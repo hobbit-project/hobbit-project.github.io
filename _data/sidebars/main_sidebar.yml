@@ -1,0 +1,104 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: sidebar
+  product: HOBBIT Documentation
+  version: 2.0
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage.html
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage.html
+      output: pdf
+      type: frontmatter
+
+  - title: Introduction
+    output: web, pdf
+    folderitems:
+
+    - title: General Introduction
+      url: /introduction.html#
+      output: web, pdf
+      type: homepage
+
+    - title: Platform Overview
+      url: /introduction.html#
+      output: web, pdf
+
+  - title: Platform Deployment
+    output: web, pdf
+    folderitems:
+
+    - title: Requirements
+      url: /platform_deployment.html#
+      output: web, pdf
+
+    - title: On a single machine
+      url: /platform_deployment.html#
+      output: web, pdf
+
+    - title: Cluster deployment
+      url: /platform_deployment.html#
+      output: web, pdf
+
+    - title: Platform parameters
+      url: /platform_deployment.html#
+      output: web, pdf
+
+  - title: Using the Platform
+    output: web, pdf
+    folderitems:
+
+    - title: Benchmarking a system
+      url: /using_the_platform.html#
+      output: web, pdf
+
+    - title: Browsing results
+      url: /using_the_platform.html#
+      output: web, pdf
+
+    - title: Challenges - Taking part in a challenge
+      url: /using_the_platform.html#
+      output: web, pdf
+
+    - title: Challenges - Organizing a challenge
+      url: /using_the_platform.html#
+      output: web, pdf
+
+  - title: Integrating your own code
+    output: web, pdf
+    folderitems:
+    - title: General comments - Workflow of an experiment
+      url: /integrating_your_own_code.html#
+      output: web, pdf
+
+    - title: General comments - Java components
+      url: /integrating_your_own_code.html#
+      output: web, pdf
+
+    - title: Integrating a system - Requirements
+      url: /integrating_your_own_code.html#
+      output: web, pdf
+
+    - title: Integrating a system - General API
+      url: /integrating_your_own_code.html#
+      output: web, pdf
+
+    - title: Integrating a system - Using Java
+      url: /integrating_your_own_code.html#
+      output: web, pdf
+
+    - title: Integrating a benchmark - General API
+      url: /integrating_your_own_code.html#
+      output: web, pdf
+
+    - title: Integrating a benchmark - Using Java
+      url: /integrating_your_own_code.html#
+      output: web, pdf
