@@ -7,7 +7,9 @@ permalink: index.html
 summary: Landing page for HOBBIT Platform documentation
 ---
 
+Welcome to the HOBBIT project documentation pages.
 Here we keep up-to-date documentation on how to use, deploy and maintain HOBBIT platform.
+If you want to directly navigate to the documentation, use the navigation bar above or a sidebar.
 
 ### Who should read this docs
 

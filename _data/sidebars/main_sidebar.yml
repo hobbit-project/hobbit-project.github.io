@@ -37,11 +37,11 @@ entries:
     folderitems:
 
     - title: Requirements
-      url: /platform_deployment.html#
+      url: /requirements.html#
       output: web, pdf
 
     - title: On a single machine
-      url: /platform_deployment.html#
+      url: /platform_deployment_single_machine.html#
       output: web, pdf
 
     - title: Cluster deployment
