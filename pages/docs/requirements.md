@@ -17,4 +17,4 @@ folder: docs
   * [Docker](https://www.docker.com/) 17.12.1-ce
   * [Docker Compose](https://docs.docker.com/compose/) 1.8.1
 
-(Newer versions should work as well - except for Docker. 18.x is not supported by the Docker client library used in the platform.)
+(Newer versions should work as well - **except for Docker**. 18.x is not supported by the Docker client library used in the platform.)
