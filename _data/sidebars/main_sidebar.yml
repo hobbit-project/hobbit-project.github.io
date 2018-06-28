@@ -24,12 +24,49 @@ entries:
     folderitems:
 
     - title: General Introduction
-      url: /introduction.html#
+      url: /introduction.html
       output: web, pdf
       type: homepage
 
     - title: Platform Overview
-      url: /introduction.html#
+      url: /overview.html
+      output: web, pdf
+
+  - title: Tutorials
+    output: web, pdf
+    folderitems:
+
+    - title: Fast Platform Deployment
+      url : /fast_deployment.html
+      output: web, pdf
+
+      subfolders:
+      - title: Quick Guide Through Platform Functionalities
+        output: web, pdf
+        subfolderitems:
+
+        - title: Benchmarking a System
+          url: /benchmarking.html
+          output: web, pdf
+
+        - title: Browsing Results
+          url: /browsing_results.html
+          output: web, pdf
+
+        - title: Taking Part in Challenge
+          url: /challenge_participation.html
+          output: web, pdf
+
+        - title: Organizing a Challenge
+          url: /challenge_organization.html
+          output: web, pdf
+
+    - title: How to Integrate a System
+      url : /system_integration.html
+      output: web, pdf
+
+    - title: How to Integrate a Benchmark
+      url : /benchmark_integration.html
       output: web, pdf
 
   - title: Platform Deployment
@@ -37,68 +74,83 @@ entries:
     folderitems:
 
     - title: Requirements
-      url: /requirements.html#
+      url: /requirements.html
       output: web, pdf
 
-    - title: On a single machine
-      url: /platform_deployment_single_machine.html#
+    - title: On a Single Machine
+      url: /platform_deployment_single_machine.html
       output: web, pdf
 
-    - title: Cluster deployment
-      url: /platform_deployment.html#
+    - title: On a Cluster
+      url: /platform_deployment.html
       output: web, pdf
 
-    - title: Platform parameters
-      url: /platform_deployment.html#
-      output: web, pdf
+      subfolders:
+      - title: Platform Parameters
+        output: web, pdf
+        subfolderitems:
 
-  - title: Using the Platform
+          - title: Env. Variables
+            url: /parameters_env.html
+            output: web, pdf
+
+          - title: Platform Config File
+            url: /parameters_config.html
+            output: web, pdf
+
+  - title: Documentation
     output: web, pdf
     folderitems:
-
-    - title: Benchmarking a system
-      url: /using_the_platform.html#
+    - title: Workflow of an Experiment
+      url: /experiment_workflow.html
       output: web, pdf
 
-    - title: Browsing results
-      url: /using_the_platform.html#
+      subfolders:
+        - title: Platform Components
+          output: web, pdf
+          subfolderitems:
+
+            - title: Platform Controller
+              url: /platform_controller.html
+              output: web, pdf
+
+        - title: Core Library
+          output: web, pdf
+          subfolderitems:
+
+            - title: Java Components
+              url: /java_components.html
+              output: web, pdf
+
+            - title: Command Queue
+              url: /command_queue.html
+              output: web, pdf
+
+    - title: General Platform API
+      url: /platform_api.html
       output: web, pdf
 
-    - title: Challenges - Taking part in a challenge
-      url: /using_the_platform.html#
-      output: web, pdf
+      subfolders:
+        - title: Integrating a System
+          output: web, pdf
+          subfolderitems:
 
-    - title: Challenges - Organizing a challenge
-      url: /using_the_platform.html#
-      output: web, pdf
+            - title: What is Necessary
+              url: /system_integration.html
+              output: web, pdf
 
-  - title: Integrating your own code
-    output: web, pdf
-    folderitems:
-    - title: General comments - Workflow of an experiment
-      url: /integrating_your_own_code.html#
-      output: web, pdf
+            - title: General API
+              url: /system_integration_api.html
+              output: web, pdf
 
-    - title: General comments - Java components
-      url: /integrating_your_own_code.html#
-      output: web, pdf
+        - title: Integrating a Benchmark
+          output: web, pdf
+          subfolderitems:
 
-    - title: Integrating a system - Requirements
-      url: /integrating_your_own_code.html#
-      output: web, pdf
+            - title: General API
+              url: /benchmark_integration_api.html
+              output: web, pdf
 
-    - title: Integrating a system - General API
-      url: /integrating_your_own_code.html#
-      output: web, pdf
-
-    - title: Integrating a system - Using Java
-      url: /integrating_your_own_code.html#
-      output: web, pdf
-
-    - title: Integrating a benchmark - General API
-      url: /integrating_your_own_code.html#
-      output: web, pdf
-
-    - title: Integrating a benchmark - Using Java
-      url: /integrating_your_own_code.html#
+    - title: FAQ
+      url: /faq.html
       output: web, pdf

@@ -1,9 +1,9 @@
 ---
-title: Using the HOBBIT platform
+title: Benchmarking a System
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: using_the_platform.html
+permalink: benchmarking.html
 folder: docs
 ---
 

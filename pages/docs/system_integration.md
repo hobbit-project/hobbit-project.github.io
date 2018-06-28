@@ -3,7 +3,7 @@ title: Integrating Your Own Code
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: integrating_your_own_code.html
+permalink: system_integration.html
 folder: docs
 ---
 
