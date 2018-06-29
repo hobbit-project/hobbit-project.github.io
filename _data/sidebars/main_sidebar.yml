@@ -111,7 +111,35 @@ entries:
           subfolderitems:
 
             - title: Platform Controller
-              url: /platform_controller.html
+              url: /platform_controller_component.html
+              output: web, pdf
+
+            - title: Storage
+              url: /storage_component.html
+              output: web, pdf
+
+            - title: Front End
+              url: /frontend_component.html
+              output: web, pdf
+
+            - title: User Management
+              url: /user_management_component.html
+              output: web, pdf
+
+            - title: Repository
+              url: /repository_component.html
+              output: web, pdf
+
+            - title: Analysis
+              url: /analysis_component.html
+              output: web, pdf
+
+            - title: Message Bus
+              url: /message_bus_component.html
+              output: web, pdf
+
+            - title: Logging
+              url: /logging_component.html
               output: web, pdf
 
         - title: Core Library
