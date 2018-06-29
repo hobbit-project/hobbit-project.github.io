@@ -7,8 +7,15 @@ permalink: benchmarking.html
 folder: docs
 ---
 
-## Using the HOBBIT platform
+Being a registered user of the platform and having uploaded a system which conforms the specification (API) of one of the benchmarks allows the user to benchmark the system.
+The benchmarking of a system is done via the *Benchmarks* menu where at first the benchmark is selected to be used for the experiment. The drop down menu displays all possible benchmarks.
 
-The main functionalities of the HOBBIT platforms user interface are explained in our [screencast](https://www.youtube.com/watch?v=flkkFBVPAAg). In the following, the functionalities will be explained in more details.
+![Configuration of a benchmarking experiment. (a) Select the benchmark.](/images/10_Benchmark.png)
 
-TODO copy the usage description from D2.2.2, including screenshots, etc.
+Having selected the benchmark, the system to be benchmarked is selected. Only systems uploaded by the user and fitting the API of the chosen benchmark are displayed. Then the benchmark experiment is configured by setting the benchmark specific parameters. These might vary amongst the different benchmarks due to their different nature. Parameters can be e.g. numeric values, string values, dates or even nominal with pre-defined values that can be selected by a drop-down box. Some of the values might also have restrictions.
+
+![Configuration of a benchmarking experiment. (b) Select the system and configure experiment.](/images/12_Benchmark.png)
+
+When the experiment is configured it can be submitted via the *Submit* button. This button is inactive as long as the configuration is not completed. After successful submission a page with the submission details is presented to the user.
+
+![Configuration of a benchmarking experiment. (c) Submission details.](/images/13_Benchmark.png)
