@@ -15,7 +15,7 @@ To add a challenge the user presses the *Add Challenge* button and is re-directe
 While the first date marks the point in time at which the platform will start to execute the experiments of the challenge, the second date is the day from which on the results will be published, i.e., they are made visible to everybody.
 Additionally, a challenge homepage can be entered which will be rendered as link for the other users.
 
-Additionally the challenge organizer can indicate if a challenge is *Visible for everyone*. Not setting this flag can be used, e.g., in order to safe a challenge and re-edit it late on. In this case it will not be visible to anyone else. 
+Additionally the challenge organizer can indicate if a challenge is *Visible for everyone*. Not setting this flag can be used, e.g., in order to safe a challenge and re-edit it late on. In this case it will not be visible to anyone else.
 
 When all parameters are filled out, the challenge organizer is required to save the challenge (press the *Save* button) before adding tasks to the challenge.
 
