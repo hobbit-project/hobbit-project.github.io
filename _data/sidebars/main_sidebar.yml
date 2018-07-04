@@ -35,12 +35,27 @@ entries:
   - title: Tutorials
     output: web, pdf
     folderitems:
-
-    - title: Fast Platform Deployment
-      url : /fast_deployment.html
+      
+    - title: About Tutorials
+      url: /about_tutorials.html
       output: web, pdf
-
+      
       subfolders:
+      - title: Fast Platform Deployment
+        output: web, pdf
+        subfolderitems:
+        
+        - title: From `git clone` to Running Platform
+          url: /platform_deployment_single_machine.html
+          output: web, pdf
+
+        - title: Automatic Platform Provisioning using Exoframe
+          url: /exoframe_local.html
+          output: web, pdf
+        
+        - title: Deploying HOBBIT Platform on AWS
+          url: /exoframe_aws.html
+          output: web, pdf
       - title: Quick Guide Through Platform Functionalities
         output: web, pdf
         subfolderitems:
