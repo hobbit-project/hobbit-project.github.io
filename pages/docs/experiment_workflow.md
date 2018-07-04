@@ -28,5 +28,30 @@ This very general workflow is assumed by the platform and has to be implemented 
 
 ### Recommended Workflow
 
-Copy the workflow from D2.2.2 including pictures.
+![sequence diagram](/images/Sequence_diagram.png)
 
+Figure shows a sequence diagram containing the steps as well as the type of communication that is used.
+However, the orchestration of the single benchmark components is part of the benchmark and might be different.
+
+1. The platform controller makes sure that a benchmark can be started. This includes a check to make sure that all nodes of the cluster are available.
+1. The platform controller spawns the components of benchmarked system.
+    * The system initializes itself and makes sure that it is working properly.
+    * It sends a message to the platform controller to indicate that it is ready.
+1. The platform controller spawns the benchmark controller.
+    * The benchmark controller spawns the data and task generators as well as the evaluation storage.
+    * The benchmark controller sends a message to the platform controller to indicate that it is ready.
+1. The platform controller waits until the system as well as the benchmark controller are ready.
+1. The platform controller sends a start signal to the benchmark controller which starts the data generators.
+1. The data generators start their algorithms to create the input data.
+    * The data is sent to the system and to the task generators.
+    * The task generators generate the tasks and send it to the system.
+    * The systems response is sent to the evaluation storage.
+1. The task generators send the expected result in the evaluation storage.
+1. After the data and task generators finished their work the benchmarking phase ends and the generators as well as the benchmarked system terminate.
+1. After that the terminated components are discarded and the benchmark controller spawns the evaluation module.
+1. The evaluation module loads results from the evaluation storage. This is done by requesting the results pairs, i.e., expected result and actual result received from the system for a single task, from the storage. The evaluation module uses these pairs to evaluate the system's performance and calculate the Key Performance Indicators (KPIs). The results of this evaluation are returned to the benchmark controller before the evaluation module terminates.
+1. The benchmark controller sends the signal to the evaluation storage to terminate.
+1. The benchmark controller sends the evaluation results to the platform controller and terminates.
+1. After the benchmark controller has finished its work, the platform controller can add additional information to the result, e.g., the configuration of the hardware, and store the result. After that, a new evaluation could be started.
+1. The platform controller sends the URI of the experiment results to the analysis component.
+1. The analysis component reads the evaluation results from the storage, processes them and stores additional information in the storage.
