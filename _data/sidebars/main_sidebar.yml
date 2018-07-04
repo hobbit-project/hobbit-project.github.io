@@ -109,8 +109,20 @@ entries:
             url: /parameters_env.html
             output: web, pdf
 
+          - title: Volumes
+            url: /parameters_volumes.html
+            output: web, pdf
+
           - title: Platform Config File
             url: /parameters_config.html
+            output: web, pdf
+
+          - title: storage-init.sh
+            url: /parameters_storage_init.html
+            output: web, pdf
+
+          - title: Frontend
+            url: /parameters_frontend.html
             output: web, pdf
 
   - title: Documentation
