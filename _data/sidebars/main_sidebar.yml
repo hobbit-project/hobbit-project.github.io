@@ -169,6 +169,10 @@ entries:
               url: /logging_component.html
               output: web, pdf
 
+            - title: Resource Monitoring
+              url: /monitoring_component.html
+              output: web, pdf
+
         - title: Core Library
           output: web, pdf
           subfolderitems:
