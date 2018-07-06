@@ -102,7 +102,7 @@ entries:
               output: web, pdf
 
             - title: On a Cluster
-              url: /platform_deployment.html
+              url: /platform_deployment_cluster.html
               output: web, pdf
             
             - title: Env. Variables
