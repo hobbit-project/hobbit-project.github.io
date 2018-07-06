@@ -20,7 +20,7 @@ entries:
       type: frontmatter
 
   - title: Introduction
-    url: /introduction.html
+    url: /index.html
     output: toplevel, pdf
     type: homepage
 
