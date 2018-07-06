@@ -42,7 +42,7 @@ entries:
         subfolderitems:
         
         - title: From `git clone` to Running Platform
-          url: /platform_deployment_single_machine.html
+          url: /tutorial_git_deploy.html
           output: web, pdf
 
         - title: Automatic Platform Provisioning using Exoframe
