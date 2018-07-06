@@ -379,6 +379,12 @@ background-color: #347DBE;
     padding: 4px 10px;
 }
 
+.nav > a {
+    font-size: 14px;
+    line-height: 20px;
+    padding: 4px 10px;
+}
+
 ul#mysidebar {
     border-radius:0px;
 }
@@ -396,6 +402,10 @@ ul#mysidebar {
 
 
 .nav ul li a {
+    background-color: #FAFAFA;
+}
+
+.nav a {
     background-color: #FAFAFA;
 }
 

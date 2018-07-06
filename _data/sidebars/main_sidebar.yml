@@ -20,17 +20,13 @@ entries:
       type: frontmatter
 
   - title: Introduction
-    output: web, pdf
-    folderitems:
+    url: /introduction.html
+    output: toplevel, pdf
+    type: homepage
 
-    - title: General Introduction
-      url: /introduction.html
-      output: web, pdf
-      type: homepage
-
-    - title: Platform Overview
-      url: /overview.html
-      output: web, pdf
+  - title: Platform Overview
+    url: /overview.html
+    output: toplevel, pdf
 
   - title: Tutorials
     output: web, pdf
@@ -84,43 +80,39 @@ entries:
       url : /benchmark_integration.html
       output: web, pdf
 
-  - title: Platform Deployment
+  - title: Reference Manual
     output: web, pdf
     folderitems:
 
-    - title: Requirements
-      url: /requirements.html
-      output: web, pdf
-
-    - title: On a Single Machine
-      url: /platform_deployment_single_machine.html
-      output: web, pdf
-
-    - title: On a Cluster
-      url: /platform_deployment.html
-      output: web, pdf
-
-      subfolders:
-      - title: Platform Parameters
-        output: web, pdf
-        subfolderitems:
-
-          - title: Env. Variables
-            url: /parameters_env.html
-            output: web, pdf
-
-          - title: Platform Config File
-            url: /parameters_config.html
-            output: web, pdf
-
-  - title: Documentation
-    output: web, pdf
-    folderitems:
     - title: Workflow of an Experiment
       url: /experiment_workflow.html
       output: web, pdf
 
       subfolders:
+        - title: Platform Deployment
+          output: web, pdf
+          subfolderitems:
+
+            - title: Requirements
+              url: /requirements.html
+              output: web, pdf
+
+            - title: On a Single Machine
+              url: /platform_deployment_single_machine.html
+              output: web, pdf
+
+            - title: On a Cluster
+              url: /platform_deployment.html
+              output: web, pdf
+            
+            - title: Env. Variables
+              url: /parameters_env.html
+              output: web, pdf
+
+            - title: Platform Config File
+              url: /parameters_config.html
+              output: web, pdf
+
         - title: Platform Components
           output: web, pdf
           subfolderitems:
@@ -197,3 +189,5 @@ entries:
     - title: FAQ
       url: /faq.html
       output: web, pdf
+    
+
