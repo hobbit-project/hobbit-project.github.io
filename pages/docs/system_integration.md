@@ -27,6 +27,7 @@ We start by creating a Maven project called "my-system-adapter" with our preferr
 1. Adding the [`hobbit.core` library](https://github.com/hobbit-project/core) as dependency to be able to use the predefined classes,
 1. Adding the slf4j-log4j binding since our classes will use [slf4j loggers](https://www.slf4j.org/index.html) for logging messages which won't work without a binding. Of cause, you can use different bindings if you prefer them and
 1. Configuring the [shade plugin](https://maven.apache.org/plugins/maven-shade-plugin/) which we will be using to create our final jar file containing all the classes and files necessary for the system adapter to run.
+
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
@@ -171,7 +172,7 @@ mvn install:install-file \
 Note that you may have to adapt the paths to the `system.jar` file or the `repository` directory.
 
 After creating the local repository, the projects pom file needs to be updated in the following by
-1. Adding the `repository` as local repository and
+1. Adding the `repository` directory as local repository and
 1. Adding the system to the dependencies
 
 ```xml
@@ -193,8 +194,125 @@ After creating the local repository, the projects pom file needs to be updated i
 	</dependencies>
 ```
 
+Now, the systems classes can be used by the System Adapter in the four methods described above as normal Java classes.
+
 ### 2.b. The System Adapter separated from the system
-TODO
+
+This solution will assume that your system is located in a different Docker container and your System Adapter is connecting to the system, e.g., via HTTP. This is a good approach if a) your system is already available as a Docker container or b) if your system is written in a different language than the System Adapter or c) if you want to design your System Adapter in an extendable way (e.g., to enable the creation of more than one instance of your system to execute tasks in parallel).
+
+In the following, we will assume that your system offers an HTTP API (i.e., the System Adapter will act as HTTP client) and is available as Docker image with the name `git.project-hobbit.eu:4567/maxpower/mysystem`. Additionally, we will assume that you have a Java class called `MySystemClient` which will implement the methods, necessary to communicate with your system, e.g., via HTTP.
+
+The first step is to implement the creation of your systems container. Your System Adapter will have to ask the HOBBIT platform to create the container. This is typically done during the initialization.
+
+```java
+    /** The instance of a class enabling the communication with the system. */
+    private MySystemClient client;
+    /** The name of the system container. */
+    private String systemContainer;
+
+    @Override
+    public void init() throws Exception {
+        super.init();
+
+        // Define environmental variables for your system if necessary
+        String[] envVariables = new String[] { "key=value" };
+        // Request the creation of the system container
+        systemContainer = createContainer(
+                PlatformBenchmarkConstants.SYSTEM_IMAGE, 
+                Constants.CONTAINER_TYPE_SYSTEM,
+                envVariables);
+        // Check whether the creation was successful
+        if (systemContainer == null) {
+            throw new Exception("Couldn't create system container. Aborting.");
+        }
+
+        /* As a response of the creation we got the name of the system container.
+         * This name acts like a host name to communicate with the container, e.g.,
+         * for sending HTTP requests. Let's assume our system should be listening
+         * to port 8080 in the other container and we can create our client class
+         * with this information.
+         */
+        String systemUrl = "http://" + systemContainer + ":8080";
+        client = new MySystemClient(systemUrl);
+
+        /* We need to make sure that our system is ready. The easiest way is to
+         * call it again and again, until it responds. (This depends a lot on the
+         * API of your system). Let's assume our client class provides a ping 
+         * method for that which answers true if the call was successful or false
+         * if a problem occured.
+         */
+        boolean response = false;
+        while(!response) {
+            response = client.ping();
+        }
+        // Our system responded and we should be ready for the benchmark.
+    }
+```
+
+In the `init` method above has to create the system container and establish the communication with the system. Note that we have defined the created client and the name of the system container as attributes since we will have to use them later on.
+
+After that, the two methods for receiving data and tasks should be straightforward. Again, we assume that the client class contains methods for handling data and requests. These methods would also handle the transformation of requests if for example the benchmark sends tasks in a format the system would not understand by itself. 
+
+```java
+    @Override
+    public void receiveGeneratedData(byte[] data) {
+        // handle the incoming data as described in the benchmark description
+        client.handleData(data);
+    }
+
+    @Override
+    public void receiveGeneratedTask(String taskId, byte[] data) {
+        // handle the incoming task and create a result
+        byte[] result = client.request(data);
+
+        // Send the result to the evaluation storage
+        sendResultToEvalStorage(taskId, result);
+    }
+```
+
+Finally, only two parts of our System Adapter are missing. We should clean up before we terminate our system adapter and we should be prepared for the case, that our system crashes. The first part is implemented in the `close` method. For the second part, we override the `receiveCommand(byte, byte[])` method to be able to react, if the system container terminated.
+
+```java
+    /** Simple flag used to check whether this component is terminating ot not. */
+    private boolean isTerminating = false;
+
+    @Override
+    public void close() throws IOException {
+        // Set the termination flag to true
+        isTerminating = true;
+        // Free the resources you requested here
+        client.close();
+        // Ask the platform to stop the system container
+        stopContainer(systemContainer);
+
+        // Always close the super class after yours!
+        super.close();
+    }
+
+    @Override
+    public void receiveCommand(byte command, byte[] data) {
+        // Check whether a container terminated
+        if (command == Commands.DOCKER_CONTAINER_TERMINATED) {
+            // Parse the name of the stopped container and its exit code
+            ByteBuffer buffer = ByteBuffer.wrap(data);
+            String containerName = RabbitMQUtils.readString(buffer);
+            int exitCode = buffer.get();
+            /* Check whether the terminated container is our system container
+             * and whether the system adapter itself is already terminating.
+             * (If we are terminating, we are not surprised that the system
+             * terminates as will since we asked the platform to stop it.)
+             */
+            if ((containerName.equals(systemContainer)) && !isTerminating) {
+                // Create an exception and terminate using the exception as reason
+                terminate(new Exception("The system container terminated unexpectedly. Aborting."));
+            }
+        }
+        // Always give the command to the super class!
+        super.receiveCommand(command, data);
+    }
+```
+
+The `close` method will ask the platform to stop the system. Note that it sets the `isTerminating` attribute to `true`. This simple flag is used in our example in the `receiveCommand` method to check whether our System Adapter is already about to terminate or not. If the System Adapter is terminating, we expect that the system container is terminating as well and don't have to react on this. However, if the flag is `false` and the System Adapter receives the message that the system terminated (i.e., if the termination is not expected), our System Adapter should react. In the example above, our System Adapter is terminating by calling the `terminate` function. The created `Exception` will cause the container to stop with an error exit code. However, you are free to react in different ways, e.g., creating a new system container.
 
 ## 3. Writing the system.ttl file
 
@@ -208,7 +326,7 @@ data file can be created for a system called `"MyOwnSystem"`.
 The simplest file defines only those information that are necessary to get the system running. First, we have to collect the necessary data:
 * The system needs a unique identifier, i.e., a URI. In our example, we choose `http://www.example.org/exampleSystem/MyOwnSystem`.
 * The system needs a name (`"MyOwnSystem"`) and a short description (`"This is my own example system..."`).
-* The name of the uploaded docker image is needed (`"git.project-hobbit.eu:4567/maxpower/mysystem"`).
+* The name of the uploaded docker image is needed (`"git.project-hobbit.eu:4567/maxpower/mysystemadapter"`).
 * The URI of the benchmark API, the system implements (`http://benchmark.org/MyNewBenchmark/BenchmarkApi`, should be provided by the benchmark description page).
 
 Our example file has the following content
@@ -220,7 +338,7 @@ Our example file has the following content
 <http://www.example.org/exampleSystem/MyOwnSystem> a  hobbit:SystemInstance;
 	rdfs:label	"MyOwnSystem"@en;
 	rdfs:comment	"This is my own system defined in a simple way"@en;
-	hobbit:imageName "git.project-hobbit.eu:4567/maxpower/mysystem";
+	hobbit:imageName "git.project-hobbit.eu:4567/maxpower/mysystemadapter";
 	hobbit:implementsAPI <http://benchmark.org/MyNewBenchmark/BenchmarkApi> .
 ```
 
@@ -250,7 +368,7 @@ The single parameterised versions of the system are defined as `hobbit:SystemIns
 <http://www.example.org/exampleSystem/MyOwnSystem> a  hobbit:SystemInstance;
     rdfs:label  "MySystem (0.7)"@en;
     rdfs:comment    "This is my own system with a threshould of 0.7"@en;
-    hobbit:imageName "git.project-hobbit.eu:4567/maxpower/mysystem";
+    hobbit:imageName "git.project-hobbit.eu:4567/maxpower/mysystemadapter";
     hobbit:implementsAPI <http://benchmark.org/MyNewBenchmark/BenchmarkApi> ;
     hobbit:instanceOf <http://www.example.org/exampleSystem/System> ;
     <http://www.example.org/exampleSystem/System#threshold> "0.7"^^xsd:float .
@@ -258,7 +376,7 @@ The single parameterised versions of the system are defined as `hobbit:SystemIns
 <http://www.example.org/exampleSystem/MyOwnSystem2> a  hobbit:SystemInstance;
     rdfs:label  "MySystem (0.6)"@en;
     rdfs:comment    "This is my own system with a threshould of 0.6"@en;
-    hobbit:imageName "git.project-hobbit.eu:4567/maxpower/mysystem";
+    hobbit:imageName "git.project-hobbit.eu:4567/maxpower/mysystemadapter";
     hobbit:implementsAPI <http://benchmark.org/MyNewBenchmark/BenchmarkApi> ;
     hobbit:instanceOf <http://www.example.org/exampleSystem/System> ;
     <http://www.example.org/exampleSystem/System#threshold> "0.6"^^xsd:float .
