@@ -61,9 +61,13 @@ Initialize the Virtuoso storage:
 
 After the platform startup, the following interfaces will be available for you:
 * localhost:8080 (GUI) - 
+
 Default credentials are: challenge-organiser/hobbit, testuser/hobbit, system-provider/hobbit and guest/hobbit
+
 * localhost:5601 (Kibana)
 * localhost:8181 (Keycloak) 
+
 Admin credentials are: admin/H160bbit
+
 * localhost:8081 (RabbitMQ)
 * localhost:8890 (Virtuoso)
