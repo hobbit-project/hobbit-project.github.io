@@ -30,81 +30,86 @@ We start by creating a Maven project called "my-system-adapter" with our preferr
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.example</groupId>
-	<artifactId>my-system-adapter</artifactId>
-	<version>1.0.0</version>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.example</groupId>
+    <artifactId>my-system-adapter</artifactId>
+    <version>1.0.0</version>
 
-	<repositories>
-		<repository>
-			<id>maven.aksw.internal</id>
-			<name>University Leipzig, AKSW Maven2 Repository</name>
-			<url>http://maven.aksw.org/repository/internal</url>
-		</repository>
-		<repository>
-			<id>maven.aksw.snapshots</id>
-			<name>University Leipzig, AKSW Maven2 Repository</name>
-			<url>http://maven.aksw.org/repository/snapshots</url>
-		</repository>
-	</repositories>
+    <repositories>
+        <repository>
+            <id>maven.aksw.internal</id>
+            <name>University Leipzig, AKSW Maven2 Repository</name>
+            <url>http://maven.aksw.org/repository/internal</url>
+        </repository>
+        <repository>
+            <id>maven.aksw.snapshots</id>
+            <name>University Leipzig, AKSW Maven2 Repository</name>
+            <url>http://maven.aksw.org/repository/snapshots</url>
+        </repository>
+    </repositories>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.hobbit</groupId>
-			<artifactId>core</artifactId>
-			<version>1.0.11</version>
-		</dependency>
-		<!-- Add a slf4j log binding here -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.7.15</version>
-		</dependency>
-	</dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>org.hobbit</groupId>
+            <artifactId>core</artifactId>
+            <version>1.0.11</version>
+        </dependency>
+        <!-- Add a slf4j log binding here -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.15</version>
+        </dependency>
+    </dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-shade-plugin</artifactId>
-				<version>2.4.3</version>
-				<configuration>
-					<!-- filter all the META-INF files of other artifacts -->
-					<filters>
-						<filter>
-							<artifact>*:*</artifact>
-							<excludes>
-								<exclude>META-INF/*.SF</exclude>
-								<exclude>META-INF/*.DSA</exclude>
-								<exclude>META-INF/*.RSA</exclude>
-							</excludes>
-						</filter>
-					</filters>
-					<transformers>
-						<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer" />
-						<transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
-					</transformers>
-				</configuration>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>shade</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>2.4.3</version>
+                <configuration>
+                    <!-- filter all the META-INF files of other artifacts -->
+                    <filters>
+                        <filter>
+                            <artifact>*:*</artifact>
+                            <excludes>
+                                <exclude>META-INF/*.SF</exclude>
+                                <exclude>META-INF/*.DSA</exclude>
+                                <exclude>META-INF/*.RSA</exclude>
+                            </excludes>
+                        </filter>
+                    </filters>
+                    <transformers>
+                        <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer" />
+                        <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
+                    </transformers>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
 ```
 
-In this project, we create the main class of our system adapter in the next step.
+In this project, you should find a `src/main/java` directory (your IDE should typically create it). In this directory (or a subdirectory if you want to use packages), we create the main class of our System Adapter in the next step.
 
 ## 2. Writing the System Adapter
 
-The System Adapter comprises one main class that extends the [`org.hobbit.core.components.AbstractSystemAdapter` class](https://github.com/hobbit-project/core/blob/master/src/main/java/org/hobbit/core/components/AbstractSystemAdapter.java). We will build our System Adapter image to execute this class, in one of the later steps. However, our System Adapter class - let's it `MySystemAdapter` - should look similar to the following piece of code:
+The System Adapter comprises one main class that extends the [`org.hobbit.core.components.AbstractSystemAdapter` class](https://github.com/hobbit-project/core/blob/master/src/main/java/org/hobbit/core/components/AbstractSystemAdapter.java). We will build our System Adapter image to execute this class, in one of the later steps. However, our System Adapter class (let's call it `MySystemAdapter` in the `org.example` package) should look similar to the following piece of code:
 ```java
+package org.example;
+
+import java.io.IOException;
+import org.hobbit.core.components.AbstractSystemAdapter;
+
 public class MySystemAdapter extends AbstractSystemAdapter {
 
     @Override
@@ -113,7 +118,8 @@ public class MySystemAdapter extends AbstractSystemAdapter {
 
         // Your initialization code comes here...
 
-        // You can access the RDF model this.systemParamModel to retrieve meta data defined in your system.ttl file
+        // You can access the RDF model this.systemParamModel 
+        // to retrieve meta data defined in your system.ttl file
     }
 
     @Override
@@ -159,7 +165,7 @@ To enable the System Adapter to work with your classes, you need to add them to 
 * you are not familiar with Maven and 
 * that you have your system available as a single, large `system.jar` file.
 
-We will add your system using a [local repository](http://mark.koli.ch/maven-add-local-jar-dependency-to-classpath). Create a folder inside your project named `repository`. Choose a `groupId`, `artifactId` and a `version`. For our example, we will use `org.example`, `my-system` and `1.0.0`.
+We will add your system using a [local repository](http://mark.koli.ch/maven-add-local-jar-dependency-to-classpath). Create a folder inside your project named `repository`. Choose a `groupId`, `artifactId` and a `version` for your system to represent it in Maven. For our example, we will use `org.example`, `my-system` and `1.0.0`. Execute the following command to install your system into the local repository and enable Maven to include it into your project.
 ```
 mvn install:install-file \
   -Dfile=system.jar \
@@ -171,27 +177,27 @@ mvn install:install-file \
 ```
 Note that you may have to adapt the paths to the `system.jar` file or the `repository` directory.
 
-After creating the local repository, the projects pom file needs to be updated in the following by
+After creating the local repository, the System Adapter projects pom file needs to be updated by
 1. Adding the `repository` directory as local repository and
 1. Adding the system to the dependencies
 
 ```xml
-	<repositories>
-		<repository>
-			<id>local repository</id>
-			<url>file://${project.basedir}/repository</url>
-		</repository>
-		...
-	</repositories>
+    <repositories>
+        <repository>
+            <id>local repository</id>
+            <url>file://${project.basedir}/repository</url>
+        </repository>
+        ...
+    </repositories>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.example</groupId>
-			<artifactId>my-system</artifactId>
-			<version>1.0.0</version>
-		</dependency>
-	...
-	</dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>my-system</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    ...
+    </dependencies>
 ```
 
 Now, the systems classes can be used by the System Adapter in the four methods described above as normal Java classes.
@@ -314,7 +320,61 @@ Finally, only two parts of our System Adapter are missing. We should clean up be
 
 The `close` method will ask the platform to stop the system. Note that it sets the `isTerminating` attribute to `true`. This simple flag is used in our example in the `receiveCommand` method to check whether our System Adapter is already about to terminate or not. If the System Adapter is terminating, we expect that the system container is terminating as well and don't have to react on this. However, if the flag is `false` and the System Adapter receives the message that the system terminated (i.e., if the termination is not expected), our System Adapter should react. In the example above, our System Adapter is terminating by calling the `terminate` function. The created `Exception` will cause the container to stop with an error exit code. However, you are free to react in different ways, e.g., creating a new system container.
 
-## 3. Writing the system.ttl file
+## 3. Create and push the Docker image
+
+### Compiling the System Adapter project
+
+For finally creating and pushing the Docker image to gitlab, the Maven project needs to be compiled. The following command will delete old compilings, compile the classes of the project and create a large jar file containing the classes defined in the project and the dependencies defined in the pom file.
+
+```
+mvn clean package
+```
+
+After that, the `target` folder of your project should contain a jar file with the name of your project. At the beginning, we named the project `my-system-adapter` and defined its version as `1.0.0` so we should find a file `my-system-adapter-1.0.0.jar` (by default Maven uses `<artifactId>-<version>`).
+
+### Creating the Docker image
+
+Create a `Dockerfile` in your System Adapter project with the following content:
+
+```dockerfile
+FROM java
+
+ADD target/my-system-adapter-1.0.0.jar /system/my-system-adapter.jar
+
+WORKDIR /system
+
+CMD java -cp my-system-adapter.jar org.hobbit.core.run.ComponentStarter org.example.MySystemAdapter
+```
+
+The file defines that Docker will reuse the already existing `java` image which contains a JVM. It will add our jar file to a `system` directory. In this directory, the last line will be executed. This line executes the `ComponentStarter` class which will call the methods of our class.
+
+Since we want to upload the image to the HOBBIT gitlab, the name of our image already has to contain the address of this gitlab as well as our gitlab user name and the name of the gitlab project. Let's assume that the name of our user is `maxpower` and that we own a project named `mysystemadapter` to which we will upload the image. The following command will create the Docker image and give it the name which is necessary to upload it in the next step.
+
+```
+docker build -t git.project-hobbit.eu:4567/maxpower/mysystemadapter .
+```
+
+Note that the letters should be lowercased even if the real user name and project name include upper case letters. Additionally, it might create problems to use names with non alphanumeric characters.
+
+### Pushing the image
+
+After the successful building of the image, it can be pushed to the git project.
+
+```
+docker login git.project-hobbit.eu:4567
+docker push git.project-hobbit.eu:4567/maxpower/mysystemadapter
+```
+
+It is possible to upload multiple images. This can be necessary if the system is in a different container than the Sytem Adapter. There are two ways to upload the additional images. Either you create a gitlab project for each image (note that every user has a maximum number of projects) or you upload several images to a single gitlab project. For that, it is necessary to name the images in a certain way. Assume that our users has created a gitlab project with the name `mysystem`. We could upload the system and system adapter images if we give them names like
+
+```
+docker push git.project-hobbit.eu:4567/maxpower/mysystem/system
+docker push git.project-hobbit.eu:4567/maxpower/mysystem/adapter
+```
+
+Note that both names contain the complete project name and end with a different name to identify the image.
+
+## 4. Writing the system.ttl file
 
 The system meta data file comprises meta data about the uploaded system that is needed by the Hobbit platform.
 The file contains the meta data as [RDF triples](https://www.w3.org/2001/sw/wiki/RDF) in the
