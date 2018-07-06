@@ -7,6 +7,8 @@ permalink: parameters_env.html
 folder: docs
 ---
 
+Environment variables for platform components can be set in `docker-compose.yml`.
+
 | Component | Parameter | Value | Meaning |
 |--|--|--|--|
 | platform-controller | `DOCKER_HOST` | Locator | The location of the Docker daemon the platform will use for creating, stopping and observing containers. |

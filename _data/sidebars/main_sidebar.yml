@@ -113,6 +113,18 @@ entries:
               url: /parameters_config.html
               output: web, pdf
 
+            - title: Volumes
+              url: /parameters_volumes.html
+              output: web, pdf
+
+            - title: storage-init.sh
+              url: /parameters_storage_init.html
+              output: web, pdf
+
+            - title: Frontend
+              url: /parameters_frontend.html
+              output: web, pdf
+
         - title: Platform Components
           output: web, pdf
           subfolderitems:
@@ -147,6 +159,10 @@ entries:
 
             - title: Logging
               url: /logging_component.html
+              output: web, pdf
+
+            - title: Resource Monitoring
+              url: /monitoring_component.html
               output: web, pdf
 
         - title: Core Library
