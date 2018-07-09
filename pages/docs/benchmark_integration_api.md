@@ -16,3 +16,10 @@ Command queue structure and command IDs are described at [command queue](/comman
 
 ## RDF Model
 
+The benchmark meta data file (`benchmark.ttl`) comprises meta data about the benchmark that is needed by the Hobbit platform. The file contains the meta data as RDF triples in the Turtle format and needs to be uploaded to the git instance of the platform.
+
+Benchmark description in `benchmark.ttl`
+should include an instance of [hobbit:Benchmark](http://w3id.org/hobbit/vocab#Benchmark)
+describing your benchmark, docker image it uses, related parameters (if any) and KPIs.
+
+Detailed information can be found in [Hobbit ontology](https://github.com/hobbit-project/ontology/blob/master/ontology.ttl).
