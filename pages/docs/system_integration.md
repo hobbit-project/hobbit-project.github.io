@@ -365,7 +365,7 @@ docker login git.project-hobbit.eu:4567
 docker push git.project-hobbit.eu:4567/maxpower/mysystemadapter
 ```
 
-It is possible to upload multiple images. This can be necessary if the system is in a different container than the Sytem Adapter. There are two ways to upload the additional images. Either you create a gitlab project for each image (note that every user has a maximum number of projects) or you upload several images to a single gitlab project. For that, it is necessary to name the images in a certain way. Assume that our users has created a gitlab project with the name `mysystem`. We could upload the system and system adapter images if we give them names like
+It is possible to upload multiple images. This can be necessary if the system is in a different container than the System Adapter. There are two ways to upload the additional images. Either you create a gitlab project for each image (note that every user has a maximum number of projects) or you upload several images to a single gitlab project. For that, it is necessary to name the images in a certain way. Assume that our users has created a gitlab project with the name `mysystem`. We could upload the system and system adapter images if we give them names like
 
 ```
 docker push git.project-hobbit.eu:4567/maxpower/mysystem/system
