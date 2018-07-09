@@ -15,7 +15,7 @@ We will use the following queue types supported by RabbitMQ:
 * **Bus.** Every component connected to this queue receives all messages sent by one of the other connected components.
 * **RPC.** The queue has one single receiving consumer that handles incoming requests, e.g., a SPARQL query, and sends a response containing the result on a second parallel queue back to the emitter of the request.
 
-Queues that are used exclusively by the benchmarking components or the benchmarked system are not listed in table~\ref{tab:queues}, since their usage depends on a particular benchmark.
+Queues that are used exclusively by the benchmarking components or the benchmarked system are not listed in the table, since their usage depends on a particular benchmark.
 However, if the benchmark relies on RabbitMQ, the benchmark implementation has to add the ID of the experiment to the execution queue in order to be executed in parallel with other submitted benchmarks.
 
 **Name** | **Type** | **Description**
