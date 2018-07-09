@@ -25,7 +25,7 @@ For this tutorial, we will use [Apache Maven](http://maven.apache.org/) to manag
 We start by creating a Maven project called "my-system-adapter" with our preferred IDE. We open the projects pom file and adapt it by
 1. Adding the AKSW repository for being able to include our libraries,
 1. Adding the [`hobbit.core` library](https://github.com/hobbit-project/core) as dependency to be able to use the predefined classes,
-1. Adding the slf4j-log4j binding since our classes will use [slf4j loggers](https://www.slf4j.org/index.html) for logging messages which won't work without a binding. Of cause, you can use different bindings if you prefer them and
+1. Adding the slf4j-log4j binding since our classes will use [slf4j loggers](https://www.slf4j.org/index.html) for logging messages which won't work without a binding. Of course, you can use different bindings if you prefer them and
 1. Configuring the [shade plugin](https://maven.apache.org/plugins/maven-shade-plugin/) which we will be using to create our final jar file containing all the classes and files necessary for the system adapter to run.
 
 ```xml
