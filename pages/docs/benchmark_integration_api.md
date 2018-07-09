@@ -13,6 +13,11 @@ Command queue structure and command IDs are described at [command queue](/comman
 
 ## Termination
 
+To indicate that your benchmark is finished,
+
+* call `sendResultModel` method
+if you're extending [AbstractBenchmarkController](https://github.com/hobbit-project/core/blob/master/src/main/java/org/hobbit/core/components/AbstractBenchmarkController.java);
+* otherwise, send [BENCHMARK_FINISHED_SIGNAL](/command_queue.html).
 
 ## RDF Model
 
