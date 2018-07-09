@@ -9,7 +9,7 @@ folder: docs
 
 This tutorial shows how a system can be prepared to be benchmarked within the HOBBIT platform. The tutorial mainly covers all necessary steps including the development of a System Adapter in Java. Note that the adapter can be implemented in other languages as well. However, for Java we are offering a library which eases the implementation. For other languages, you may want to take a look into the [System API](/system_integration_api.html).
 
-A system that should be benchmark within the HOBBIT platform needs to fulfil the following requirements:
+A system that should be benchmark within the HOBBIT platform needs to fulfill the following requirements:
 1. Be encapsulated in a Docker image
 1. Implement the API of the benchmark. This is something that can not be covered by this tutorial since it is depending on the benchmark.
 1. Implement the API of the platform. This mainly includes
