@@ -9,7 +9,7 @@ folder: docs
 
 ## Experiment Workflow
 
-The HOBBIT platform does not demand the implementation of a very detailed workflow. In fact, the platform itself has a small API which has to be implemented by the benchmark and the system for a hand full of necessary messages (the minimal API for the benchmark and the system will be explained in TODO). Apart from that, the real workflow of the benchmarking is up to the benchmark and system developer.
+The HOBBIT platform does not demand the implementation of a very detailed workflow. In fact, the platform itself has a small API which has to be implemented by the benchmark and the system for a hand full of necessary messages (the minimal API for the benchmark and the system will be explained in [How to integrate a Benchmark](/benchmark_integration.html)). Apart from that, the real workflow of the benchmarking is up to the benchmark and system developer.
 
 However, since we want to support the development of benchmarks and system adapters, we defined a second, more fine grained workflow which is supported by our abstract Java class implementations.
 

@@ -155,7 +155,9 @@ We will go through the different methods to clarify their meaning:
 
 There are additional methods which could be overriden by your class if you want to make use of them.
 
-TODO.
+1. `run` is the method which is called when the system is initialized. It should indicate that the system is ready to the Hobbit Platform with [SYSTEM_READY_SIGNAL message](/command_queue.html).
+1. `receiveCommand` is the method which can check for command queue messages. Make sure that `super.receiveCommand()` is the last method called this method.
+1. `terminate` is the method which is called when benchmark is terminated.
 
 Based on this general implementation, we will show two scenarios how the communication with the system can be managed.
 
