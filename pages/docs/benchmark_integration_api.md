@@ -9,16 +9,17 @@ folder: docs
 
 ## RabbitMQ
 
-Command IDs for well-known commands for [command queue](/command_queue.html) are defined in
-[Constants module](https://github.com/hobbit-project/core/blob/master/src/main/java/org/hobbit/core/Constants.java).
-
-**Command ID constant** | **Command ID value** | **Description**
--------- | -------- | ---------------
-BENCHMARK_READY_SIGNAL | 2 | Sent by the benchmarked system to indicate that the system is ready.
-BENCHMARK_FINISHED_SIGNAL | 11 | Sent by the benchmarked system to indicate that the benchmark is finished.
+Command queue structure and command IDs are described at [command queue](/command_queue.html).
 
 ## Termination
 
 
 ## RDF Model
 
+The benchmark meta data file (`benchmark.ttl`) comprises meta data about the benchmark that is needed by the Hobbit platform. The file contains the meta data as RDF triples in the Turtle format and needs to be uploaded to the git instance of the platform.
+
+Benchmark description in `benchmark.ttl`
+should include an instance of [hobbit:Benchmark](http://w3id.org/hobbit/vocab#Benchmark)
+describing your benchmark, docker image it uses, related parameters (if any) and KPIs.
+
+Detailed information can be found in [Hobbit ontology](https://github.com/hobbit-project/ontology/blob/master/ontology.ttl).
