@@ -76,3 +76,28 @@ services:
 ```
 
 Now you can start docker-compose.yml normally and you will have resource monitoring enabled.
+
+## Rabbitmq Clustering
+
+You need to edit docker-compose.yml (or docker-compose-dev.yml) and comment out or delete rabbitmq related section:
+
+```
+# message bus
+#rabbit:
+#  image: rabbitmq:management
+#  networks:
+#    - hobbit
+#    - hobbit-core
+#  ports:
+#    - "8081:15672"
+#    # Forwarding the port for testing
+#    - "5672:5672"
+```
+
+Start 3 nodes rabbitmq cluster:
+```
+make start-rabbitmq-cluster
+```
+
+You can navigate to http://localhost:15672/#/ and see that rabbitmq got 3 nodes available.
+Now you can start docker-compose.yml normally, the HOBBIT platform will be using cluster of rabbitmq nodes.
