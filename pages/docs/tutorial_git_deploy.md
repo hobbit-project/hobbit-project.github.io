@@ -7,6 +7,8 @@ permalink: tutorial_git_deploy.html
 folder: docs
 ---
 
+Make sure you've got all [requirements](/requirements.html) installed.
+
 Clone the repository:
 ```
 git clone https://github.com/hobbit-project/platform && cd platform
