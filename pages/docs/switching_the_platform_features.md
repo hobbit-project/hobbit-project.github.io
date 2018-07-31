@@ -102,7 +102,7 @@ make start-rabbitmq-cluster
 You can navigate to http://localhost:15672/#/ and see that rabbitmq got 3 nodes available.
 Now you can start docker-compose.yml normally, the HOBBIT platform will be using cluster of rabbitmq nodes.
 
-For production use, you need to edit `rabbitmq-cluster/docker-compose.yml` and specify rabbitmq services for each of your worker nodes. Use placement constraints to allocate the services to different nodes, e.g.:
+For production use, you need to edit `rabbitmq-cluster/docker-compose.yml` and `rabbitmq-cluster/haproxy.cfg` to specify rabbitmq services for each of your worker nodes. Use placement constraints to allocate the services to different nodes, e.g.:
 ```
   rabbitmq1:
     deploy:
