@@ -69,7 +69,7 @@ Default credentials are: challenge-organiser/hobbit, testuser/hobbit, system-pro
 * localhost:5601 (Kibana)
 * localhost:8181 (Keycloak) 
 
-Admin credentials are: admin/H160bbit
+Admin credentials are: `admin`:`H16obbit`
 
 * localhost:8081 (RabbitMQ)
 * localhost:8890 (Virtuoso)
