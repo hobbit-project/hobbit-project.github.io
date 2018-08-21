@@ -80,6 +80,10 @@ entries:
       url : /benchmark_integration.html
       output: web, pdf
 
+    - title: Using Java SDK to develop a Benchmark
+      url : /java_sdk.html
+      output: web, pdf
+
   - title: Reference Manual
     output: web, pdf
     folderitems:
