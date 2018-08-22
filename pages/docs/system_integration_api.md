@@ -10,8 +10,8 @@ folder: docs
 This article describes the general API the platform offers for a benchmarked system. Note that in addition to this API, the benchmark might define an own API for the communication with the system.
 
 The API of the platform for benchmarked systems comprises three parts.
-1. There are some details that should be taken into account when definn thee system container image.
-2. The platform controller offers some functionalities which can be used to by the system to create new containers and stop them.
+1. There are some details that should be taken into account when defining the system container image.
+2. The platform controller offers some functionalities which can be used by the system to create new containers and stop them.
 3. Every system needs to be described in a meta data file which gives the platform the necessary information about the system.
 
 ## System container
