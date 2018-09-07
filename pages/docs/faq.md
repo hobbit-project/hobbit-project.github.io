@@ -37,6 +37,25 @@ Caused by: org.h2.jdbc.JdbcSQLException: Feature not supported: "autoServerMode 
 ```
 Please have a look at [#140](https://github.com/hobbit-project/platform/issues/140#issuecomment-341407382).
 
+#### Keycloak login fails with "HTTPS required" message
+
+[Keycloak only allows non-SSL access from IPs from private ranges](https://www.keycloak.org/docs/3.3/server_installation/topics/network/https.html).
+
+If you encounter this error in your local setup, it probably means that
+your `docker_gwbridge` network does not use private IP range.
+You can check `docker_gwbridge`'s network address with:
+
+`docker network inspect docker_gwbridge |grep Subnet`
+
+To fix this, recreate `docker_gwbridge` network and set any private address for it
+(make sure it does not conflict with your other networks):
+
+`docker network rm docker_gwbridge`
+
+`docker network create --subnet=172.18.0.1/24 --gateway=172.18.0.1 --opt com.dockerridge.name=docker_gwbridge --opt com.docker.network.bridge.enable_icc=false docker_gwbridge`
+
+(You may need to leave docker swarm first: `docker swarm leave`.)
+
 #### Connection to RabbitMQ failing
 
 After starting the platform, messages similar to the following are printed:
