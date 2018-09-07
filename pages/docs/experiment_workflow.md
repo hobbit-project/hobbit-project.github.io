@@ -28,7 +28,9 @@ This very general workflow is assumed by the platform and has to be implemented 
 
 ### Recommended Workflow
 
-![sequence diagram](/images/Sequence_diagram.png)
+<!-- https://docs.google.com/drawings/d/1wj22SfFHUxg_Az76p-Xuhcfq7RTpH1JlkHsjf54nSag/edit -->
+
+![sequence diagram](/images/Sequence_diagram.svg)
 
 Figure shows a sequence diagram containing the steps as well as the type of communication that is used.
 However, the orchestration of the single benchmark components is part of the benchmark and might be different.

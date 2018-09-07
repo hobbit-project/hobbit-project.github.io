@@ -9,7 +9,9 @@ folder: docs
 
 The platform is designed to benchmark Linked Data systems on a cluster. It comprises several components that are designed as [Docker containers](https://www.docker.com/what-docker). The following figure shows an overview over the (simplified) architecture of the platform.
 
-![component diagram](/images/Components_diagram.png)
+<!-- https://docs.google.com/drawings/d/1mtsjhE2GqPilNQBZxcF3HKkKSodKt2mFLczSBujtqhw -->
+
+![component diagram](/images/Components-diagram.svg)
 
 The different colors in the figure show the different parts of the platform. The blue components are the platform components that offer its main functionality. The orange components belong to a benchmark and are only instantiated if the benchmark is running. The grey component is the system that is benchmarked by the orange benchmark. Note that even if the overview picture shows the system as a single component, it might comprise multiple distributed components.
 
