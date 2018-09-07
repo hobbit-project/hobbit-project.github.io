@@ -32,9 +32,7 @@ exclude:
   - .gitignore
 # these are the files and directories that jekyll will exclude from the build
 
-feedback_subject_line: HOBBIT Platform Documentation Feedback
-
-feedback_email: iermilov@informatik.uni-leipzig.de
+feedback_link: https://github.com/hobbit-project/hobbit-project.github.io/issues
 # used as a contact email for the Feedback link in the top navigation bar
 
 # feedback_disable: true
