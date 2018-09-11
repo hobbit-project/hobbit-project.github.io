@@ -1,9 +1,9 @@
 ---
-title: From `git clone` to Running Platform
+title: Quick Guide
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: tutorial_git_deploy.html
+permalink: quick_guide.html
 folder: docs
 ---
 

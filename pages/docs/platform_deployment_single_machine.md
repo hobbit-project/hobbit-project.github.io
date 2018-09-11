@@ -7,7 +7,7 @@ permalink: platform_deployment_single_machine.html
 folder: docs
 ---
 
-For the quick start check out [From `git clone` to Running Platform](/tutorial_git_deploy.html) tutorial.
+For the quick start check out [quick platform deployment guide](/quick_guide.html).
 
 ## Preparing
 

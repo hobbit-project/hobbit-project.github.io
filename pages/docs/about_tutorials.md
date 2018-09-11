@@ -9,4 +9,4 @@ folder: docs
 
 Tutorials section will get you quickly started with different components of the HOBBIT platform. Here you can learn how to quickly deploy the platform locally or in AWS, how to develop your system adapter for the platform or how to integrate a benchmark.
 
-Don't know where to start? Try [fast platform deployment tutorial.](/tutorial_git_deploy.html)
+Don't know where to start? Try [quick platform deployment guide.](/quick_guide.html)
