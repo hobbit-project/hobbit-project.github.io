@@ -32,19 +32,6 @@ docker swarm init
 make create-networks
 ```
 
-For Elasticsearch stack you need to configure `vm.max_map_count`:
-```
-$ sudo vim /etc/sysctl.conf
-# add line:
-vm.max_map_count=262144
-$ sudo sysctl -p
-```
-
-Start ELK stack:
-```
-docker-compose -f docker-compose-elk.yml up -d 
-```
-
 Start the platform:
 ```
 docker-compose up -d 
@@ -67,3 +54,20 @@ After the platform startup, the following interfaces will be available for you:
 (RabbitMQ)
 * [localhost:8890](http://localhost:8890/)
 (Virtuoso)
+
+## Optional Steps
+
+### Elasticsearch stack
+
+For Elasticsearch stack you need to configure `vm.max_map_count`:
+```
+$ sudo vim /etc/sysctl.conf
+# add line:
+vm.max_map_count=262144
+$ sudo sysctl -p
+```
+
+Start ELK stack before starting HOBBIT platform:
+```
+docker-compose -f docker-compose-elk.yml up -d
+```
