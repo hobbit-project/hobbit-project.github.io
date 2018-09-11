@@ -14,18 +14,6 @@ Clone the repository:
 git clone https://github.com/hobbit-project/platform && cd platform
 ```
 
-Register at HOBBIT gitlab instance at `git.project-hobbit.eu`. Write down your username and email. On the HOBBIT gitlab instance go to User Settings (click on your userpic in the upper right corner --> Settings) -> Access Token and generate a personal access token for your HOBBIT instance. Write down your token. Export username, email and token to the environment:
-```
-export GITLAB_USER=iermilov
-export GITLAB_EMAIL=earthquakesan@gmail.com
-export GITLAB_TOKEN=1234567890
-```
-
-When you execute the docker-compose commands these variables should be available in your terminal. You can quickly check it with (should show your username):
-```
-echo $GITLAB_USER
-```
-
 Initialize Docker Swarm and create the necessary docker networks (the used subnets are 172.16.100.0/24, 172.16.101.0/24 and 172.16.102.0/24):
 ```
 docker swarm init
@@ -56,6 +44,27 @@ After the platform startup, the following interfaces will be available for you:
 (Virtuoso)
 
 ## Optional Steps
+
+### HOBBIT GitLab credentials
+
+HOBBIT GitLab credentials are needed for accessing private benchmarks and systems
+uploaded to [git.project-hobbit.eu](https://git.project-hobbit.eu).
+Register there and write down your username and email.
+Go to User Settings (click on your user picture in the upper right corner --> Settings) -> Access Token and generate a personal access token for your HOBBIT instance. Write down your token. Export username, email and token to the environment:
+```
+export GITLAB_USER=max.power
+export GITLAB_EMAIL=max.power@project-hobbit.eu
+export GITLAB_TOKEN=1234567890
+```
+
+When you execute the docker-compose commands these variables should be available in your terminal. You can quickly check it with (should show your username):
+```
+echo $GITLAB_USER
+```
+
+You can edit these variables in `docker-compose.yml`
+or use tools like [direnv](https://direnv.net/)
+to avoid setting up your terminal every time.
 
 ### Elasticsearch stack
 
