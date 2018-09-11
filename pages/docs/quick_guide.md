@@ -14,12 +14,6 @@ Clone the repository:
 git clone https://github.com/hobbit-project/platform && cd platform
 ```
 
-Pull the required HOBBIT platform and ELK docker images (around 7.5GB):
-```
-docker-compose pull
-docker-compose -f docker-compose-elk.yml pull
-```
-
 Register at HOBBIT gitlab instance at `git.project-hobbit.eu`. Write down your username and email. On the HOBBIT gitlab instance go to User Settings (click on your userpic in the upper right corner --> Settings) -> Access Token and generate a personal access token for your HOBBIT instance. Write down your token. Export username, email and token to the environment:
 ```
 export GITLAB_USER=iermilov

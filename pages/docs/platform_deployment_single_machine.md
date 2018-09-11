@@ -19,7 +19,7 @@ These steps have to be done only once before starting the platform the first tim
     `make create-networks`
 1. (optional) Build platform components by running:
     `make build`
-1. Build and pull required docker containers by running:
+1. (optional) Build and pull required docker containers by running:
     `docker-compose pull && docker-compose -f docker-compose-elk.yml pull`
 1. Configure Virtuoso
    1. Change passwords (optional)
