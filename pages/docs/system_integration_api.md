@@ -1,5 +1,5 @@
 ---
-title: General API of a benchmarked system
+title: Integrating a System
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false

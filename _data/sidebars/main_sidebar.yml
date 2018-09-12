@@ -190,26 +190,13 @@ entries:
       url: /platform_api.html
       output: web, pdf
 
-      subfolders:
-        - title: Integrating a System
-          output: web, pdf
-          subfolderitems:
+    - title: Integrating a System
+      url: /system_integration_api.html
+      output: web, pdf
 
-            - title: What is Necessary
-              url: /system_integration.html
-              output: web, pdf
-
-            - title: General API
-              url: /system_integration_api.html
-              output: web, pdf
-
-        - title: Integrating a Benchmark
-          output: web, pdf
-          subfolderitems:
-
-            - title: General API
-              url: /benchmark_integration_api.html
-              output: web, pdf
+    - title: Integrating a Benchmark
+      url: /benchmark_integration_api.html
+      output: web, pdf
 
     - title: FAQ
       url: /faq.html
