@@ -106,6 +106,10 @@ entries:
               url: /platform_deployment_cluster.html
               output: web, pdf
 
+            - title: Troubleshooting
+              url: /troubleshooting.html
+              output: web, pdf
+
             - title: Switching the platform features on/off
               url: /switching_the_platform_features.html
               output: web, pdf

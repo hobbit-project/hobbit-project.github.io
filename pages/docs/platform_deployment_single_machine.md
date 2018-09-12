@@ -98,35 +98,6 @@ docker-compose up -d keycloak
 * Click on `Clients` in the left menu and click on the `Hobbit-GUI` client.
 * Add the address of the GUI to the list `Valid Redirect URIs` (with a trailing star, e.g., `http://192.168.99.100:8080/*` or `https://platform.example.com/*` in case of public deployment) as well as to the list `Web Origins` and click on `save` at the bottom of the page
 
-#### Firewall adjustments (Linux)
-
-The serverbackend of the hobbitgui container needs access to keycloak via the external IP address. Therefore you may need to adapt the firewall rules. First find the IP range of the hobbit network:
-```bash
-docker network inspect hobbit | grep Gateway
-```
-
-Assuming you get something like "Gateway": "172.19.0.1" you have to find the matching network device:
-```bash
-ip addr | grep -B 2 172.19.0
-```
-
-If you get something like
-```bash
-6: br-5c9d73b080ad: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP
-    link/ether 02:42:22:50:d4:8c brd ff:ff:ff:ff:ff:ff
-    inet 172.19.0.1/16 scope global br-5c9d73b080ad
-```
-the network device name is `br-5c9d73b080ad`. If you have iptables as firewall use:
-```bash
-iptables -A INPUT -i br-5c9d73b080ad -j ACCEPT
-```
-
-If you have firewalld (fedora/centos7) use:
-```bash
-firewall-cmd --permanent --zone=trusted --change-interface=br-5c9d73b080ad
-firewall-cmd --reload
-```
-
 #### Details of the user management
 
 To manage users, groups and/or roles:
@@ -219,7 +190,9 @@ docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)
 
 ## Troubleshooting
 
-If you encounter problems setting up the platform, please have a look at our [FAQ](/faq.html).
+If you encounter problems setting up the platform, please have a look at
+[Troubleshooting](/troubleshooting.html)
+and [FAQ](/faq.html).
 
 ### Regular cleaning of dangling Docker images
 Depending on the way the platform is used, it can download many Docker images over time. Note that Docker itself won't delete but keep all versions of these images. To save disk space, a regular cleaning of dangling images is helpful.
