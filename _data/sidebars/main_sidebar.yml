@@ -45,13 +45,10 @@ entries:
           url: /quick_guide.html
           output: web, pdf
 
-        - title: Automatic Platform Provisioning using Exoframe
-          url: /exoframe_local.html
+        - title: Deployment with Exoframe
+          url: /exoframe.html
           output: web, pdf
         
-        - title: Deploying HOBBIT Platform on AWS
-          url: /exoframe_aws.html
-          output: web, pdf
       - title: Quick Guide Through Platform Functionalities
         output: web, pdf
         subfolderitems:
