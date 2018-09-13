@@ -45,6 +45,9 @@ After the platform startup, the following interfaces will be available for you:
 * [localhost:8890](http://localhost:8890/)
 (Virtuoso)
 
+Now, when you've got a running platform,
+you can [benchmark a system](/benchmarking.html).
+
 ## Optional Steps
 
 ### HOBBIT GitLab credentials
@@ -70,6 +73,13 @@ $ sudo vim /etc/sysctl.conf
 # add line:
 vm.max_map_count=262144
 $ sudo sysctl -p
+```
+
+If you have less than 8GB RAM, you need to tweak
+the following settings in `config/elk/jvm.options`:
+```
+-Xms8g
+-Xmx8g
 ```
 
 Start ELK stack before starting HOBBIT platform:
