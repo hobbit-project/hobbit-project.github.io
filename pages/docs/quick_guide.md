@@ -7,28 +7,30 @@ permalink: quick_guide.html
 folder: docs
 ---
 
-Make sure you've got all [requirements](/requirements.html) installed.
+1. Make sure you've got all [requirements](/requirements.html) installed.
 
-Clone the repository:
+1. Clone the repository:
 ```
 git clone https://github.com/hobbit-project/platform && cd platform
 ```
 
-Initialize Docker Swarm and create the necessary docker networks (the used subnets are 172.16.100.0/24, 172.16.101.0/24 and 172.16.102.0/24):
+1. Initialize Docker Swarm and create the necessary docker networks (the used subnets are `172.16.100.0/24`, `172.16.101.0/24` and `172.16.102.0/24`):
 ```
 docker swarm init
 make create-networks
 ```
 
-Start the platform:
+1. Start the platform:
 ```
 docker-compose up -d 
 ```
 
-Initialize the Virtuoso storage:
+1. Initialize the Virtuoso storage:
 ```
 ./run-storage-init.sh
 ```
+
+That's it!
 
 After the platform startup, the following interfaces will be available for you:
 * [localhost:8080](http://localhost:8080/)
@@ -50,21 +52,15 @@ After the platform startup, the following interfaces will be available for you:
 HOBBIT GitLab credentials are needed for accessing private benchmarks and systems
 uploaded to [git.project-hobbit.eu](https://git.project-hobbit.eu).
 Register there and write down your username and email.
-Go to User Settings (click on your user picture in the upper right corner --> Settings) -> Access Token and generate a personal access token for your HOBBIT instance. Write down your token. Export username, email and token to the environment:
+Go to User Settings (click on your user picture in the upper right corner --> Settings) -> Access Token and generate a personal access token for your HOBBIT instance. Write down your token.
+
+You can either set your credentials in `docker-compose.yml`
+or export them in your environment (perhaps, using [direnv](https://direnv.net/)):
 ```
 export GITLAB_USER=max.power
 export GITLAB_EMAIL=max.power@project-hobbit.eu
 export GITLAB_TOKEN=1234567890
 ```
-
-When you execute the docker-compose commands these variables should be available in your terminal. You can quickly check it with (should show your username):
-```
-echo $GITLAB_USER
-```
-
-You can edit these variables in `docker-compose.yml`
-or use tools like [direnv](https://direnv.net/)
-to avoid setting up your terminal every time.
 
 ### Elasticsearch stack
 
