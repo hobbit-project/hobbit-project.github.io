@@ -31,43 +31,30 @@ entries:
   - title: Tutorials
     output: web, pdf
     folderitems:
-      
-    - title: About Tutorials
-      url: /about_tutorials.html
+
+    - title: Quick Guide
+      url: /quick_guide.html
       output: web, pdf
-      
-      subfolders:
-      - title: Fast Platform Deployment
-        output: web, pdf
-        subfolderitems:
-        
-        - title: Quick Guide
-          url: /quick_guide.html
-          output: web, pdf
 
-        - title: Deployment with Exoframe
-          url: /exoframe.html
-          output: web, pdf
-        
-      - title: Quick Guide Through Platform Functionalities
-        output: web, pdf
-        subfolderitems:
+    - title: Deployment with Exoframe
+      url: /exoframe.html
+      output: web, pdf
 
-        - title: Benchmarking a System
-          url: /benchmarking.html
-          output: web, pdf
+    - title: Benchmarking a System
+      url: /benchmarking.html
+      output: web, pdf
 
-        - title: Browsing Results
-          url: /browsing_results.html
-          output: web, pdf
+    - title: Browsing Results
+      url: /browsing_results.html
+      output: web, pdf
 
-        - title: Taking Part in Challenge
-          url: /challenge_participation.html
-          output: web, pdf
+    - title: Taking Part in Challenge
+      url: /challenge_participation.html
+      output: web, pdf
 
-        - title: Organizing a Challenge
-          url: /challenge_organization.html
-          output: web, pdf
+    - title: Organizing a Challenge
+      url: /challenge_organization.html
+      output: web, pdf
 
     - title: How to Integrate a System
       url : /system_integration.html
@@ -130,7 +117,7 @@ entries:
               url: /parameters_storage_init.html
               output: web, pdf
 
-            - title: Frontend
+            - title: Frontend configuration
               url: /parameters_frontend.html
               output: web, pdf
 
@@ -146,7 +133,7 @@ entries:
               url: /storage_component.html
               output: web, pdf
 
-            - title: Front End
+            - title: Frontend
               url: /frontend_component.html
               output: web, pdf
 

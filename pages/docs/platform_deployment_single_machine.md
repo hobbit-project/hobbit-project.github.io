@@ -1,5 +1,5 @@
 ---
-title: From `git clone` to Running Platform
+title: Platform Deployment
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
