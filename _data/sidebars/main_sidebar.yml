@@ -97,8 +97,8 @@ entries:
               url: /troubleshooting.html
               output: web, pdf
 
-            - title: Switching the platform features on/off
-              url: /switching_the_platform_features.html
+            - title: Optional platform features
+              url: /optional_features.html
               output: web, pdf
             
             - title: Env. Variables
