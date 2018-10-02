@@ -249,4 +249,8 @@ INSERT {
 ```
 `%CHALLENGE_TASK_URI%` as well as %EXPERIMENT_URI% need to be replaced with the challenge URI in `<>` brackets. The `%GRAPH_URI` needs to be replaced in the same way with the URI of graph containing the experiment.
 
+#### Delete a challenge
+Sometimes, it might be necessary to delete a challenge. In this case, it has to be decided whether the experiments of the challenge should be kept. In this case, they should be removed from the challenge tasks as described above. If they should be deleted, a query for that can be found in the "Deleting faulty experiments" section above.
+
+**After** the experiments have been handled, the challenge and its tasks can be removed. For deleting the challenge itself, the query used for removing the challenge from the public graph in the secion "“Unpublish” a challenge" above can be used. However, it might be possible, to adapt the graph if the challenge has not been published before.
 
