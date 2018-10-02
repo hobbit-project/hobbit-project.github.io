@@ -1,18 +1,13 @@
 ---
-title: Switching the Platform Features On/Off
+title: Optional platform features
 keywords: platform HOBBIT
 sidebar: main_sidebar
-toc: false
-permalink: switching_the_platform_features.html
+toc: true
+permalink: optional_features.html
 folder: docs
 ---
 
-The following features of the HOBBIT platform can be turned on and off:
-1. ELK stack logging
-1. Encryption for communication between the components
-1. Resource monitoring
-
-For the complete platform deployment see [Platform Deployment on Single Machine](/platform_deployment_single_machine) or [Platform Deployment in Cluster](/platform_deployment_cluster.html).
+For the complete platform deployment see [Platform Deployment on Single Machine](/platform_deployment_single_machine.html) or [Platform Deployment in Cluster](/platform_deployment_cluster.html).
 
 ## Elasticsearch Logstack Kibana
 

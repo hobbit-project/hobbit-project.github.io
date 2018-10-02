@@ -1,5 +1,5 @@
 ---
-title: From `git clone` to Running Platform
+title: Platform Deployment
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
@@ -7,7 +7,7 @@ permalink: platform_deployment_single_machine.html
 folder: docs
 ---
 
-For the quick start check out [From `git clone` to Running Platform](/tutorial_git_deploy.html) tutorial.
+For the quick start check out [quick platform deployment guide](/quick_guide.html).
 
 ## Preparing
 
@@ -19,7 +19,7 @@ These steps have to be done only once before starting the platform the first tim
     `make create-networks`
 1. (optional) Build platform components by running:
     `make build`
-1. Build and pull required docker containers by running:
+1. (optional) Build and pull required docker containers by running:
     `docker-compose pull && docker-compose -f docker-compose-elk.yml pull`
 1. Configure Virtuoso
    1. Change passwords (optional)
@@ -97,35 +97,6 @@ docker-compose up -d keycloak
 * Make sure that the realm `Hobbit` is selected in the left upper corner below the Keycloak logo
 * Click on `Clients` in the left menu and click on the `Hobbit-GUI` client.
 * Add the address of the GUI to the list `Valid Redirect URIs` (with a trailing star, e.g., `http://192.168.99.100:8080/*` or `https://platform.example.com/*` in case of public deployment) as well as to the list `Web Origins` and click on `save` at the bottom of the page
-
-#### Firewall adjustments (Linux)
-
-The serverbackend of the hobbitgui container needs access to keycloak via the external IP address. Therefore you may need to adapt the firewall rules. First find the IP range of the hobbit network:
-```bash
-docker network inspect hobbit | grep Gateway
-```
-
-Assuming you get something like "Gateway": "172.19.0.1" you have to find the matching network device:
-```bash
-ip addr | grep -B 2 172.19.0
-```
-
-If you get something like
-```bash
-6: br-5c9d73b080ad: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP
-    link/ether 02:42:22:50:d4:8c brd ff:ff:ff:ff:ff:ff
-    inet 172.19.0.1/16 scope global br-5c9d73b080ad
-```
-the network device name is `br-5c9d73b080ad`. If you have iptables as firewall use:
-```bash
-iptables -A INPUT -i br-5c9d73b080ad -j ACCEPT
-```
-
-If you have firewalld (fedora/centos7) use:
-```bash
-firewall-cmd --permanent --zone=trusted --change-interface=br-5c9d73b080ad
-firewall-cmd --reload
-```
 
 #### Details of the user management
 
@@ -219,7 +190,9 @@ docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)
 
 ## Troubleshooting
 
-If you encounter problems setting up the platform, please have a look at our [FAQ](/faq.html).
+If you encounter problems setting up the platform, please have a look at
+[Troubleshooting](/troubleshooting.html)
+and [FAQ](/faq.html).
 
 ### Regular cleaning of dangling Docker images
 Depending on the way the platform is used, it can download many Docker images over time. Note that Docker itself won't delete but keep all versions of these images. To save disk space, a regular cleaning of dangling images is helpful.

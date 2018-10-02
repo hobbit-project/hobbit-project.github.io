@@ -1,5 +1,5 @@
 ---
-title: General Benchmark Integration API
+title: Integrating a Benchmark
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false

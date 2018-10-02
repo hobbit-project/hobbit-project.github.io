@@ -1,5 +1,5 @@
 ---
-title: Front End Component
+title: Frontend Component
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false

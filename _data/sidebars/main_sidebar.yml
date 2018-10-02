@@ -31,46 +31,30 @@ entries:
   - title: Tutorials
     output: web, pdf
     folderitems:
-      
-    - title: About Tutorials
-      url: /about_tutorials.html
+
+    - title: Quick Guide
+      url: /quick_guide.html
       output: web, pdf
-      
-      subfolders:
-      - title: Fast Platform Deployment
-        output: web, pdf
-        subfolderitems:
-        
-        - title: From `git clone` to Running Platform
-          url: /tutorial_git_deploy.html
-          output: web, pdf
 
-        - title: Automatic Platform Provisioning using Exoframe
-          url: /exoframe_local.html
-          output: web, pdf
-        
-        - title: Deploying HOBBIT Platform on AWS
-          url: /exoframe_aws.html
-          output: web, pdf
-      - title: Quick Guide Through Platform Functionalities
-        output: web, pdf
-        subfolderitems:
+    - title: Deployment with Exoframe
+      url: /exoframe.html
+      output: web, pdf
 
-        - title: Benchmarking a System
-          url: /benchmarking.html
-          output: web, pdf
+    - title: Benchmarking a System
+      url: /benchmarking.html
+      output: web, pdf
 
-        - title: Browsing Results
-          url: /browsing_results.html
-          output: web, pdf
+    - title: Browsing Results
+      url: /browsing_results.html
+      output: web, pdf
 
-        - title: Taking Part in Challenge
-          url: /challenge_participation.html
-          output: web, pdf
+    - title: Taking Part in Challenge
+      url: /challenge_participation.html
+      output: web, pdf
 
-        - title: Organizing a Challenge
-          url: /challenge_organization.html
-          output: web, pdf
+    - title: Organizing a Challenge
+      url: /challenge_organization.html
+      output: web, pdf
 
     - title: How to Integrate a System
       url : /system_integration.html
@@ -109,8 +93,12 @@ entries:
               url: /platform_deployment_cluster.html
               output: web, pdf
 
-            - title: Switching the platform features on/off
-              url: /switching_the_platform_features.html
+            - title: Troubleshooting
+              url: /troubleshooting.html
+              output: web, pdf
+
+            - title: Optional platform features
+              url: /optional_features.html
               output: web, pdf
             
             - title: Env. Variables
@@ -129,7 +117,7 @@ entries:
               url: /parameters_storage_init.html
               output: web, pdf
 
-            - title: Frontend
+            - title: Frontend configuration
               url: /parameters_frontend.html
               output: web, pdf
 
@@ -145,7 +133,7 @@ entries:
               url: /storage_component.html
               output: web, pdf
 
-            - title: Front End
+            - title: Frontend
               url: /frontend_component.html
               output: web, pdf
 
@@ -189,26 +177,13 @@ entries:
       url: /platform_api.html
       output: web, pdf
 
-      subfolders:
-        - title: Integrating a System
-          output: web, pdf
-          subfolderitems:
+    - title: Integrating a System
+      url: /system_integration_api.html
+      output: web, pdf
 
-            - title: What is Necessary
-              url: /system_integration.html
-              output: web, pdf
-
-            - title: General API
-              url: /system_integration_api.html
-              output: web, pdf
-
-        - title: Integrating a Benchmark
-          output: web, pdf
-          subfolderitems:
-
-            - title: General API
-              url: /benchmark_integration_api.html
-              output: web, pdf
+    - title: Integrating a Benchmark
+      url: /benchmark_integration_api.html
+      output: web, pdf
 
     - title: FAQ
       url: /faq.html
