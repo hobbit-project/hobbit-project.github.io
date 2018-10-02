@@ -214,3 +214,39 @@ After this step, the challenge organizer can close the challenge again via the U
 #### Rerunning single challenge tasks
 
 If only a single task has failed, it might be better to rerun only the experiments of this task. This can be done exactly in the same way as described above. However, before closing the challenge, the triples connecting the other challenge tasks have to be removed temporarily. **Note** that you should add them after the challenge has been closed and the experiments of the single task have been added to the experiment queue, to make sure that the tasks are reconnected to their challenge.
+
+### Queries to repair challenges
+
+In this section, we collect SPARQL queries which help to repair challenges.
+
+#### Remove experiments from a challenge task
+Experiments are connected to the single challenge tasks. Sometimes, it might be necessary to remove failed experiments from a single task.
+
+```sparql
+PREFIX hobbit: <http://w3id.org/hobbit/vocab#>
+
+WITH %GRAPH_URI%
+DELETE {
+    ?experiment hobbit:isPartOf %CHALLENGE_TASK_URI% .
+}
+WHERE {
+    ?experiment a hobbit:Experiment .
+    ?experiment hobbit:isPartOf %CHALLENGE_TASK_URI% .
+}
+```
+`%CHALLENGE_TASK_URI%` needs to be replaced with the challenge URI in `<>` brackets. The `%GRAPH_URI` needs to be replaced in the same way with the URI of the private or the public graph.
+
+#### Add an experiment to a challenge task
+If a single experiment has been repeated and should be added to a challenge task, the following query can be used.
+
+```sparql
+PREFIX hobbit: <http://w3id.org/hobbit/vocab#>
+
+WITH %GRAPH_URI%
+INSERT {
+    %EXPERIMENT_URI% hobbit:isPartOf %CHALLENGE_TASK_URI% .
+}
+```
+`%CHALLENGE_TASK_URI%` as well as %EXPERIMENT_URI% need to be replaced with the challenge URI in `<>` brackets. The `%GRAPH_URI` needs to be replaced in the same way with the URI of graph containing the experiment.
+
+
