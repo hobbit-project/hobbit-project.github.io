@@ -161,6 +161,10 @@ entries:
               url: /monitoring_component.html
               output: web, pdf
 
+            - title: Internal Challenge Workflow
+              url: /internal_challenge_workflow.html
+              output: web, pdf
+
         - title: Core Library
           output: web, pdf
           subfolderitems:
