@@ -181,6 +181,10 @@ entries:
               url: /command_queue.html
               output: web, pdf
 
+            - title: Transferring Data
+              url: /transferring_data.html
+              output: web, pdf
+
     - title: General Platform API
       url: /platform_api.html
       output: web, pdf
