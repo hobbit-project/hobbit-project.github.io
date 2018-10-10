@@ -7,6 +7,34 @@ permalink: challenge_organization.html
 folder: docs
 ---
 
+## About challenges
+
+A Challenge is a collection of one or more challenge task. Each challenge task uses exactly one benchmark with a certain configuration to benchmark systems that participate in the challenge. Challenges have some features that separate them from other experiments that can be executed on the platform:
+* The experiments of a challenge are executed on a particular date. From that time on, the experiments of the challenge have a higher priority than other experiments.
+* Challenge results have a publication date. Before this date is reached, the results are not publicly visible. Participants can see only the results of their system while the challenge owner can see all results.
+
+Note that you need to have a special role to be able to create a challenge. If you want to use the master HOBBIT instance for a certain challenge, please contact the [hobbit project](http://project-hobbit.eu) team.
+
+## Workflow overview
+
+1. Create a challenge
+   * If the challenge can be already be visible, you can tick the checkbox. Otherwise, the challenge won't be visible for normal users.
+2. Create challenge tasks
+   * The creation of the tasks work like the definition of an experiment but without choosing a system.
+3. Participant registration
+   * After the creation and
+   * if the challenge is visible, users can register their system for one or more challenge tasks if the system fits to the benchmark of the challenge task
+4. Close the challenge
+   * Closing the challenge is necessary to fix the registrations and the challenge task configuration. Note that from that point on, no additional user will be able to register a system for the challenge.
+   * Note that participants can still update their system images.
+5. Execution date reached
+   * The single experiments are executed.
+   * The challenge organiser can see the results in the challenge view. The participants can see only their result.
+6. Publication date is reached
+   * The results are publicly available.
+
+## How to organize a challenge
+
 A challenge organizer can create challenges. In order to do so the challenge organizer needs to be logged in. When selecting the *Challenges* menu item the challenge organizer, other than a conventional user, additionally sees the *Add Challenge* button.
 
 ![Challenge page header for a user with the challenge organizer role.](/images/51_Challenge.png)

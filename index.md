@@ -2,12 +2,18 @@
 title: "Welcome to HOBBIT Platform Pages"
 keywords: hobbit benchmarking benchmark big data semantic web
 sidebar: main_sidebar
+toc: false
 permalink: index.html
-summary: Landing page for HOBBIT Platform documentation
 ---
 
 Welcome to the HOBBIT project documentation pages.
 Here we keep up-to-date documentation on how to use, deploy and maintain HOBBIT platform.
+
+### Quick start
+
+Want to [take part in a challenge](/challenge_participation.html)?
+
+Interested in [benchmarking your system](/benchmarking.html)?
 
 ### About HOBBIT project
 

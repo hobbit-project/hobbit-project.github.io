@@ -40,6 +40,10 @@ entries:
       url: /exoframe.html
       output: web, pdf
 
+    - title: Using Master Instance
+      url: /master.html
+      output: web, pdf
+
     - title: Benchmarking a System
       url: /benchmarking.html
       output: web, pdf
