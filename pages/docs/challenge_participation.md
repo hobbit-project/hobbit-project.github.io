@@ -3,7 +3,7 @@ title: Taking Part in Challenge
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: challenge_participation.html
+permalink: challenge_participation
 folder: docs
 ---
 

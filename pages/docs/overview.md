@@ -3,7 +3,7 @@ title: Platform Overview
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: overview.html
+permalink: overview
 folder: docs
 ---
 
@@ -21,4 +21,4 @@ Internally, the platform is written in Java and its communication is based on [R
 
 It can be seen that the benchmarking of a system has three different phases. First, the system and the benchmark are created and initialized. Second, the benchmark starts to benchmark the system and stores its responses in the evaluation storage. Third, the system as well as other parts are terminated and the data in the evaluation storage is used to evaluate the system responses.
 
-[Experiment workflow](/experiment_workflow.html) explains that in more detail.
+[Experiment workflow](/experiment_workflow) explains that in more detail.

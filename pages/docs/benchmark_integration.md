@@ -3,11 +3,11 @@ title: How to integrate a Benchmark
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: benchmark_integration.html
+permalink: benchmark_integration
 folder: docs
 ---
 
-This article shows how to use the provided abstract classes to implement the different benchmark components using the interfaces and classes from the [core library](https://github.com/hobbit-project/core) of the HOBBIT platform. The role of the different components is described in the [overview article](/overview.html) If you haven't took a look at the [general development of a component in java](/java_components.html) you should do this before reading this article.
+This article shows how to use the provided abstract classes to implement the different benchmark components using the interfaces and classes from the [core library](https://github.com/hobbit-project/core) of the HOBBIT platform. The role of the different components is described in the [overview article](/overview) If you haven't took a look at the [general development of a component in java](/java_components) you should do this before reading this article.
 
 * [Data Generator](#data-generator)
 * [Task Generator](#task-generator)

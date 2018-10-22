@@ -3,7 +3,7 @@ title: User Management Component
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: user_management_component.html
+permalink: user_management_component
 folder: docs
 ---
 

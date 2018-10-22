@@ -3,7 +3,7 @@ title: Message Bus Component
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: message_bus_component.html
+permalink: message_bus_component
 folder: docs
 ---
 

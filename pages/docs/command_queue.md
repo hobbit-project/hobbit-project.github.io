@@ -3,7 +3,7 @@ title: Command Queue
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: command_queue.html
+permalink: command_queue
 folder: docs
 ---
 
@@ -25,7 +25,7 @@ It can be seen that the first part of a message contains the session id of the b
 
 ## API
 
-The command queue uses a RabbitMQ Exchange. Connecting a component to this exchange can be done as described in the [RabbitMQ Publish/Subscribe tutorial](https://www.rabbitmq.com/tutorials/tutorial-three-java.html). The exchange itself has to be setup with:
+The command queue uses a RabbitMQ Exchange. Connecting a component to this exchange can be done as described in the [RabbitMQ Publish/Subscribe tutorial](https://www.rabbitmq.com/tutorials/tutorial-three-java). The exchange itself has to be setup with:
 * `name="hobbit.command"`
 * `type="fanout"`
 * `durable=false`

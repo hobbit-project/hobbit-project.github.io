@@ -3,7 +3,7 @@ title: Frontend Component
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: frontend_component.html
+permalink: frontend_component
 folder: docs
 ---
 

@@ -3,7 +3,7 @@ title: Integrating a System
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: system_integration_api.html
+permalink: system_integration_api
 folder: docs
 ---
 
@@ -32,11 +32,11 @@ After the container started, the platform assumes that it will connect itself to
 
 ### Communication
 
-The platform expects the system container to send the [`SYSTEM_READY_SIGNAL`](https://hobbit-project.github.io/command_queue.html#predefined-command-ids) via the command queue after the system is initialized. Note that the benchmarking is not started as long as this message has not been received. It should also be mentioned that from that moment on, the benchmark is allowed to bombard the system with messages. So the system should be fully up and running when sending this message.
+The platform expects the system container to send the [`SYSTEM_READY_SIGNAL`](https://hobbit-project.github.io/command_queue#predefined-command-ids) via the command queue after the system is initialized. Note that the benchmarking is not started as long as this message has not been received. It should also be mentioned that from that moment on, the benchmark is allowed to bombard the system with messages. So the system should be fully up and running when sending this message.
 
 #### Benchmark API Communication
 
-Apart from that, the system container will have to implement the benchmark API. If the benchmark is relying on [our proposed workflow](https://hobbit-project.github.io/experiment_workflow.html), the system adapter should listen to the command queue for the [`TASK_GENERATION_FINISHED`](https://hobbit-project.github.io/command_queue.html#predefined-command-ids) message. If this message is received, the benchmark informs the system that there won't be any new tasks generated. They system should process all remaining tasks and terminate.
+Apart from that, the system container will have to implement the benchmark API. If the benchmark is relying on [our proposed workflow](https://hobbit-project.github.io/experiment_workflow), the system adapter should listen to the command queue for the [`TASK_GENERATION_FINISHED`](https://hobbit-project.github.io/command_queue#predefined-command-ids) message. If this message is received, the benchmark informs the system that there won't be any new tasks generated. They system should process all remaining tasks and terminate.
 
 ### Container termination
 
@@ -50,7 +50,7 @@ The platform controller offers an API to the system which offers
 * the creation of new containers and
 * the termination of previously started containers.
 
-The API is described [here](https://hobbit-project.github.io/platform_api.html) in detail.
+The API is described [here](https://hobbit-project.github.io/platform_api) in detail.
 
 ## System meta data file
 

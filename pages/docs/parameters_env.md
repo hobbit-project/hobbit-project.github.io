@@ -3,7 +3,7 @@ title: Env. Variables
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: parameters_env.html
+permalink: parameters_env
 folder: docs
 ---
 

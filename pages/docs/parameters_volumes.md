@@ -3,7 +3,7 @@ title: Volumes
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: parameters_volumes.html
+permalink: parameters_volumes
 folder: docs
 ---
 

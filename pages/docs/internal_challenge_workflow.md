@@ -3,7 +3,7 @@ title: Internal Challenge Wokflow
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: internal_challenge_workflow.html
+permalink: internal_challenge_workflow
 folder: docs
 ---
 

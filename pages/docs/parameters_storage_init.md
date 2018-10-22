@@ -3,7 +3,7 @@ title: storage-init.sh
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: parameters_storage_init.html
+permalink: parameters_storage_init
 folder: docs
 ---
 

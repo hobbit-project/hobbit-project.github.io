@@ -3,7 +3,7 @@ title: Java SDK
 keywords: tutorials
 sidebar: main_sidebar
 toc: false
-permalink: java_sdk.html
+permalink: java_sdk
 folder: docs
 ---
 
@@ -20,7 +20,7 @@ The SDK helps platform users with the following tasks:
 
 ### Creating a benchmark
 
-Make sure you have all [HOBBIT requirements](/requirements.html) met.
+Make sure you have all [HOBBIT requirements](/requirements) met.
 
 Clone [Java SDK Example kit](https://github.com/hobbit-project/java-sdk-example/)
 which contains a template for a benchmark.
@@ -47,7 +47,7 @@ Now, you can test the benchmark using Docker containers:
 After that, the benchmark image is ready and can be `docker push`-ed
 to remote repository.
 
-As usual, you'll need to add [a `.ttl` file](/benchmark_integration_api.html) describing your benchmark.
+As usual, you'll need to add [a `.ttl` file](/benchmark_integration_api) describing your benchmark.
 
 For more details, consult
 [HOBBIT Java SDK Example kit README](https://github.com/hobbit-project/java-sdk-example).

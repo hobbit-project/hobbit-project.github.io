@@ -3,7 +3,7 @@ title: Repository Component
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: repository_component.html
+permalink: repository_component
 folder: docs
 ---
 

@@ -3,7 +3,7 @@ title: FAQ
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: faq.html
+permalink: faq
 folder: docs
 ---
 
@@ -87,7 +87,7 @@ Please make sure that you have no hyphen in the name of your variable as explain
 #### I have a system written in Java. Do I need to use Maven to be able to benchmark it?
 No.
 
-First of all, the System Adapter can be an own project separated from your original system project. In that case you can [follow the tutorial](/system_integration.html) and develop the system adapter using Maven and the following three approaches:
+First of all, the System Adapter can be an own project separated from your original system project. In that case you can [follow the tutorial](/system_integration) and develop the system adapter using Maven and the following three approaches:
 1. You can implement the System Adapter as a parallel container that communicates with your system through some API.
 1. The System Adapter wraps your program and starts it as a second process in the same container.
 1. The System Adapter executes your system as Java class (i.e., executes it in the same VM). For this solution, you need to include the jar file of your system in the system adapter in your pom file. This blog post explains how you can do that in Maven: http://mark.koli.ch/maven-add-local-jar-dependency-to-classpath

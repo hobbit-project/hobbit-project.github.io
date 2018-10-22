@@ -3,11 +3,11 @@ title: Optional platform features
 keywords: platform HOBBIT
 sidebar: main_sidebar
 toc: true
-permalink: optional_features.html
+permalink: optional_features
 folder: docs
 ---
 
-For the complete platform deployment see [Platform Deployment on Single Machine](/platform_deployment_single_machine.html) or [Platform Deployment in Cluster](/platform_deployment_cluster.html).
+For the complete platform deployment see [Platform Deployment on Single Machine](/platform_deployment_single_machine) or [Platform Deployment in Cluster](/platform_deployment_cluster).
 
 ## Elasticsearch Logstack Kibana
 

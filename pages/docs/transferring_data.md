@@ -2,7 +2,7 @@
 title: Transferring Data
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
-permalink: transferring_data.html
+permalink: transferring_data
 folder: docs
 ---
 

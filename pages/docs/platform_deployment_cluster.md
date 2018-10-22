@@ -3,7 +3,7 @@ title: Platform Deployment
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: platform_deployment_cluster.html
+permalink: platform_deployment_cluster
 folder: docs
 ---
 

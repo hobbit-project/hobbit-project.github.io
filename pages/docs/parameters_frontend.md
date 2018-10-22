@@ -3,7 +3,7 @@ title: Frontend
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: parameters_frontend.html
+permalink: parameters_frontend
 folder: docs
 ---
 

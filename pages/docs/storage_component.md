@@ -3,7 +3,7 @@ title: Storage Component
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: storage_component.html
+permalink: storage_component
 folder: docs
 ---
 

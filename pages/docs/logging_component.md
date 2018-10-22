@@ -3,7 +3,7 @@ title: Logging Component
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: logging_component.html
+permalink: logging_component
 folder: docs
 ---
 

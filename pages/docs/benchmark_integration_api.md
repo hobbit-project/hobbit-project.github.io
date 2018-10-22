@@ -3,7 +3,7 @@ title: Integrating a Benchmark
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: benchmark_integration_api.html
+permalink: benchmark_integration_api
 folder: docs
 ---
 
@@ -48,15 +48,15 @@ Note that for enumerations, i.e., for parameters that have a fixed set of possib
 
 ### Communication
 
-The communication between the benchmark controller and the platform is mainly based on the  [command queue](/command_queue.html) and predefined command IDs.
+The communication between the benchmark controller and the platform is mainly based on the  [command queue](/command_queue) and predefined command IDs.
 
 #### Benchmark initialization
 
-The platform expects the benchmark controller to send the [`BENCHMARK_READY_SIGNAL`](https://hobbit-project.github.io/command_queue.html#predefined-command-ids) via the command queue after the benchmark is initialized. Note that the benchmarking is not started as long as this message has not been received.
+The platform expects the benchmark controller to send the [`BENCHMARK_READY_SIGNAL`](https://hobbit-project.github.io/command_queue#predefined-command-ids) via the command queue after the benchmark is initialized. Note that the benchmarking is not started as long as this message has not been received.
 
 #### Benchmark start
 
-Note that the benchmark will have to wait for the platform controller to send the [`START_BENCHMARK_SIGNAL`](https://hobbit-project.github.io/command_queue.html#predefined-command-ids) via the command queue. Only after receiving this signal, the benchmark controller is allowed to start benchmarking the system. Note that this message contains the container name of the systems main container, i.e., from that point in time on, the benchmark itself is responsible to react if the system terminates (see the [container termination](https://hobbit-project.github.io/platform_api.html#container-termination) section for information about receiving the information about a terminated container). The start message has the following structure:
+Note that the benchmark will have to wait for the platform controller to send the [`START_BENCHMARK_SIGNAL`](https://hobbit-project.github.io/command_queue#predefined-command-ids) via the command queue. Only after receiving this signal, the benchmark controller is allowed to start benchmarking the system. Note that this message contains the container name of the systems main container, i.e., from that point in time on, the benchmark itself is responsible to react if the system terminates (see the [container termination](https://hobbit-project.github.io/platform_api#container-termination) section for information about receiving the information about a terminated container). The start message has the following structure:
 
 | start byte | length | meaning |
 |---|---|---|
@@ -96,7 +96,7 @@ The platform controller offers an API to the system which offers
 * the creation of new containers and
 * the termination of previously started containers.
 
-The API is described [here](https://hobbit-project.github.io/platform_api.html) in detail.
+The API is described [here](https://hobbit-project.github.io/platform_api) in detail.
 
 ## Benchmark meta data file
 

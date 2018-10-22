@@ -3,11 +3,11 @@ title: Benchmarking a System
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: benchmarking.html
+permalink: benchmarking
 folder: docs
 ---
 
-Being a registered user of the platform and [having uploaded a system](/system_integration.html#3-create-and-push-the-docker-image) which conforms the specification (API) of one of the benchmarks allows the user to benchmark the system.
+Being a registered user of the platform and [having uploaded a system](/system_integration#3-create-and-push-the-docker-image) which conforms the specification (API) of one of the benchmarks allows the user to benchmark the system.
 The benchmarking of a system is done via the *Benchmarks* menu where at first the benchmark is selected to be used for the experiment. The drop down menu displays all possible benchmarks.
 
 ![Configuration of a benchmarking experiment. (a) Select the benchmark.](/images/10_Benchmark.png)

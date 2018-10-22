@@ -3,7 +3,7 @@ title: Java Components
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: java_components.html
+permalink: java_components
 folder: docs
 ---
 
@@ -89,7 +89,7 @@ The lines add the AKSW repository containing the core library. Additionally, the
 
 ### The Component interface
 
-A single benchmark comprises several components (as described in the [platform overview](/overview.html)) and a system adapter can be seen as a single component as well. All these components should implement the `org.hobbit.core.components.Component` interface. It defines the following methods.
+A single benchmark comprises several components (as described in the [platform overview](/overview)) and a system adapter can be seen as a single component as well. All these components should implement the `org.hobbit.core.components.Component` interface. It defines the following methods.
 ```java
 	public void init() throws Exception;
 
@@ -175,7 +175,7 @@ public class ExampleComponent extends SomeAbstractExampleComponent {
 
 ### Using the command queue
 
-The abstract classes offer an easy usage of the [command queue](/command_queue.html). In most cases, a direct usage of the command queue shouldn't be necessary. However, the abstract classes offer the following methods to send a message to the command queue:
+The abstract classes offer an easy usage of the [command queue](/command_queue). In most cases, a direct usage of the command queue shouldn't be necessary. However, the abstract classes offer the following methods to send a message to the command queue:
 
 ```java
 protected void sendToCmdQueue(byte command) throws IOException;
@@ -228,11 +228,11 @@ This docker file tells Docker
 * that it should execute the `ComponentStarter` that will load our component (in this example it is the `ExampleDataGenerator`)
 
 ## Logging
-The offered abstract classes use the [slf4j](https://www.slf4j.org/) logging library with a [binding to log4j](https://www.slf4j.org/manual.html#swapping). However, using the abstract classes without additional configuration of the logging will lead to the following Warnings instead of log messages:
+The offered abstract classes use the [slf4j](https://www.slf4j.org/) logging library with a [binding to log4j](https://www.slf4j.org/manual#swapping). However, using the abstract classes without additional configuration of the logging will lead to the following Warnings instead of log messages:
 ```
 log4j:WARN No appenders could be found for logger (org.hobbit.benchmark.platform.Temp).
 log4j:WARN Please initialize the log4j system properly.
-log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq#noconfig for more info.
 ```
 
 An easy way to configure a log4j appender is to add a `log4j.properties` file to the project (e.g., to `src/main/resources` in a maven project) that could have the following content:
@@ -244,7 +244,7 @@ log4j.appender.stdout=org.apache.log4j.ConsoleAppender
 log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
 log4j.appender.stdout.layout.ConversionPattern=%d %p [%c] - <%m>%n
 ```
-This file defines a simple log appender that writes all log messages which have at least the log level `INFO` to the console. For more information on configuring log4j, please have a look at its documentation at http://logging.apache.org/log4j/1.2/index.html
+This file defines a simple log appender that writes all log messages which have at least the log level `INFO` to the console. For more information on configuring log4j, please have a look at its documentation at http://logging.apache.org/log4j/1.2/index
 
 If a different logging should be used and a bridge from slf4j to this logging is available, the log4j binding has to be excluded in your projects pom file using.
 ```

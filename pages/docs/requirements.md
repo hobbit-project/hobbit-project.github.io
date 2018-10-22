@@ -3,7 +3,7 @@ title: Requirements for the HOBBIT Platform
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: requirements.html
+permalink: requirements
 folder: docs
 ---
 

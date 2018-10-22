@@ -2,7 +2,7 @@
 title: Using Master Instance
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
-permalink: master.html
+permalink: master
 folder: docs
 ---
 
@@ -27,18 +27,18 @@ If you are participating in a challenge as a team, it is sufficient to have one 
 
 Every system that should be benchmarked on the Hobbit platform needs to be uploaded to it. This uploading comprises several steps. Note that a user profile is necessary to have the right to upload something to the platform.
 
-1. Before uploading something, an adapter for the system needs to be developed, so that the system fits into the platform and is able to interact with the benchmark with which it should be benchmarked. The general development of the adapter is [described here](/system_integration.html).
-2. The second step is the creation of a project in the [gitlab instance](http://git.project-hobbit.eu) of the platform. For that you can use the same account as for the platform itself. (The project should have the same name as the system. Please have a look at the [image upload](/system_integration.html) and its hints regarding the project name.)
-3. After creating a git project, you need to push the Docker image to the git project as [described here](/system_integration.html).
-4. The final step is to put the meta data describing your system into a file called `system.ttl` and push it to the git project. The format of the file is [described here](/system_integration.html).
+1. Before uploading something, an adapter for the system needs to be developed, so that the system fits into the platform and is able to interact with the benchmark with which it should be benchmarked. The general development of the adapter is [described here](/system_integration).
+2. The second step is the creation of a project in the [gitlab instance](http://git.project-hobbit.eu) of the platform. For that you can use the same account as for the platform itself. (The project should have the same name as the system. Please have a look at the [image upload](/system_integration) and its hints regarding the project name.)
+3. After creating a git project, you need to push the Docker image to the git project as [described here](/system_integration).
+4. The final step is to put the meta data describing your system into a file called `system.ttl` and push it to the git project. The format of the file is [described here](/system_integration).
 
-After uploading a system, [starting an experiment](/benchmarking.html) including the uploaded system and the benchmark for which the adapter has been implemented is recommended to make sure that the adapter is working as expected.
+After uploading a system, [starting an experiment](/benchmarking) including the uploaded system and the benchmark for which the adapter has been implemented is recommended to make sure that the adapter is working as expected.
 
 ## Upload a Benchmark
 
 Every benchmark that should be run on the Hobbit platform needs to be uploaded to it. This uploading comprises several steps. Note that a user profile is necessary to have the right to upload something to the platform.
 
-1. Before uploading, the benchmark has to be implemented in a way that it fits into the platform and is able to interact with the paltform controller. The general development of a benchmark is [described here](/benchmark_integration.html).
-2. The second step is the creation of at least one project in the [gitlab instance](http://git.project-hobbit.eu) of the platform. For that you can use the same account as for the platform itself. (The project should have the same name as the system. Please have a look at the [image upload](/system_integration.html) and its hints regarding the project name.)
-3. After creating the git project(s), you need to push the Docker image(s) to the git project(s) as [described here](/system_integration.html).
-4. The final step is to put the meta data describing the benchmark into a file called `benchmark.ttl` and push it to one of the git projects. The format of the file is [described here](/benchmark_integration_api.html).
+1. Before uploading, the benchmark has to be implemented in a way that it fits into the platform and is able to interact with the paltform controller. The general development of a benchmark is [described here](/benchmark_integration).
+2. The second step is the creation of at least one project in the [gitlab instance](http://git.project-hobbit.eu) of the platform. For that you can use the same account as for the platform itself. (The project should have the same name as the system. Please have a look at the [image upload](/system_integration) and its hints regarding the project name.)
+3. After creating the git project(s), you need to push the Docker image(s) to the git project(s) as [described here](/system_integration).
+4. The final step is to put the meta data describing the benchmark into a file called `benchmark.ttl` and push it to one of the git projects. The format of the file is [described here](/benchmark_integration_api).

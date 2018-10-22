@@ -3,7 +3,7 @@ title: Platform Config File
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: parameters_config.html
+permalink: parameters_config
 folder: docs
 ---
 

@@ -3,7 +3,7 @@ title: Organizing a Challenge
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: challenge_organization.html
+permalink: challenge_organization
 folder: docs
 ---
 

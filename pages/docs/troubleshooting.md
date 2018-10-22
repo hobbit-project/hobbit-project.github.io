@@ -3,7 +3,7 @@ title: Troubleshooting
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: troubleshooting.html
+permalink: troubleshooting
 folder: docs
 ---
 

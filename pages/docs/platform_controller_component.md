@@ -3,7 +3,7 @@ title: Platform Controller Component
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: platform_controller_component.html
+permalink: platform_controller_component
 folder: docs
 ---
 

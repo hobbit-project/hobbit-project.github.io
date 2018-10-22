@@ -3,7 +3,7 @@ title: Resource Monitoring
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: monitoring_component.html
+permalink: monitoring_component
 folder: docs
 ---
 

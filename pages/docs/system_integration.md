@@ -3,11 +3,11 @@ title: Integrating Your Own Code
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: system_integration.html
+permalink: system_integration
 folder: docs
 ---
 
-This tutorial shows how a system can be prepared to be benchmarked within the HOBBIT platform. The tutorial mainly covers all necessary steps including the development of a System Adapter in Java. Note that the adapter can be implemented in other languages as well. However, for Java we are offering a library which eases the implementation. For other languages, you may want to take a look into the [System API](/system_integration_api.html).
+This tutorial shows how a system can be prepared to be benchmarked within the HOBBIT platform. The tutorial mainly covers all necessary steps including the development of a System Adapter in Java. Note that the adapter can be implemented in other languages as well. However, for Java we are offering a library which eases the implementation. For other languages, you may want to take a look into the [System API](/system_integration_api).
 
 A system that should be benchmark within the HOBBIT platform needs to fulfill the following requirements:
 1. Be encapsulated in a Docker image
@@ -153,9 +153,9 @@ We will go through the different methods to clarify their meaning:
 1. `receiveGeneratedTask` is the method which is called if your system receives a task that should be fulfilled. Based on the data that you receive, your system should generate the result the benchmark is assuming and send it back using the `sendResultToEvalStorage` method. Please check the benchmarks API for the format that the data of the task will have and which format the (serialized) result should have.
 1. `close` is the method which will be called at the end after the benchmarking is done and your system is asked to shut down. Make sure that `super.close()` is the last method called this method.
 
-Note that there are additional methods which could be overriden by your class if you want to make use of them. An overview of these methods can be found at [System API](/system_integration_api.html).
+Note that there are additional methods which could be overriden by your class if you want to make use of them. An overview of these methods can be found at [System API](/system_integration_api).
 
-One of possibilities to manage communication with the system is to write a system adapter as a wrapper. Other options are described at [System API](/system_integration_api.html).
+One of possibilities to manage communication with the system is to write a system adapter as a wrapper. Other options are described at [System API](/system_integration_api).
 
 ### 2.a. The System Adapter as wrapper
 

@@ -11,21 +11,21 @@ entries:
     type: frontmatter
     folderitems:
     - title:
-      url: /titlepage.html
+      url: /titlepage
       output: pdf
       type: frontmatter
     - title:
-      url: /tocpage.html
+      url: /tocpage
       output: pdf
       type: frontmatter
 
   - title: Introduction
-    url: /index.html
+    url: /
     output: toplevel, pdf
     type: homepage
 
   - title: Platform Overview
-    url: /overview.html
+    url: /overview
     output: toplevel, pdf
 
   - title: Tutorials
@@ -33,43 +33,43 @@ entries:
     folderitems:
 
     - title: Quick Guide
-      url: /quick_guide.html
+      url: /quick_guide
       output: web, pdf
 
     - title: Deployment with Exoframe
-      url: /exoframe.html
+      url: /exoframe
       output: web, pdf
 
     - title: Using Master Instance
-      url: /master.html
+      url: /master
       output: web, pdf
 
     - title: Benchmarking a System
-      url: /benchmarking.html
+      url: /benchmarking
       output: web, pdf
 
     - title: Browsing Results
-      url: /browsing_results.html
+      url: /browsing_results
       output: web, pdf
 
     - title: Taking Part in Challenge
-      url: /challenge_participation.html
+      url: /challenge_participation
       output: web, pdf
 
     - title: Organizing a Challenge
-      url: /challenge_organization.html
+      url: /challenge_organization
       output: web, pdf
 
     - title: How to Integrate a System
-      url : /system_integration.html
+      url : /system_integration
       output: web, pdf
 
     - title: How to Integrate a Benchmark
-      url : /benchmark_integration.html
+      url : /benchmark_integration
       output: web, pdf
 
     - title: Using Java SDK to develop a Benchmark
-      url : /java_sdk.html
+      url : /java_sdk
       output: web, pdf
 
   - title: Reference Manual
@@ -77,7 +77,7 @@ entries:
     folderitems:
 
     - title: Workflow of an Experiment
-      url: /experiment_workflow.html
+      url: /experiment_workflow
       output: web, pdf
 
       subfolders:
@@ -86,43 +86,43 @@ entries:
           subfolderitems:
 
             - title: Requirements
-              url: /requirements.html
+              url: /requirements
               output: web, pdf
 
             - title: On a Single Machine
-              url: /platform_deployment_single_machine.html
+              url: /platform_deployment_single_machine
               output: web, pdf
 
             - title: On a Cluster
-              url: /platform_deployment_cluster.html
+              url: /platform_deployment_cluster
               output: web, pdf
 
             - title: Troubleshooting
-              url: /troubleshooting.html
+              url: /troubleshooting
               output: web, pdf
 
             - title: Optional platform features
-              url: /optional_features.html
+              url: /optional_features
               output: web, pdf
-            
+
             - title: Env. Variables
-              url: /parameters_env.html
+              url: /parameters_env
               output: web, pdf
 
             - title: Platform Config File
-              url: /parameters_config.html
+              url: /parameters_config
               output: web, pdf
 
             - title: Volumes
-              url: /parameters_volumes.html
+              url: /parameters_volumes
               output: web, pdf
 
             - title: storage-init.sh
-              url: /parameters_storage_init.html
+              url: /parameters_storage_init
               output: web, pdf
 
             - title: Frontend configuration
-              url: /parameters_frontend.html
+              url: /parameters_frontend
               output: web, pdf
 
         - title: Platform Components
@@ -130,43 +130,43 @@ entries:
           subfolderitems:
 
             - title: Platform Controller
-              url: /platform_controller_component.html
+              url: /platform_controller_component
               output: web, pdf
 
             - title: Storage
-              url: /storage_component.html
+              url: /storage_component
               output: web, pdf
 
             - title: Frontend
-              url: /frontend_component.html
+              url: /frontend_component
               output: web, pdf
 
             - title: User Management
-              url: /user_management_component.html
+              url: /user_management_component
               output: web, pdf
 
             - title: Repository
-              url: /repository_component.html
+              url: /repository_component
               output: web, pdf
 
             - title: Analysis
-              url: /analysis_component.html
+              url: /analysis_component
               output: web, pdf
 
             - title: Message Bus
-              url: /message_bus_component.html
+              url: /message_bus_component
               output: web, pdf
 
             - title: Logging
-              url: /logging_component.html
+              url: /logging_component
               output: web, pdf
 
             - title: Resource Monitoring
-              url: /monitoring_component.html
+              url: /monitoring_component
               output: web, pdf
 
             - title: Internal Challenge Workflow
-              url: /internal_challenge_workflow.html
+              url: /internal_challenge_workflow
               output: web, pdf
 
         - title: Core Library
@@ -174,31 +174,29 @@ entries:
           subfolderitems:
 
             - title: Java Components
-              url: /java_components.html
+              url: /java_components
               output: web, pdf
 
             - title: Command Queue
-              url: /command_queue.html
+              url: /command_queue
               output: web, pdf
 
             - title: Transferring Data
-              url: /transferring_data.html
+              url: /transferring_data
               output: web, pdf
 
     - title: General Platform API
-      url: /platform_api.html
+      url: /platform_api
       output: web, pdf
 
     - title: Integrating a System
-      url: /system_integration_api.html
+      url: /system_integration_api
       output: web, pdf
 
     - title: Integrating a Benchmark
-      url: /benchmark_integration_api.html
+      url: /benchmark_integration_api
       output: web, pdf
 
     - title: FAQ
-      url: /faq.html
+      url: /faq
       output: web, pdf
-    
-

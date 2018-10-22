@@ -3,7 +3,7 @@ title: Automatic Platform Provisioning using Exoframe
 keywords: tutorials
 sidebar: main_sidebar
 toc: false
-permalink: exoframe.html
+permalink: exoframe
 folder: docs
 ---
 

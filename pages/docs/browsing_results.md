@@ -3,7 +3,7 @@ title: Browsing Results
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: browsing_results.html
+permalink: browsing_results
 folder: docs
 ---
 

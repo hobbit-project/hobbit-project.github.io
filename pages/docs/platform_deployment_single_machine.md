@@ -3,11 +3,11 @@ title: Platform Deployment
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: platform_deployment_single_machine.html
+permalink: platform_deployment_single_machine
 folder: docs
 ---
 
-For the quick start check out [quick platform deployment guide](/quick_guide.html).
+For the quick start check out [quick platform deployment guide](/quick_guide).
 
 ## Preparing
 
@@ -191,8 +191,8 @@ docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)
 ## Troubleshooting
 
 If you encounter problems setting up the platform, please have a look at
-[Troubleshooting](/troubleshooting.html)
-and [FAQ](/faq.html).
+[Troubleshooting](/troubleshooting)
+and [FAQ](/faq).
 
 ### Regular cleaning of dangling Docker images
 Depending on the way the platform is used, it can download many Docker images over time. Note that Docker itself won't delete but keep all versions of these images. To save disk space, a regular cleaning of dangling images is helpful.

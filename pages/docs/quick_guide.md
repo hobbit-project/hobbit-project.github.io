@@ -3,11 +3,11 @@ title: Quick Guide
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: quick_guide.html
+permalink: quick_guide
 folder: docs
 ---
 
-1. Make sure you've got all [requirements](/requirements.html) installed.
+1. Make sure you've got all [requirements](/requirements) installed.
 
 1. Clone the repository:
 ```
@@ -46,7 +46,7 @@ After the platform startup, the following interfaces will be available for you:
 (Virtuoso)
 
 Now, when you've got a running platform,
-you can [benchmark a system](/benchmarking.html).
+you can [benchmark a system](/benchmarking).
 
 ## Optional Steps
 

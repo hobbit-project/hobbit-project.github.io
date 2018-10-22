@@ -3,7 +3,7 @@ title: Analysis Component
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 toc: false
-permalink: analysis_component.html
+permalink: analysis_component
 folder: docs
 ---
 
