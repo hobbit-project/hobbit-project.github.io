@@ -9,7 +9,7 @@ folder: docs
 
 The platform offers a general API for the benchmark and the benchmarked system. Using this API, a component can request the creation of additional components, e.g., a benchmark controller can request the creation of benchmark related components or a benchmarked system can request the creation of additional containers needed by the system. Additionally, created containers can be stopped and the platform controller will send messages regarding the termination of created containers.
 
-For the communication with the platform controller, the [command queue](https://hobbit-project.github.io/command_queue) is used.
+For the communication with the platform controller, the [command queue](/command_queue) is used.
 
 ## Environment variables
 
@@ -24,7 +24,7 @@ If an abstract component class from the `hobbit.core` library is used, `HOBBIT_R
 
 ## Creating a container
 
-Requesting the creation of a container is done by sending the [`Commands.DOCKER_CONTAINER_START`](https://hobbit-project.github.io/command_queue#predefined-command-ids) id (=`0x0C`) on the command queue, followed by a JSON string containing the necessary information. Following the structure of [command queue messages](https://hobbit-project.github.io/command_queue#structure-of-a-message) such a request looks like the following:
+Requesting the creation of a container is done by sending the [`Commands.DOCKER_CONTAINER_START`](/command_queue#predefined-command-ids) id (=`0x0C`) on the command queue, followed by a JSON string containing the necessary information. Following the structure of [command queue messages](/command_queue#structure-of-a-message) such a request looks like the following:
 
 | start byte | length | meaning |
 |---|---|---|
