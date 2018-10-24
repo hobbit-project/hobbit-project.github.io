@@ -65,6 +65,22 @@ export GITLAB_EMAIL=max.power@project-hobbit.eu
 export GITLAB_TOKEN=1234567890
 ```
 
+### Enable local metadata files
+
+Instead of using Gitlab, the platform can be enabled to gather metadata about systems and benchmarks from a local directory. For that, a local directory should be mounted into the platform controller and a variable should be set to inform the controller where it can find the files. In the following example, both is added to the `docker-compose.yml` file for a local directory named `meta`.
+```yaml
+  platform-controller:
+    ...
+    environment:
+      ...
+      - METADATA_DIRECTORY=/usr/src/app/metadata
+    volumes:
+      ...
+      - ./meta:/usr/src/app/metadata
+```
+
+After that, the platform will regularly load the metadata of all `*.ttl` files in this directory.
+
 ### Elasticsearch stack
 
 For Elasticsearch stack you need to configure `vm.max_map_count`:
