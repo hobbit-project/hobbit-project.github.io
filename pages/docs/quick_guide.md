@@ -7,6 +7,8 @@ permalink: quick_guide.html
 folder: docs
 ---
 
+{% include note.html content="We have a [video tutorial](https://www.youtube.com/watch?v=ktAtwU55M6s) covering the quick local deployment." %}
+
 1. Make sure you've got all [requirements](/requirements.html) installed.
 
 1. Clone the repository:

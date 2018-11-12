@@ -8,6 +8,8 @@ folder: docs
 
 There is hosted instance of HOBBIT at http://master.project-hobbit.eu.
 
+{% include note.html content="We have a [video tutorial](https://www.youtube.com/watch?v=3oeEyHXVd_4) covering the HOBBIT platform usage." %}
+
 ## User Registration
 
 Please open http://master.project-hobbit.eu and click on `Register` located on the right hand side.

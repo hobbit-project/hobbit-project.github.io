@@ -7,6 +7,8 @@ permalink: benchmarking.html
 folder: docs
 ---
 
+{% include note.html content="We have a [video tutorial](https://www.youtube.com/watch?v=QWPujpc9srM) covering the system benchmarking." %}
+
 Being a registered user of the platform and [having uploaded a system](/system_integration.html#3-create-and-push-the-docker-image) which conforms the specification (API) of one of the benchmarks allows the user to benchmark the system.
 The benchmarking of a system is done via the *Benchmarks* menu where at first the benchmark is selected to be used for the experiment. The drop down menu displays all possible benchmarks.
 
