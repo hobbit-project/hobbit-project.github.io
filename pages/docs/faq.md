@@ -52,7 +52,7 @@ To fix this, recreate `docker_gwbridge` network and set any private address for 
 
 `docker network rm docker_gwbridge`
 
-`docker network create --subnet=172.18.0.1/24 --gateway=172.18.0.1 --opt com.dockerridge.name=docker_gwbridge --opt com.docker.network.bridge.enable_icc=false docker_gwbridge`
+`docker network create --subnet=172.18.0.1/24 --gateway=172.18.0.1 --opt com.docker.network.bridge.name=docker_gwbridge --opt com.docker.network.bridge.enable_icc=false docker_gwbridge`
 
 (You may need to leave docker swarm first: `docker swarm leave`.)
 
