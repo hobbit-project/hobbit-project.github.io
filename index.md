@@ -15,6 +15,8 @@ Want to [take part in a challenge](/challenge_participation.html)?
 
 Interested in [benchmarking your system](/benchmarking.html)?
 
+Eager to [deploy the platform](/quick_guide.html)?
+
 See [our YouTube channel with tutorials](https://www.youtube.com/channel/UC3eWNVAKXLqAdOhuQ5kd57g/).
 
 ### About HOBBIT project

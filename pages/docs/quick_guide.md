@@ -36,16 +36,15 @@ That's it!
 
 After the platform startup, the following interfaces will be available for you:
 * [localhost:8080](http://localhost:8080/)
-(GUI, default credentials are: `challenge-organiser`:`hobbit`,
-`testuser`:`hobbit`, `system-provider`:`hobbit` and `guest`:`hobbit`)
+(GUI, default credentials are: `challenge-organiser`:`hobbit`, `system-provider`:`hobbit` and `guest`:`hobbit`)
 * [localhost:5601](http://localhost:5601/)
 (Kibana)
-* [localhost:8181](http://localhost:8181/)
-(Keycloak, admin credentials are: `admin`:`H16obbit`)
 * [localhost:8081](http://localhost:8081/)
 (RabbitMQ)
 * [localhost:8890](http://localhost:8890/)
 (Virtuoso)
+* [localhost:8181](http://localhost:8181/)
+(Keycloak (available if deployed together with the ELK stack), admin credentials are: `admin`:`H16obbit`)
 
 Now, when you've got a running platform,
 you can [benchmark a system](/benchmarking.html).
@@ -75,7 +74,7 @@ Instead of using Gitlab, the platform can be enabled to gather metadata about sy
     ...
     environment:
       ...
-      - LOCAL_METADATA_DIRECTORY=/usr/src/app/metadata
+      LOCAL_METADATA_DIRECTORY: "/usr/src/app/metadata"
     volumes:
       ...
       - ./meta:/usr/src/app/metadata
@@ -83,7 +82,7 @@ Instead of using Gitlab, the platform can be enabled to gather metadata about sy
 
 After that, the platform will regularly load the metadata of all `*.ttl` files in this directory.
 
-### Elasticsearch stack
+### ELK stack for log access
 
 For Elasticsearch stack you need to configure `vm.max_map_count`:
 ```
