@@ -22,6 +22,10 @@ docker swarm init
 make create-networks
 ```
 
+1. Now, the optinoal steps described below can be applied if necessary. 
+  * The access to benchmarks and systems via [HOBBIT Gitlab credentials](#hobbit-gitlab-credentials) or [local files](enable-local-metadata-files) can be configured.
+  * The [ELK stack](#elk-stack-for-log-access) could be configured and started.
+
 1. Start the platform:
 ```
 docker-compose up -d 
