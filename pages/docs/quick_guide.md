@@ -22,7 +22,7 @@ docker swarm init
 make create-networks
 ```
 
-1. Now, the optinoal steps described below can be applied if necessary. 
+1. At this point, the optional configurations described below can be applied if necessary. 
   * The access to benchmarks and systems via [HOBBIT Gitlab credentials](#hobbit-gitlab-credentials) or [local files](enable-local-metadata-files) can be configured.
   * The [ELK stack](#elk-stack-for-log-access) could be configured and started.
 
@@ -31,7 +31,7 @@ make create-networks
 docker-compose up -d 
 ```
 
-1. Initialize the Virtuoso storage:
+1. Initialize the Virtuoso storage (this needs to be done only when the platform is started for the first time):
 ```
 ./run-storage-init.sh
 ```
@@ -41,14 +41,14 @@ That's it!
 After the platform startup, the following interfaces will be available for you:
 * [localhost:8080](http://localhost:8080/)
 (GUI, default credentials are: `challenge-organiser`:`hobbit`, `system-provider`:`hobbit` and `guest`:`hobbit`)
-* [localhost:5601](http://localhost:5601/)
-(Kibana)
 * [localhost:8081](http://localhost:8081/)
 (RabbitMQ)
 * [localhost:8890](http://localhost:8890/)
-(Virtuoso)
+(Virtuoso, default credentials are: `HobbitPlatform`:`Password` and `dba`:`Password`)
 * [localhost:8181](http://localhost:8181/)
-(Keycloak (available if deployed together with the ELK stack), admin credentials are: `admin`:`H16obbit`)
+(Keycloak, admin credentials are: `admin`:`H16obbit`)
+* [localhost:5601](http://localhost:5601/)
+(Kibana, available if deployed together with the ELK stack)
 
 Now, when you've got a running platform,
 you can [benchmark a system](/benchmarking.html).
@@ -68,6 +68,18 @@ or export them in your environment (perhaps, using [direnv](https://direnv.net/)
 export GITLAB_USER=max.power
 export GITLAB_EMAIL=max.power@project-hobbit.eu
 export GITLAB_TOKEN=1234567890
+```
+
+**Note** that if you don't have an account, you can still access public benchmarks and systems. For that, you should either remove the following lines from your `docker-compose.yml` file or comment them out using the `#` character.
+```yaml
+services:
+  platform-controller:
+    ...
+    environment:
+      ...
+      GITLAB_USER: "${GITLAB_USER}"
+      GITLAB_EMAIL: "${GITLAB_EMAIL}"
+      GITLAB_TOKEN: "${GITLAB_TOKEN}"
 ```
 
 ### Enable local metadata files
