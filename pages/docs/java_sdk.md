@@ -39,10 +39,10 @@ Package the benchmark as a jar file:
 `mvn -DskipTests package`.
 
 Build the benchmark Docker image:
-`mvn -Dtest=ExampleBenchmarkTest#checkHealthDockerized test`.
+`mvn -Dtest=ExampleBenchmarkTest#buildImages test`.
 
 Now, you can test the benchmark using Docker containers:
-`mvn -Dtest=ExampleSystemTest#checkHealth test`.
+`mvn -Dtest=ExampleSystemTest#checkHealthDockerized test`.
 
 After that, the benchmark image is ready and can be `docker push`-ed
 to remote repository.
