@@ -72,6 +72,10 @@ entries:
       url : /java_sdk.html
       output: web, pdf
 
+    - title: Data License
+      url : /data_license
+      output: web, pdf
+
   - title: Reference Manual
     output: web, pdf
     folderitems:
