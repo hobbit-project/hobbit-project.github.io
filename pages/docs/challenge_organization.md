@@ -62,3 +62,26 @@ After having added the challenge tasks to the challenge the challenge needs to b
 The *Close Challenge* button closes a challenge, i.e., no more registrations are possible and the challenge is waiting for its execution date to arrive for running the experiments. It should only be pressed when the registration for the challenge is over. After closing the evaluation of the registered systems starts as soon as the execution date is reached. When pressing the button a dialogue comes up asking for closing the challenge to ensure this does not happen accidentally.
 
 ![Dialog for closing a challenge.](/images/58_Challenge.png)
+
+## Setting up a leaderboard
+
+To rank systems participated in a task, the task resource should have `hobbit:rankingKPIs` property linked to a `rdf:Seq` and `hobbit:KPISeq` resource containing a sequence of KPIs available in the task. Systems would be ranked in the order of experiment results for first KPI in that sequence, in case of equal results the following KPIs would be used.
+
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX hobbit: <http://w3id.org/hobbit/vocab#>
+
+INSERT DATA {
+GRAPH <http://hobbit.org/graphs/PublicResults> {
+<TASK_URI> hobbit:rankingKPIs <TASK_URI_rankingKPIs> .
+<TASK_URI_rankingKPIs> a rdf:Seq, hobbit:KPISeq;
+rdf:li <KPI_URI>.
+}
+}
+```
+
+Every KPI resource used this way should have `hobbit:ranking` property defined in the benchmark metadata file. Available values are defined in HOBBIT ontology.
+
+```
+<KPI_URI> hobbit:ranking hobbit:DescendingOrder.
+```
