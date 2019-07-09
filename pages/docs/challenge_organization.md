@@ -75,7 +75,7 @@ INSERT DATA {
 GRAPH <http://hobbit.org/graphs/PublicResults> {
 <TASK_URI> hobbit:rankingKPIs <TASK_URI_rankingKPIs> .
 <TASK_URI_rankingKPIs> a rdf:Seq, hobbit:KPISeq;
-rdf:li <KPI_URI>.
+rdf:_1 <KPI_URI>.
 }
 }
 ```
