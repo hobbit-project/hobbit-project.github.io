@@ -16,8 +16,8 @@ There is hosted instance of HOBBIT at http://master.project-hobbit.eu.
 |-------------|--------------------|------------|
 | Master      | Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz, 10&nbsp;cores; 32&nbsp;GB&nbsp;RAM | HOBBIT components |
 | Data        | Intel(R) Xeon(R) CPU E5-2630 v3 @ 2.40GHz, 8&nbsp;cores; 64&nbsp;GB&nbsp;RAM; ~100&nbsp;TB&nbsp;storage | Auxiliary services |
-| Workers 1-3 | Intel(R) Xeon(R) CPU E5-2630 v3 @ 2.40GHz, 8&nbsp;cores; 256&nbsp;GB&nbsp;RAM | Benchmark components |
-| Workers 4-6 | Intel(R) Xeon(R) CPU E5-2630 v3 @ 2.40GHz, 8&nbsp;cores; 256&nbsp;GB&nbsp;RAM | Benchmarked system components |
+| Workers 1-3 | 2 &times; Intel(R) Xeon(R) CPU E5-2630 v3 @ 2.40GHz, 8&nbsp;cores; 256&nbsp;GB&nbsp;RAM | Benchmark components |
+| Workers 4-6 | 2 &times; Intel(R) Xeon(R) CPU E5-2630 v3 @ 2.40GHz, 8&nbsp;cores; 256&nbsp;GB&nbsp;RAM | Benchmarked system components |
 
 ## User Registration
 
