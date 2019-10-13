@@ -40,7 +40,7 @@ entries:
       url: /exoframe.html
       output: web, pdf
 
-    - title: Using Master Instance
+    - title: master.project-hobbit.eu
       url: /master.html
       output: web, pdf
 

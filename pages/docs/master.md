@@ -1,16 +1,16 @@
 ---
-title: Using Master Instance
+title: Cluster at master.project-hobbit.eu
 keywords: HOBBIT Documentation
 sidebar: main_sidebar
 permalink: master.html
 folder: docs
 ---
 
-There is hosted instance of HOBBIT at http://master.project-hobbit.eu.
+There is a hosted instance of HOBBIT Platform available at http://master.project-hobbit.eu.
 
 {% include note.html content="We have a [video tutorial](https://www.youtube.com/watch?v=3oeEyHXVd_4) covering the HOBBIT platform usage." %}
 
-## Our Hardware
+## Hardware of the cluster
 
 | Node        | Feature Highlights | Components |
 |-------------|--------------------|------------|
