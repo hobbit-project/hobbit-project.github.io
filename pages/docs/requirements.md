@@ -18,3 +18,5 @@ folder: docs
   * [Docker Compose](https://docs.docker.com/compose/) 1.17.0
 
 (Newer versions should work as well - **except for Docker**. 18.x is not supported by the Docker client library used in the platform.)
+
+If you have problems installing this version of Docker, you can try to download it manually from [here](https://download.docker.com/linux/ubuntu/dists/xenial/pool/stable/amd64/) as described [here](https://docs.docker.com/engine/install/ubuntu/).
