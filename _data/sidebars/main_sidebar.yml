@@ -204,5 +204,17 @@ entries:
     - title: FAQ
       url: /faq.html
       output: web, pdf
+
+  - title: Challenges
+    output: web, pdf
+    folderitems:
+
+    - title: Challenge Overview
+      url: /challenge_overview.html
+      output: web, pdf
+
+    - title: OAEI 2020
+      url: /OAEI_2020.html
+      output: web, pdf
     
 
