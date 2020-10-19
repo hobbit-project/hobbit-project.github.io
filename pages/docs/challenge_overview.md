@@ -14,17 +14,17 @@ To support the development of new technologies and the comparison of different a
 * 2019
    * [Instance Matching or Link Discovery Task at the OAEI OM 2019 Workshop](https://project-hobbit.eu/challenges/om2019/)
 * 2018
-   * [Grand Challenge – DEBS 2018]()
-   * [Link Discovery Task at OAEI 2017.5 – OM 2017.5, ISWC 2018]()
-   * [Link Discovery Task at OAEI 2018 – OM 2018, ISWC 2018]()
+   * [Grand Challenge – DEBS 2018](https://project-hobbit.eu/challenges/debs2018-grand-challenge/)
+   * [Link Discovery Task at OAEI 2017.5 – OM 2017.5, ISWC 2018](https://project-hobbit.eu/challenges/oaei2017-5/)
+   * [Link Discovery Task at OAEI 2018 – OM 2018, ISWC 2018](https://project-hobbit.eu/challenges/om2018/)
    * [Mighty Storage Challenge – MOCHA at ESWC 2018](https://project-hobbit.eu/challenges/mighty-storage-challenge2018/)
-   * [OKE2018 Challenge – OKE at ESWC 2018]()
-   * [QALD-9 Challenge – QALD-9 ISWC 2018]()
+   * [Open Knowledge Extraction Challenge – OKE at ESWC 2018](https://project-hobbit.eu/challenges/oke2018-challenge-eswc-2018/)
+   * [Question Answering over Linked Data Challenge – QALD-9 at ISWC 2018](https://project-hobbit.eu/qald-9-challenge/)
    * [Scalable Question Answering Challenge – SQA at ESWC 2018](https://project-hobbit.eu/challenges/sqa-challenge-eswc-2018/)
 * 2017
-   * [Grand Challenge – DEBS 2017]()
-   * [Link Discovery Task at OAEI 2017 – OM 2017, ISWC 2017]()
-   * MOCHA2017 Challenge – ESWC 2017
-   * OKE2017 Challenge – ESWC 2017
-   * QALD-8 Challenge – ISWC 2017
+   * [Grand Challenge – DEBS 2017](https://project-hobbit.eu/challenges/debs-grand-challenge/)
+   * [Link Discovery Task at OAEI 2017 – OM 2017, ISWC 2017](https://project-hobbit.eu/challenges/om2017/)
+   * [Mighty Storage Challenge – MOCHA at ESWC 2017](https://project-hobbit.eu/challenges/mighty-storage-challenge/)
+   * [Open Knowledge Extraction Challenge – OKE at ESWC 2017](https://project-hobbit.eu/challenges/oke2017-challenge-eswc-2017)
+   * [Question Answering over Linked Data Challenge – QALD-8 at ISWC 2017](https://project-hobbit.eu/qald-8-challenge/)
 
