@@ -10,9 +10,9 @@ folder: docs
 To support the development of new technologies and the comparison of different approaches to solve a given problem, the HOBBIT project supported several challenges, i.e., compatitions in which different systems are submitted and benchmarked in a fair and comparable way. The HOBBIT platform supports the organisation of such [challenges](/challenge_organization.html). During the existence of the HOBBIT platform, the following challenges have been carried out on the platform:
 
 * 2020
-   * [Link Discovery Task at OAEI 2019](/OAEI_2020.html)
+   * [Instance Matching or Link Discovery Task at the OAEI OM 2020 Workshop – ISWC 2020](/OAEI_2020.html)
 * 2019
-   * [Instance Matching or Link Discovery Task at the OAEI OM 2019 Workshop](https://project-hobbit.eu/challenges/om2019/)
+   * [Instance Matching or Link Discovery Task at the OAEI OM 2019 Workshop – ISWC 2019](https://project-hobbit.eu/challenges/om2019/)
 * 2018
    * [Grand Challenge – DEBS 2018](https://project-hobbit.eu/challenges/debs2018-grand-challenge/)
    * [Link Discovery Task at OAEI 2017.5 – OM 2017.5, ISWC 2018](https://project-hobbit.eu/challenges/oaei2017-5/)
