@@ -27,3 +27,5 @@ Environment variables for platform components can be set in `docker-compose.yml`
 | storage-service| `SPARQL_ENDPOINT_USERNAME` | User name | The user name used to authenticate the service at the SPARQL endpoint. |
 | storage-service| `SPARQL_ENDPOINT_PASSWORD` | Password | The password used to authenticate the service at the SPARQL endpoint. |
 | platform-controller, gui, analysis, storage-service | `HOBBIT_RABBIT_HOST` | Host name | Host name of the RabbitMQ broker used for the communication with other components. |
+| platform-controller | `HOBBIT_RABBIT_EXPERIMENTS_HOST` | Host name | Host name of the RabbitMQ broker used for the communication with the experiment components. Either `HOBBIT_RABBIT_EXPERIMENTS_HOST` or `HOBBIT_RABBIT_IMAGE` should be specified. |
+| platform-controller | `HOBBIT_RABBIT_IMAGE` | Docker image | Docker image of the RabbitMQ broker to use for the communication with the experiment components. New broker instance would be created for each experiment. Either `HOBBIT_RABBIT_EXPERIMENTS_HOST` or `HOBBIT_RABBIT_IMAGE` should be specified. |
