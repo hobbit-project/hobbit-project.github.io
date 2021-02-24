@@ -129,6 +129,10 @@ entries:
               url: /parameters_frontend.html
               output: web, pdf
 
+            - title: GPU configuration
+              url: /gpu.html
+              output: web, pdf
+
         - title: Platform Components
           output: web, pdf
           subfolderitems:
