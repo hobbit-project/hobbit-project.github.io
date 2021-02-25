@@ -9,7 +9,6 @@ folder: docs
 [Install NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#setting-up-nvidia-container-toolkit).
 
 Identify UUIDs of GPUs by running `nvidia-smi -a`.
-It is possible that only the first two dash-separated paths are needed (`GPU-ffffffff`).
 
 Configure [`/etc/docker/daemon.json`](https://docs.docker.com/engine/reference/commandline/dockerd/#daemon-configuration-file):
 
