@@ -216,10 +216,6 @@ entries:
     - title: Challenge Overview
       url: /challenge_overview.html
       output: web, pdf
-
-    - title: OAEI 2020
-      url: /OAEI_2020.html
-      output: web, pdf
       
     - title: OAEI 2021
       url: /OAEI_2021.html
