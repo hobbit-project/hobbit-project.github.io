@@ -217,8 +217,8 @@ entries:
       url: /challenge_overview.html
       output: web, pdf
       
-    - title: OAEI 2021
-      url: /OAEI_2021.html
+    - title: OAEI 2022
+      url: /OAEI_2022.html
       output: web, pdf
     
 
