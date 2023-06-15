@@ -10,7 +10,7 @@ folder: docs
 To support the development of new technologies and the comparison of different approaches to solve a given problem, the HOBBIT project supported several challenges, i.e., compatitions in which different systems are submitted and benchmarked in a fair and comparable way. The HOBBIT platform supports the organisation of such [challenges](/challenge_organization.html). During the existence of the HOBBIT platform, the following challenges have been carried out on the platform:
 
 * 2023
-   * [Instance Matching or Link Discovery Task at the OAEI OM 2023 Workshop – ISWC 2022](/OAEI_2023.html)
+   * [Instance Matching or Link Discovery Task at the OAEI OM 2023 Workshop – ISWC 2023](/OAEI_2023.html)
 * 2022
    * [Instance Matching or Link Discovery Task at the OAEI OM 2022 Workshop – ISWC 2022](/OAEI_2022.html)
 * 2021
