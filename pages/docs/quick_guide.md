@@ -22,6 +22,11 @@ docker swarm init
 make create-networks
 ```
 
+1. Set the permissions for the keycloak's database:
+```
+make set-keycloak-permissions
+```
+
 1. At this point, the optional configurations described below can be applied if necessary. 
   * The access to benchmarks and systems via [HOBBIT Gitlab credentials](#hobbit-gitlab-credentials) or [local files](enable-local-metadata-files) can be configured.
   * The [ELK stack](#elk-stack-for-log-access) could be configured and started.
