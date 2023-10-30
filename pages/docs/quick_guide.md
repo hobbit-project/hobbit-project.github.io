@@ -28,6 +28,7 @@ make set-keycloak-permissions
 ```
 
 1. At this point, the optional configurations described below can be applied if necessary. 
+  * [Keycloak dependency can be removed](#deployment-without-keycloak).
   * The access to benchmarks and systems via [HOBBIT Gitlab credentials](#hobbit-gitlab-credentials) or [local files](enable-local-metadata-files) can be configured.
   * The [ELK stack](#elk-stack-for-log-access) could be configured and started.
 
@@ -59,6 +60,19 @@ Now, when you've got a running platform,
 you can [benchmark a system](/benchmarking.html).
 
 ## Optional Steps
+
+### Deployment without Keycloak
+
+Add the following environment variable for `gui` (`hobbitproject/hobbit-gui`) service in `docker-compose.yml`:
+```diff
+   gui:
+     environment:
++      - USE_UI_AUTH=false
+```
+
+Remove `keycloak` service section from `docker-compose.yml`.
+
+Note that anyone with access to HOBBIT UI would be able to run experiments with this setup.
 
 ### HOBBIT GitLab credentials
 
