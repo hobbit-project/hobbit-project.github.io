@@ -66,8 +66,18 @@ you can [benchmark a system](/benchmarking.html).
 Add the following environment variable for `gui` (`hobbitproject/hobbit-gui`) service in `docker-compose.yml`:
 ```diff
    gui:
+     # ...
      environment:
 +      - USE_UI_AUTH=false
+```
+
+Add the following mount for `gui` service:
+```diff
+
+   gui:
+     # ...
+     volumes:
++      - ./config/jetty/web-without-ui-auth.xml:/var/lib/jetty/webapps/ROOT/WEB-INF/web.xml
 ```
 
 Remove `keycloak` service section from `docker-compose.yml`.
