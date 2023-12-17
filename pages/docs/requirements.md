@@ -14,9 +14,9 @@ folder: docs
   * [Node.js](https://nodejs.org) v6.9.1
   * [npm](https://www.npmjs.com/) 4.0.2
 * For building and running project components
-  * [Docker](https://www.docker.com/) 17.12.1-ce
-  * [Docker Compose](https://docs.docker.com/compose/) 1.17.0
+  * [Docker](https://www.docker.com/) 19.03.13
+  * [Docker Compose](https://docs.docker.com/compose/) 1.19.0
 
-(Newer versions should work as well - **except for Docker**. 18.x is not supported by the Docker client library used in the platform.)
+(Newer versions should work as well.)
 
 If you have problems installing this version of Docker, you can try to download it manually from [here](https://download.docker.com/linux/ubuntu/dists/xenial/pool/stable/amd64/) as described [here](https://docs.docker.com/engine/install/ubuntu/).

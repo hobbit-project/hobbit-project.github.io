@@ -129,6 +129,10 @@ entries:
               url: /parameters_frontend.html
               output: web, pdf
 
+            - title: GPU configuration
+              url: /gpu.html
+              output: web, pdf
+
         - title: Platform Components
           output: web, pdf
           subfolderitems:
@@ -212,9 +216,9 @@ entries:
     - title: Challenge Overview
       url: /challenge_overview.html
       output: web, pdf
-
-    - title: OAEI 2020
-      url: /OAEI_2020.html
+      
+    - title: OAEI 2023
+      url: /OAEI_2023.html
       output: web, pdf
     
 

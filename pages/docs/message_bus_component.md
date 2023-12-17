@@ -7,6 +7,8 @@ permalink: message_bus_component.html
 folder: docs
 ---
 
+## Overview
+
 This component contains the message bus system.
 There are several messaging systems available from which we chose RabbitMQ.
 Table shows the different queues that are used by the platform components.
@@ -39,3 +41,19 @@ Additional data can be appended as well if necessary.
 4..`h + 3` | String | **Hobbit** ID of the experiment this command belongs to.
 `h + 4` | byte | ID of the command.
 > `h + 4` | byte[] | Additional data (optional)
+
+## Communication scenarios
+
+The platform offers three scenarios for a RabbitMQ-based communication between containers of a single experiment.
+
+1.  A single broker for everything
+
+    The simplest solution is to use a single RabbitMQ broker for the complete communication, i.e., the communication of the platform components and the communication of the components of an experiment. This approach needs the least amount of resources. It can be easily configured by setting the `HOBBIT_RABBIT_EXPERIMENTS_HOST` environmental variable of the platform controller to the name of the platform's RabbitMQ instance. However, in larger setups, it is might be better to separate the platform and experiment communication into two different brokers.
+
+2.  A permanent broker for experiments
+
+    In the second scenario, the platform operates with two brokers – one for the platform internal communication and the second for experiments. To run the platform with this configuration, a second RabbitMQ broker can be added to the docker-compose file of the platform. It's name is used as value for the `HOBBIT_RABBIT_EXPERIMENTS_HOST` environmental variable of the platform controller.
+
+3.  A new broker for each experiment
+
+    It is possible that faulty implementations of benchmarks or systems can spam the RabbitMQ broker with messages and leave it in a bad state which makes it harder to operate correctly for the next experiment. For such cases, the platform offers the creation of a new broker for each experiment. To this end, the image name (and version) of the RabbitMQ broker should be given to the platform controller by defining it's `HOBBIT_RABBIT_IMAGE` environmental variable.

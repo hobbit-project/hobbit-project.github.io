@@ -12,8 +12,8 @@ site_title: HOBBIT Project and Platform Documentation
 company_name: HOBBIT Partners (maintained by InfAI)
 # this appears in the footer
 
-#github_editme_path: hobbit-project/hobbit-project.github.io/tree/master/
-# if you're using Github, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
+# gitlab_editme_path: hobbit-project/hobbit-project.github.io/blob/master/
+# if you're using GitLab, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
 
 #disqus_shortname: idratherbewriting
 # if you're using disqus for comments, add the shortname here. if not, leave this value blank.
@@ -30,6 +30,7 @@ port: 4000
 exclude:
   - .idea/
   - .gitignore
+  - vendor
 # these are the files and directories that jekyll will exclude from the build
 
 feedback_link: https://github.com/hobbit-project/hobbit-project.github.io/issues
@@ -68,7 +69,8 @@ defaults:
       type: "pages"
     values:
       layout: "page"
-      comments: true
+      comments: false
+      # if you don't want to use Commento.io and just hide comments, change true to false wherever you see the comments property
       search: true
       sidebar: main_sidebar
       topnav: topnav
@@ -78,7 +80,6 @@ defaults:
       type: "tooltips"
     values:
       layout: "page"
-      comments: true
       search: true
       tooltip: true
 
@@ -88,7 +89,8 @@ defaults:
       type: "posts"
     values:
       layout: "page"
-      comments: true
+      comments: false
+      # if you don't want to use Commento.io and just hide comments, change true to false wherever you see the comments property
       search: true
       sidebar: main_sidebar
       topnav: topnav
@@ -104,3 +106,6 @@ description: "HOBBIT Project Documentation."
 # needed for sitemap.xml file only
 url: https://hobbit-project.github.io/
 baseurl: ""
+
+
+github: [metadata]
