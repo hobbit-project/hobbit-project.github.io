@@ -22,22 +22,20 @@ docker swarm init
 make create-networks
 ```
 
-1. Set the permissions for the keycloak's database:
-```
-make set-keycloak-permissions
-```
+1. Decide whether user management should be used. Have a look at the section [User Management](user-management).
 
-1. At this point, the optional configurations described below can be applied if necessary. 
-  * [Keycloak dependency can be removed](#deployment-without-keycloak).
-  * The access to benchmarks and systems via [HOBBIT Gitlab credentials](#hobbit-gitlab-credentials) or [local files](enable-local-metadata-files) can be configured.
-  * The [ELK stack](#elk-stack-for-log-access) could be configured and started.
+1. Configure how the platform should access benchmarks and systems. At least one of the two options has to be enabled.
+  * Use the [HOBBIT gitlab instance](#hobbit-gitlab-credentials)
+  * Use [local metadata files](enable-local-metadata-files)
+
+1. The [ELK stack](#elk-stack-for-log-access) can be added as central storage of log messages. This is only suggested for larger deployments.
 
 1. Start the platform:
 ```
 docker-compose up -d 
 ```
 
-1. Initialize the Virtuoso storage (this needs to be done only when the platform is started for the first time):
+1. Initialize the Virtuoso storage. This needs to be done only when the platform is started for the first time. Note that the platform has to be running while the following command is executed:
 ```
 ./run-storage-init.sh
 ```
@@ -46,13 +44,13 @@ That's it!
 
 After the platform startup, the following interfaces will be available for you:
 * [localhost:8080](http://localhost:8080/)
-(GUI, default credentials are: `challenge-organiser`:`hobbit`, `system-provider`:`hobbit` and `guest`:`hobbit`)
+(GUI; if Keycloak is used the default credentials are: `challenge-organiser`:`hobbit`, `system-provider`:`hobbit` and `guest`:`hobbit`)
 * [localhost:8081](http://localhost:8081/)
 (RabbitMQ)
 * [localhost:8890](http://localhost:8890/)
 (Virtuoso, default credentials are: `HobbitPlatform`:`Password` and `dba`:`Password`)
 * [localhost:8181](http://localhost:8181/)
-(Keycloak, admin credentials are: `admin`:`H16obbit`)
+(Keycloak, if deployed; admin credentials are: `admin`:`H16obbit`)
 * [localhost:5601](http://localhost:5601/)
 (Kibana, available if deployed together with the ELK stack)
 
@@ -61,7 +59,20 @@ you can [benchmark a system](/benchmarking.html).
 
 ## Optional Steps
 
-### Deployment without Keycloak
+### User Management
+
+The platform can be started with a local user management. This enforces that users have to authenticate themselfs before starting any experiment. Unauthenticated users (i.e., guests) can only see experiment results. We use Keycloak for the user management. The platform can be run with Keycloak. In that case, it must be configured as described below.
+
+For a simple, local setup, we suggest to run the platform [without Keycloak](#remove-keycloak).
+
+#### Configure Keycloak
+
+Set the permissions for Keycloak's database with
+```
+make set-keycloak-permissions
+```
+
+#### Remove Keycloak
 
 Add the following environment variable for `gui` (`hobbitproject/hobbit-gui`) service in `docker-compose.yml`:
 ```diff

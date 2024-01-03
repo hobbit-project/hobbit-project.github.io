@@ -46,18 +46,19 @@ DATA_GENERATOR_READY_SIGNAL | 3 | The signal sent by the data generator to indic
 TASK_GENERATOR_READY_SIGNAL | 4 | The signal sent by the task generator to indicate that it is ready.
 EVAL_STORAGE_READY_SIGNAL | 5 | The signal sent by the evaluation storage to indicate that it is ready.
 EVAL_MODULE_READY_SIGNAL | 6 | The signal sent by the evaluation module to indicate that it is ready.
-DATA_GENERATOR_START_SIGNAL | 7 | 
-TASK_GENERATOR_START_SIGNAL | 8 | 
-EVAL_MODULE_FINISHED_SIGNAL | 9 | 
-EVAL_STORAGE_TERMINATE | 10 | 
-BENCHMARK_FINISHED_SIGNAL | 11 | 
+DATA_GENERATOR_START_SIGNAL | 7 | The signal sent by the benchmark controller to start the data generators.
+TASK_GENERATOR_START_SIGNAL | 8 | The signal sent by the benchmark controller to start the task generators.
+EVAL_MODULE_FINISHED_SIGNAL | 9 | The signal sent by the evaluation module to inform the benchmark controller that the evaluation is done. The message contains the evaluation results as additional data.
+EVAL_STORAGE_TERMINATE | 10 | The signal that lets the evaluation storage terminate.
+BENCHMARK_FINISHED_SIGNAL | 11 | The signal sent by the benchmark controller to the platform to indicate that the benchmark has been finished. It contains the evaluation result as RDF model.
 DOCKER_CONTAINER_START | 12 | Command used to ask a docker managing component to start a certain container. The command is followed by a String containing the following JSON data: `{<br>"image": "image-to-run",<br> "type": "system|benchmark",<br> "parent":"parent-container-id"<br>}`
 DOCKER_CONTAINER_STOP | 13 | Command used to ask a docker managing component to stop a certain container. The command is followed by a String containing the following JSON data: `{<br>"containerId": "container-to-stop"<br>}`
-DATA_GENERATION_FINISHED | 14 | 
-TASK_GENERATION_FINISHED | 15 | 
-DOCKER_CONTAINER_TERMINATED | 16 | 
-START_BENCHMARK_SIGNAL | 17 | 
-REQUEST_SYSTEM_RESOURCES_USAGE | 18 | 
+DATA_GENERATION_FINISHED | 14 | The signal sent by the benchmark controller to the system to indicate that all data has been generated.
+TASK_GENERATION_FINISHED | 15 | The signal sent by the benchmark controller to the system to indicate that all tasks have been generated and sent.
+DOCKER_CONTAINER_TERMINATED | 16 | The message that is sent if a container terminates. The message contains the container name.
+START_BENCHMARK_SIGNAL | 17 | The message sent by the platform controller to inform the benchmark controller that everything is ready to start the benchmarking.
+REQUEST_SYSTEM_RESOURCES_USAGE | 18 | The message sent by the benchmark to the platform controller to request system resource consumption statistics.
+REPORT_ERROR | 19 | The message with which a system or a benchmark component can [report an error](#error-object). This should only be used for severe errors that should be part of the result model.
 
 For implementing components, it is possible to use other than the predefined command ids. In this case it should be made sure that the used command ids do not overlap with the predefined ids. In general, it is recommended to use one an id of a free range listed in the following table.
 
@@ -67,3 +68,21 @@ For implementing components, it is possible to use other than the predefined com
 | 101 - 122 | free |
 | 123 | reserved for future extensions |
 | 124 - 255 | free |
+
+## Predefined data objects
+
+Some of the predefined commands come with data objects that are described in the following.
+
+### Error object
+
+When reporting an error, the error data is represented as JSON:
+```json
+{ 
+  "containerId": "container reporting the error",
+  "errorType": "IRI of the error type (optional)",
+  "label": "A string that can be used as short label of an error (optional, the error type label will be used as default)"
+  "description": "A string that can be used as a short description of an error (optional, the error type description will be used as default)"
+}
+```
+The [org.hobbit.core.data.ErrorData](https://github.com/hobbit-project/core/blob/master/src/main/java/org/hobbit/core/data/ErrorData.java) class can be used to represent this data as Java object.
+
