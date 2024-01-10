@@ -212,6 +212,14 @@ This can be achieved by defining a parameter only as `hobbit:FeatureParameter` a
 ```
 In our example, the benchmark would generate a graph for benchmarking a system. After the generation and the evaluation of the systems results, the benchmark could add the amount of blank nodes that have been created to the result. Note that this is not a KPI since it is not bound to the performance of the system.
 
+#### Parameter types
+
+There are three different types of parameters. A single parameter can have more than one of these types.
+
+* **hobbit:ConfigurableParameter**: These are parameters that should be configurable, i.e., the user will be able to set them when configuring an experiment.
+* **hobbit:FeatureParameter**: These parameters might be interesting for a later analysis.
+* **hobbit:ForwardedParameter**: These parameters are configurable but will be given to the system.
+
 ### The complete example
 
 In the following, you can find the complete example described in the section above.
