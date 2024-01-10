@@ -79,9 +79,9 @@ When reporting an error, the error data is represented as JSON:
 ```json
 { 
   "containerId": "container reporting the error",
-  "errorType": "IRI of the error type (optional)",
-  "label": "A string that can be used as short label of an error (optional, the error type label will be used as default)"
-  "description": "A string that can be used as a short description of an error (optional, the error type description will be used as default)"
+  "errorType": "IRI of the error type",
+  "label": "A string that can be used as short label of an error"
+  "description": "A string that can be used as a short description of an error"
 }
 ```
 The [org.hobbit.core.data.ErrorData](https://github.com/hobbit-project/core/blob/master/src/main/java/org/hobbit/core/data/ErrorData.java) class can be used to represent this data as Java object.
