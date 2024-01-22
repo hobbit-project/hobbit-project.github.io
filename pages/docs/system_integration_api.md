@@ -22,11 +22,11 @@ There is one main container that will represent the complete system (from the pl
 
 A benchmarked system might comprise more than one container. However, it needs to have exactly __one main container__. This container will be created by the platform controller including the following environmental variables:
 
-|- Variable name -|- Meaning -|
+| Variable name | Meaning |
 |---|---|
 | `HOBBIT_RABBIT_HOST` | The DNS name of the RabbitMQ instance which is used for communicating to the platform controller, e.g, via the [command queue](command_queue). |
 | `HOBBIT_SESSION_ID` | The ID of the current experiment. It is necessary for the usage of the [command queue](command_queue). |
-| `SYSTEM_PARAMETERS_MODEL_KEY` | The system instance model from the meta data file serialized as `JSON-LD` string. |
+| `SYSTEM_PARAMETERS_MODEL` | The system instance model from the meta data file serialized as `JSON-LD` string. |
 
 After the container started, the platform assumes that it will connect itself to the command queue.
 

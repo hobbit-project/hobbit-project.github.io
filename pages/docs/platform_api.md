@@ -7,11 +7,122 @@ permalink: platform_api.html
 folder: docs
 ---
 
-The platform offers a general API for the benchmark and the benchmarked system. Using this API, a component can request the creation of additional components, e.g., a benchmark controller can request the creation of benchmark related components or a benchmarked system can request the creation of additional containers needed by the system. Additionally, created containers can be stopped and the platform controller will send messages regarding the termination of created containers.
+The platform offers two general APIs. An inner and an outer API. The inner API can be used by the benchmark and the benchmark system and offers basic functionalities for them. The outer API summarizes the functions that can be used to integrate the platform into automated processes.
+
+## Outer API
+
+The outer API is a collection of APIs that go beyond the usage of the graphical user interface of the platform's or Kibana's frontend (the latter is only available, if the platform is deployed with ). These APIs might be interesting to automate the benchmarking of systems and are:
+* The triple store's SPARQL API
+* The platform's HTTP API
+
+The triple store offers a SPARQL endpoint that can be used to access the platform's data. When using the [quick guide](https://hobbit-project.github.io/quick_guide.html) the store's SPARQL endpoint is available at `http://localhost:8890/sparql` for reading data. The endpoint at `http://localhost:8890/sparql-auth` can also be used to alter the data but needs authentication with the credentials that have been defined during the setup of the platform.
+
+The platform's HTTP API is the HTTP service to which HTTP requests of the graphical user interface are sent. It comprises several methods that might be intersting to integrate the HOBBIT platform into an automated process. In the following, we assume that the platform is deployed as described in the [quick guide](https://hobbit-project.github.io/quick_guide.html), i.e., at `http://localhost:8080`. Note that we will skip the authentication that might be necessary in the following.
+
+### Starting an experiment
+
+The HTTP API can be used to request the run of an experiment avoiding the user interface. Such a request should be a POST request like it is sent by the following `curl` command (you can use any other HTTP client):
+```
+curl --data "@request.txt" -H "Content-Type: application/json" http://localhost:8080/rest/benchmarks
+```
+It should be noted that we assume that the platform runs on `localhost` and that it does not use a user management. For the latter, the command would have to include the user authentication. The command sends the following JSON that it loads from a `request.txt` file:
+```json
+{
+  "benchmark":"http://w3id.org/dice-research/bbdc/ontology#Benchmark",
+  "system":"http://w3id.org/dice-research/bbdc/ontology#MLFlowSystem",
+  "configurationParams":[
+    {
+      "id":"http://w3id.org/dice-research/bbdc/ontology#modelUrl",
+      "name":"Model URL",
+      "description":"The URL that can be used to access the ML-Flow model that should be benchmarked.",
+      "datatype":"xsd:string",
+      "value":"http://example.org/some-model"
+    }],
+  "benchmarkName":"BBDC",
+  "systemName":"System 1"
+}
+```
+The request contains the benchmark and system IRIs, the configuration of the benchmark, i.e., a value for each configuration parameter that the benchmark defines, as well as the names of the benchmark and system.
+
+The platform will answer with the following JSON:
+```
+{
+  "id":"1704911859897",
+  "timestamp":"2024-01-10T18:37:39.915Z"
+}
+```
+The ID is very important, since it is used together with the namespace `http://w3id.org/hobbit/experiments#` to form the experiment's IRI.
+
+The request above can be additionally extended by adding `maxHardwareConstraints`:
+```json
+{
+  "benchmark":"http://w3id.org/dice-research/bbdc/ontology#Benchmark",
+  "system":"http://w3id.org/dice-research/bbdc/ontology#MLFlowSystem",
+  "configurationParams":[
+    {
+      "id":"http://w3id.org/dice-research/bbdc/ontology#modelUrl",
+      "name":"Model URL",
+      "description":"The URL that can be used to access the ML-Flow model that should be benchmarked.",
+      "datatype":"xsd:string",
+      "value":"http://example.org/some-model"
+    }],
+  "benchmarkName":"BBDC",
+  "systemName":"System 1",
+  "maxHardwareConstraints":
+  {
+    "iri":"http://example.org/hardware/simple-raspberry-pi",
+    "label":"Raspberry Pi",
+    "cpuCount":"2",
+    "memory":"2147483648"
+  }
+}
+```
+The hardware constraint has the same structure as the [HardwareConstraintBean](https://github.com/hobbit-project/platform/blob/develop/hobbit-gui/gui-serverbackend/src/main/java/de/usu/research/hobbit/gui/rest/beans/HardwareConstraintBean.java) in Java. It comprises an IRI, a human readable label and two values, which can be used to restrict the hardware for the system.
+1. The `cpuCount` restricts the usage of CPUs to the given number.
+2. The `memory` value restricts the RAM of the system's container to the given number of bytes.
+
+Note that:
+1. If the limitations exceed the resources available to the hardware nodes, the system will be limited by the available hardware. The platform won't check this.
+2. The limitation only holds for the first container of the system. Systems that comprise several containers will have less restrictions!
+
+### Request experiment status
+
+A call to `http://localhost:8080/rest/status` returns the status of the platform's experiment queue as JSON object. The following example shows one running experiment and a second experiment which waits in the queue.
+```json
+{
+  "queuedExperiments":[
+    {
+      "experimentId":"1699551319764",
+      "benchmarkUri":"http://w3id.org/dice-research/bbdc/ontology#Benchmark",
+      "benchmarkName":"BBDC",
+      "systemUri":"http://w3id.org/dice-research/bbdc/ontology#ExampleSystem",
+      "systemName":"System 1",
+      "dateOfExecution":0,
+      "canBeCanceled":true
+    }
+],
+  "runningExperiment":{
+    "experimentId":"1699551319764",
+    "benchmarkUri":"http://w3id.org/dice-research/bbdc/ontology#Benchmark",
+    "benchmarkName":"BBDC",
+    "systemUri":"http://w3id.org/dice-research/bbdc/ontology#ExampleSystem",
+    "systemName":"System 1",
+    "dateOfExecution":0,
+    "canBeCanceled":true,
+    "startTimestamp":"2023-11-09T17:35:28Z",
+    "latestDateToFinish":"2023-11-09T17:55:42Z",
+    "status":"Benchmark and system are initializing."
+  }
+}
+```
+
+## Inner API
+
+The inner API can be used by the benchmark and the benchmarked system. Using this API, a component can request the creation of additional components, e.g., a benchmark controller can request the creation of benchmark related components or a benchmarked system can request the creation of additional containers needed by the system. Additionally, created containers can be stopped and the platform controller will send messages regarding the termination of created containers.
 
 For the communication with the platform controller, the [command queue](https://hobbit-project.github.io/command_queue.html) is used.
 
-## Environment variables
+### Environment variables
 
 During the creation of docker containers, environment variables can be defined. The following variables are defined by the platform controller:
 * `HOBBIT_SESSION_ID` defines the session id of the current experiment the created component is a part of.
@@ -22,7 +133,7 @@ If an abstract component class from the `hobbit.core` library is used, `HOBBIT_R
 
 **Note** that variables with a hyphen in their name, e.g., `may-own-variable`, seem to cause problems in Dockers HTTP API. The container will be created but the variable will not be correctly set.
 
-## Creating a container
+### Creating a container
 
 Requesting the creation of a container is done by sending the [`Commands.DOCKER_CONTAINER_START`](https://hobbit-project.github.io/command_queue.html#predefined-command-ids) id (=`0x0C`) on the command queue, followed by a JSON string containing the necessary information. Following the structure of [command queue messages](https://hobbit-project.github.io/command_queue.html#structure-of-a-message) such a request looks like the following:
 
@@ -53,7 +164,7 @@ The Hobbit platform organizes the containers as a tree. The container that reque
 
 All created components are part of the same network. In this network, the container names serve as the host names of the containers and no port forwarding is necessary.
 
-## Stopping and removing a container
+### Stopping and removing a container
 
 Stopping a container can be done by sending a message to the [command queue](command-queue) containing the `Commands.DOCKER_CONTAINER_STOP` id (=`0x0D`) followed by a `UTF-8` encoded String containing the following JSON data:
 ```json
@@ -63,7 +174,7 @@ Stopping a container can be done by sending a message to the [command queue](com
 ```
 where `container-to-stop` should be replaced by the container name that has been received during the creation of the container. Note that this message is won't have a direct response from the platform controller but an "indirect" response as described in the next sub section.
 
-## Container termination
+### Container termination
 
 When a container terminates, the platform controller sends a broadcast message to the [command queue](command-queue) containing the container name and its exit code.
 
