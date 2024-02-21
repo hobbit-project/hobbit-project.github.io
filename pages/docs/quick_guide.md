@@ -26,7 +26,7 @@ make create-networks
 
 1. Configure how the platform should access benchmarks and systems. At least one of the two options has to be enabled.
   * Use the [HOBBIT gitlab instance](#hobbit-gitlab-credentials)
-  * Use [local metadata files](enable-local-metadata-files)
+  * Use [local metadata files](#enable-local-metadata-files)
 
 1. The [ELK stack](#elk-stack-for-log-access) can be added as central storage of log messages. This is only suggested for larger deployments.
 
