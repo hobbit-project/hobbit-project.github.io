@@ -26,8 +26,6 @@ See [our YouTube channel with tutorials](https://www.youtube.com/channel/UC3eWNV
 
 ### Useful links
 
-Project webpage: [project-hobbit.eu](http://project-hobbit.eu/).
-
 Master instance of the HOBBIT platform, where public experiments and challenges take place:
 [master.project-hobbit.eu](https://master.project-hobbit.eu/).
 
