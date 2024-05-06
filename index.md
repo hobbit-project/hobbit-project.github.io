@@ -6,7 +6,13 @@ toc: false
 permalink: index.html
 ---
 
-HOBBIT is a distributed benchmarking platform designed for the unified execution of benchmarks for Linked Data solutions. The Hobbit benchmarking platform is based on the [FAIR principles](https://en.wikipedia.org/wiki/FAIR_data) and is the first benchmarking platform able to scale up to benchmarking real-world scenarios for Big Linked Data solutions.
+<img align="right" style="max-width: 50%;" src="/images/Components-diagram.svg" alt="component diagram">
+
+HOBBIT is a distributed benchmarking platform designed for the unified execution of benchmarks for Linked Data solutions. The Hobbit benchmarking platform is based on the [FAIR data principles](https://www.go-fair.org/fair-principles/) and is the first benchmarking platform able to scale up to benchmarking real-world scenarios for Big Linked Data solutions.
+
+- Benchmark your systems against one of HOBBIT benchmarks and compare it with others on our or your own cluster, or locally.
+- Implement and publish your own benchmarks.
+- Take part of periodically organized challenges.
 
 ### Quick start
 
