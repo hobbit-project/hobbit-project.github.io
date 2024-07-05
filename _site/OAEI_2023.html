@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" HOBBIT Documentation">
+<title>OAEI 2023 | HOBBIT Project and Platform Documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="platform" href="http://0.0.0.0:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-tachometer fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> HOBBIT Documentation</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="https://github.com/hobbit-project/hobbit-project.github.io/issues">Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="OAEI 2023">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  
+      
+  
+  <a href="/index.html">Introduction</a>
+  
+  
+      
+  
+  <a href="/overview.html">Platform Overview</a>
+  
+  
+      
+  
+  
+  <li>
+      <a title="Tutorials" href="#">Tutorials</a>
+      <ul>
+          
+          
+          
+          <li><a title="Quick Guide" href="quick_guide.html">Quick Guide</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Deployment with Exoframe" href="exoframe.html">Deployment with Exoframe</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="master.project-hobbit.eu" href="master.html">master.project-hobbit.eu</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Benchmarking a System" href="benchmarking.html">Benchmarking a System</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Browsing Results" href="browsing_results.html">Browsing Results</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Taking Part in Challenge" href="challenge_participation.html">Taking Part in Challenge</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Organizing a Challenge" href="challenge_organization.html">Organizing a Challenge</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="How to Integrate a System" href="system_integration.html">How to Integrate a System</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="How to Integrate a Benchmark" href="benchmark_integration.html">How to Integrate a Benchmark</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using Java SDK to develop a Benchmark" href="java_sdk.html">Using Java SDK to develop a Benchmark</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Data License" href="data_license">Data License</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  <li>
+      <a title="Reference Manual" href="#">Reference Manual</a>
+      <ul>
+          
+          
+          
+          <li><a title="Workflow of an Experiment" href="experiment_workflow.html">Workflow of an Experiment</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Platform Deployment" href="#">Platform Deployment</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Requirements" href="requirements.html">Requirements</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="On a Single Machine" href="platform_deployment_single_machine.html">On a Single Machine</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="On a Cluster" href="platform_deployment_cluster.html">On a Cluster</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Troubleshooting" href="troubleshooting.html">Troubleshooting</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Optional platform features" href="optional_features.html">Optional platform features</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Env. Variables" href="parameters_env.html">Env. Variables</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Platform Config File" href="parameters_config.html">Platform Config File</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Volumes" href="parameters_volumes.html">Volumes</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="storage-init.sh" href="parameters_storage_init.html">storage-init.sh</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Frontend configuration" href="parameters_frontend.html">Frontend configuration</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="GPU configuration" href="gpu.html">GPU configuration</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Platform Components" href="#">Platform Components</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Platform Controller" href="platform_controller_component.html">Platform Controller</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Storage" href="storage_component.html">Storage</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Frontend" href="frontend_component.html">Frontend</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="User Management" href="user_management_component.html">User Management</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Repository" href="repository_component.html">Repository</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Analysis" href="analysis_component.html">Analysis</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Message Bus" href="message_bus_component.html">Message Bus</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Logging" href="logging_component.html">Logging</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Resource Monitoring" href="monitoring_component.html">Resource Monitoring</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Internal Challenge Workflow" href="internal_challenge_workflow.html">Internal Challenge Workflow</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Core Library" href="#">Core Library</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Java Components" href="java_components.html">Java Components</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Command Queue" href="command_queue.html">Command Queue</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Transferring Data" href="transferring_data.html">Transferring Data</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a title="General Platform API" href="platform_api.html">General Platform API</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Integrating a System" href="system_integration_api.html">Integrating a System</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Integrating a Benchmark" href="benchmark_integration_api.html">Integrating a Benchmark</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="FAQ" href="faq.html">FAQ</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  <li>
+      <a title="Challenges" href="#">Challenges</a>
+      <ul>
+          
+          
+          
+          <li><a title="Challenge Overview" href="challenge_overview.html">Challenge Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li class="active"><a title="OAEI 2023" href="OAEI_2023.html">OAEI 2023</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">OAEI 2023</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+
+
+    
+
+   <h2 id="instance-matching-or-link-discovery">Instance Matching or Link Discovery</h2>
+<p>The number of datasets published in the Web of Data as part of the Linked Data Cloud is constantly increasing. The Linked Data paradigm is based on the unconstrained publication of information by different publishers, and the interlinking of Web resources across knowledge bases. In most cases, the cross-dataset links are not explicit in the dataset and must be automatically determined using Instance Matching (IM) and Link Discovery tools amongst others. The large variety of techniques requires their comparative evaluation to determine which one is best suited for a given context. Performing such an assessment generally requires well-defined and widely accepted benchmarks to determine the weak and strong points of the proposed techniques and/or tools.</p>
+
+<p>A number of real and synthetic benchmarks that address diﬀerent data linking challenges have been proposed for evaluating the performance of such systems. So far, only a limited number of link discovery benchmarks target the problem of linking geo-spatial entities. However, some of the largest knowledge bases on the Linked Open Data Web are geospatial knowledge bases (e.g., LinkedGeoData with more than 30 billion triples). Linking spatial resources requires techniques that diﬀer from the classical mostly string-based approaches. In particular, considering the topology of the spatial resources and the topological relations between them is of central importance to systems driven by spatial data.</p>
+
+<p>We believe that due to the large amount of available geospatial datasets employed in Linked Data and in several domains, it is critical that benchmarks for geospatial link discovery are developed.</p>
+
+<p>The proposed Task  entitled “Instance Matching or Link Discovery Task” is presented at the OAEI OM 2023 Workshop at ISWC 2023. OM workshop conducts an extensive and rigorous evaluation of ontology matching and instance matching (link discovery) approaches through the OAEI (Ontology Alignment Evaluation Initiative) 2023 campaign.</p>
+
+<h2 id="tasks-and-training-data">Tasks and Training Data</h2>
+<p>The aim of the Task is to test the performance of Link Discovery tools that implement string-based as well as topological approaches for identifying matching instances and spatial entities. The different frameworks will be evaluated for both accuracy (precision, recall and f-measure) and time performance.</p>
+
+<h3 id="spimbench">SPIMBENCH</h3>
+
+<p>The goal of the SPIMBENCH task is to determine when two instances describe the same Creative Work. A dataset is composed of a Tbox (contains the ontology and the instances) and corresponding Abox (contains only the instances). The datasets share almost the same ontology (with some difference in the properties’ level, due to the structure-based transformations). What we expect from participants. Participants are requested to match instances in the source dataset (Tbox1) against the instances of the target dataset (Tbox2). The task goal is to produce a set of mappings between the pairs of matching instances that are found to refer to the same real-world entity. An instance in the source (Tbox1) dataset can have none or one matching counterparts in the target dataset (Tbox2). We ask the participants to map only instances of Creative Works (http://www.bbc.co.uk/ontologies/creativework/NewsItem, http://www.bbc.co.uk/ontologies/creativework/BlogPost and http://www.bbc.co.uk/ontologies/creativework/Programme) and not the instances of the other classes.</p>
+
+<p>You can download training data here: <a href="http://users.ics.forth.gr/~jsaveta/.index.php?dir=OAEI_IM_SPIMBENCH">SPIMBENCH training data</a></p>
+
+<h3 id="spatial">Spatial</h3>
+
+<p>We use the TomTom and Spaten datasets in order to create the appropriate benchmarks.</p>
+
+<p>TomTom provides a Synthetic Trace Generator developed in the context of the HOBBIT Project, that facilitates the creation of an arbitrary volume of data from statistical descriptions of vehicle traffic. More specifically, it generates traces, with a trace being a list of (longitude, latitude) pairs recorded by one device (phone, car, etc.) throughout one day. TomTom was the only data generator in the first version of SPgen.
+Spaten is an open-source configurable spatio-temporal and textual dataset generator, that can produce large volumes of data based on realistic user behavior. Spaten extracts GPS traces from realistic routes utilizing the Google Maps API, and combines them with real POIs and relevant user comments crawled from TripAdvisor. Spaten publicly offers  GB-size datasets with millions of check-ins and GPS traces.
+This version of the challenge will comprise the Spatial task that measures how well the systems can identify DE-9IM (Dimensionally Extended nine-Intersection Model) topological relations [2]. The supported spatial relations are the following: Equals, Disjoint, Touches, Contains/Within, Covers/CoveredBy, Intersects, Crosses, Overlaps  and the  traces are represented in Well-known text (WKT) format. For each relation, a different pair of source and target dataset will be given to the participants.
+The Spatial Benchmark generator (Task 2) can be used to test the performance of systems that deal with topological relations proposed in the state of the art DE-9IM (Dimensionally Extended nine-Intersection Model) model [3].
+This benchmark generator implements all topological relations of DE-9IM between trajectories in the two dimensional space. To the best of our knowledge such a generic benchmark, that takes as input trajectories and checks the performance of linking systems for spatial data does not exist. For the design, we focused on (a) on the correct implementation of all the topological relations of the DE-9IM topological model and (b) on producing large datasets large enough to stress the systems under test. The supported relations are: Equals, Disjoint, Touches, Contains/Within, Covers/CoveredBy, Intersects, Crosses, Overlaps.</p>
+
+<p>Spatial task consists of two subtasks:</p>
+
+<ul>
+  <li>
+    <p>Task 2.1 : TomTom dataset</p>
+
+    <ul>
+      <li>
+        <p>2.1.1 : Match LineStrings to LineStrings</p>
+      </li>
+      <li>
+        <p>2.1.2 : Match LineStrings to Polygons</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Task 2.2 : Spaten dataset</p>
+
+    <ul>
+      <li>
+        <p>2.2.1 : Match LineStrings to LineStrings</p>
+      </li>
+      <li>
+        <p>2.2.2 : Match LineStrings to Polygons</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>The namespaces of the datasets are:</p>
+<ul>
+  <li>TomTom http://www.tomtom.com/ontologies/traces# for the Traces (LineStrings) and the  namespace http://www.tomtom.com/ontologies/regions# for the Regions (Polygons)</li>
+  <li>Spaten http://www.spaten.com/ontologies/traces# for the Traces (LineStrings) and the  namespace http://www.spaten.com/ontologies/regions# for the Regions (Polygons)</li>
+</ul>
+
+<p>You can download training data here: <a href="http://users.ics.forth.gr/~jsaveta/.index.php?dir=OAEI_HOBBIT_LinkDiscovery">Spatial training data</a></p>
+
+<h2 id="implementation">Implementation</h2>
+<p>In order to prepare your system to be benchmarked within the HOBBIT platform you must follow the instructions provided <a href="https://hobbit-project.github.io/system_integration.html">here</a>.</p>
+
+<h3 id="spimbench-1">SPIMBENCH</h3>
+<p>An example of LIMES [3] as system adapter for SPIMBENCH can be found <a href="https://github.com/hobbit-project/LinkingBenchmark/blob/master/src/main/java/org/hobbit/spatiotemporalbenchmark/platformConnection/systems/LinkingSystemAdapter.java ">here</a>.
+The system.ttl for the system adapter can be found <a href="https://git.project-hobbit.eu/jsaveta1/linkingsystemadapter/blob/master/system.ttl"> here</a>.</p>
+
+<p>You can also find an exaple of LogMap wrapping for HOBBIT <a href="https://gitlab.com/ernesto.jimenez.ruiz/logmap-hobbit">here</a> .</p>
+
+<p>The URI of the benchmark API, the system implements is <strong>hobbit:implementsAPI	bench:LinkingAPI;</strong></p>
+
+<h3 id="spatial-1">Spatial</h3>
+<p>An example of LIMES [3] as system adapter for Spatial can be found <a href="https://github.com/hobbit-project/SpatialBenchmark/blob/master/src/main/java/org/hobbit/spatialbenchmark/platformConnection/systems/LimesSystemAdapter.java">here</a>.
+The system.ttl for the system adapter can be found <a href="https://git.project-hobbit.eu/jsaveta1/limessystemadapter/blob/master/system.ttl">here</a>.</p>
+
+<p>The URI of the benchmark API, the system implements is <strong>hobbit:implementsAPI	bench:SpatialAPI;</strong></p>
+
+<h2 id="evaluation">Evaluation</h2>
+<p>The performance metric(s) in a benchmark determine the effectiveness and efficiency of the systems and tools. In SPIMBENCH and Spatial benchmark, we focus on the quality of the output in terms of standard metrics such as precision, recall and f-measure. We also aim to quantify the performance (in ms) of the systems measuring the time needed to return all the results.</p>
+
+<h2 id="challenge-coordinators">Challenge coordinators</h2>
+<p>TBA</p>
+
+<h2 id="evaluation-platform-chairs">Evaluation platform chairs</h2>
+<p>TBA</p>
+
+<h2 id="dissemination-chairs">Dissemination chairs</h2>
+<p>TBA</p>
+
+<h2 id="proceedings-chairs">Proceedings chairs</h2>
+<p>TBA</p>
+
+<h2 id="publicity-chairs">Publicity chairs</h2>
+<p>TBA</p>
+
+<h2 id="contact">Contact</h2>
+<p>For more information send an e-mail to: Tzanina Saveta (jsaveta [at] ics [.] forth [.] gr) and Irini Fundulaki (fundul [at] ics [.] forth [.] gr).</p>
+
+<h2 id="references">References</h2>
+<p>[1] Saveta, E. Daskalaki, G. Flouris, I. Fundulaki, and A. Ngonga-Ngomo. LANCE: Piercing to the Heart of Instance Matching Tools. In ISWC, 2015.</p>
+
+<p>[2] Christian Strobl. Encyclopedia of GIS , chapter Dimensionally Extended Nine-Intersection Model (DE-9IM), pages 240245. Springer, 2008.</p>
+
+<p>[3] Axel-Cyrille Ngonga Ngomo. On link discovery using a hybrid approach. Journal on Data Semantics, 1(4):203–217, 2012.</p>
+
+
+    <div class="tags">
+        
+    </div>
+
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2024 HOBBIT Partners (maintained by InfAI). All rights reserved. <br />
+ Site last generated: Jul 4, 2024 <br />
+<p><img src="images/Hobbit_Logo_2015_rgb_cropped2.png" alt="HOBBIT logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+</html>

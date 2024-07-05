@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" HOBBIT Documentation">
+    <title>OKE2017 Challenge - ESWC 2017</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="platform" href="http://0.0.0.0:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-tachometer fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> HOBBIT Documentation</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="https://github.com/hobbit-project/hobbit-project.github.io/issues">Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="OAEI 2023">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  
+      
+  
+  <a href="/index.html">Introduction</a>
+  
+  
+      
+  
+  <a href="/overview.html">Platform Overview</a>
+  
+  
+      
+  
+  
+  <li>
+      <a title="Tutorials" href="#">Tutorials</a>
+      <ul>
+          
+          
+          
+          <li><a title="Quick Guide" href="quick_guide.html">Quick Guide</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Deployment with Exoframe" href="exoframe.html">Deployment with Exoframe</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="master.project-hobbit.eu" href="master.html">master.project-hobbit.eu</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Benchmarking a System" href="benchmarking.html">Benchmarking a System</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Browsing Results" href="browsing_results.html">Browsing Results</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Taking Part in Challenge" href="challenge_participation.html">Taking Part in Challenge</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Organizing a Challenge" href="challenge_organization.html">Organizing a Challenge</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="How to Integrate a System" href="system_integration.html">How to Integrate a System</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="How to Integrate a Benchmark" href="benchmark_integration.html">How to Integrate a Benchmark</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using Java SDK to develop a Benchmark" href="java_sdk.html">Using Java SDK to develop a Benchmark</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Data License" href="data_license">Data License</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  <li>
+      <a title="Reference Manual" href="#">Reference Manual</a>
+      <ul>
+          
+          
+          
+          <li><a title="Workflow of an Experiment" href="experiment_workflow.html">Workflow of an Experiment</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Platform Deployment" href="#">Platform Deployment</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Requirements" href="requirements.html">Requirements</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="On a Single Machine" href="platform_deployment_single_machine.html">On a Single Machine</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="On a Cluster" href="platform_deployment_cluster.html">On a Cluster</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Troubleshooting" href="troubleshooting.html">Troubleshooting</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Optional platform features" href="optional_features.html">Optional platform features</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Env. Variables" href="parameters_env.html">Env. Variables</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Platform Config File" href="parameters_config.html">Platform Config File</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Volumes" href="parameters_volumes.html">Volumes</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="storage-init.sh" href="parameters_storage_init.html">storage-init.sh</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Frontend configuration" href="parameters_frontend.html">Frontend configuration</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="GPU configuration" href="gpu.html">GPU configuration</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Platform Components" href="#">Platform Components</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Platform Controller" href="platform_controller_component.html">Platform Controller</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Storage" href="storage_component.html">Storage</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Frontend" href="frontend_component.html">Frontend</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="User Management" href="user_management_component.html">User Management</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Repository" href="repository_component.html">Repository</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Analysis" href="analysis_component.html">Analysis</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Message Bus" href="message_bus_component.html">Message Bus</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Logging" href="logging_component.html">Logging</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Resource Monitoring" href="monitoring_component.html">Resource Monitoring</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Internal Challenge Workflow" href="internal_challenge_workflow.html">Internal Challenge Workflow</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Core Library" href="#">Core Library</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Java Components" href="java_components.html">Java Components</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Command Queue" href="command_queue.html">Command Queue</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Transferring Data" href="transferring_data.html">Transferring Data</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a title="General Platform API" href="platform_api.html">General Platform API</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Integrating a System" href="system_integration_api.html">Integrating a System</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Integrating a Benchmark" href="benchmark_integration_api.html">Integrating a Benchmark</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="FAQ" href="faq.html">FAQ</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  <li>
+      <a title="Challenges" href="#">Challenges</a>
+      <ul>
+          
+          
+          
+          <li><a title="Challenge Overview" href="challenge_overview.html">Challenge Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li class="active"><a title="OAEI 2023" href="OAEI_2023.html">OAEI 2023</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-content">
+                <header>
+                    <h1>OKE 2017 - Open Knowledge Extraction Challenge</h1>
+                    <p>URL: <a href="https://project-hobbit.eu/challenges/oke2017-challenge-eswc-2017/">OKE2017 Challenge</a></p>
+                    <p>Email: <a href="mailto:OKE-contact@googlegroups.com">OKE-contact@googlegroups.com</a></p>
+                    <p>May 28th to June 1st 2017, Portoroz, Slovenia</p>
+                    <p>in conjunction with the 14th European Semantic Web Conference (ESWC 2017, <a
+                            href="http://2017.eswc-conferences.org">http://2017.eswc-conferences.org</a>)</p>
+                </header>
+
+                <section>
+                    <h2>Challenge Motivation</h2>
+                    <p>The Open Knowledge Extraction Challenge invites researchers and practitioners from academia as well as
+                        industry to compete to the aim of pushing further the state of the art of knowledge extraction for the
+                        Semantic Web. The Open Knowledge Extraction Challenge is accepted at ESWC 2017.</p>
+                    <p>Most of the Web content consists of natural language text, e.g., websites, news, blogs, micro-posts, etc.,
+                        hence a main challenge is to extract as much relevant knowledge as possible from this content, and publish
+                        it in the form of Semantic Web triples. There is huge work on knowledge extraction (KE) and knowledge
+                        discovery contributing to address this problem. In fact, results of knowledge extraction systems are usually
+                        evaluated against tasks that do not focus on specific Semantic Web goals. For example, tasks such as named
+                        entity recognition, named entity disambiguation and relation extraction are certainly of importance for the
+                        SW, but in most cases such tasks are designed without considering the output design and formalization in
+                        the form of Linked Data and OWL ontologies. This makes results of existing methods often not directly
+                        reusable for populating the SW, until a translation from linguistic semantics to formal semantics is
+                        performed.</p>
+                </section>
+
+                <section>
+                    <h2>Challenge Overview</h2>
+                    <p>The goal of the Open Knowledge Extraction Challenge is to test the performance of Knowledge Extraction
+                        Systems with respect to the Semantic Web. The OKE challenge has the ambition to provide a reference
+                        framework for research on “Knowledge Extraction from text for the Semantic Web” by redefining a number of
+                        tasks (typically from information and knowledge extraction) by taking into account specific Semantic Web
+                        requirements.</p>
+                </section>
+
+                <section>
+                    <h2>Q&A</h2>
+                    <p>For more information check out the forum google groups <a href="https://groups.google.com/forum/#!forum/oke2017">oke2017</a> or send an e-mail to: <a
+                            href="mailto:OKE-contact@googlegroups.com">OKE-contact@googlegroups.com</a></p>
+                </section>
+
+                <section>
+                    <h2>Tasks and Training Data</h2>
+                    <ul>
+                        <li>Task 1: Focused NE Identification and Linking</li>
+                        <li>Task 2: Broader NE Identification and Linking</li>
+                        <li>Task 3: Focused Musical NE Recognition and Linking</li>
+                        <li>Task 4: Knowledge Extraction</li>
+                    </ul>
+                    <p>Each participant must provide a system that solves at least one of the tasks and a paper that describes
+                        this system. Both requirements are described in the following.</p>
+                    <p>Note that if you have questions regarding the submission of the paper or the system feel free to write a mail
+                        to <a href="mailto:OKE-contact@googlegroups.com">OKE-contact@googlegroups.com</a>.</p>
+                </section>
+
+                <section>
+                    <h2>Registration and Submission</h2>
+                    <p>All challenge papers should be exactly five (5) pages in length in PDF file format and written in English. In
+                        order to prepare their manuscripts, authors should follow Springer’s Lecture Notes in Computer Science
+                        (LNCS) style. For details and templates see <a href="https://www.springer.com/gp/computer-science/lncs/conference-proceedings-guidelines">Springer’s Author Instructions</a>.</p>
+                    <p>Paper submissions will be handled electronically via the EasyChair conference management system, available
+                        at the following address: <a href="https://easychair.org/conferences/?conf=oke2017">EasyChair - OKE 2017</a>.
+                    </p>
+                    <p>Papers must be submitted no later than Monday March 20th, 2017, 23:59 Hawaii Time.</p>
+                    <p>NOTE: Eligible to submit papers are only authors participating in the challenge.</p>
+                </section>
+
+                <section>
+                    <h2>Technical requirements for participation</h2>
+                    <p>Each participant must provide a system as Docker image. This image has to be uploaded to the HOBBIT Gitlab
+                        (it is possible to use a private repository, i.e., the system will not be visible for other people).</p>
+                    <p>Proceedings will be published by Springer in LNCS volume.</p>
+                    <p>After the conference, challenge participants will be able to provide a detailed description of their system
+                        and evaluation results in a longer version of their paper (up to 15 pages). This longer paper will be
+                        included in the challenge proceedings.</p>
+                </section>
+
+                <section>
+                    <h2>CALL FOR PAPERS</h2>
+                    <p>————————————————————————</p>
+                    <p>OKE 2017 – Open Knowledge Extraction Challenge</p>
+                    <p>————————————————————————</p>
+                    <p>URL: <a href="https://project-hobbit.eu/challenges/oke2017-challenge-eswc-2017/">OKE2017 Challenge</a></p>
+                    <p>Email: <a href="mailto:OKE-contact@googlegroups.com">OKE-contact@googlegroups.com</a></p>
+                    <p>May 28th to June 1st 2017, Portoroz, Slovenia</p>
+                    <p>in conjunction with the 14th European Semantic Web Conference (ESWC 2017, <a
+                            href="http://2017.eswc-conferences.org">http://2017.eswc-conferences.org</a>)</p>
+                    <p>————————————————————————————–</p>
+                    <p>The aim of this challenge is to test the performance of knowledge extraction systems in
+                        aspects that are relevant for the Semantic Web. These include precision, recall and
+                        runtime. The challenge will test the systems against data derived from real datasets.
+                        We herewith invite system developers to participate in the aforementioned tasks.
+                        The system developers are invited to write papers (5 page documents) presenting their results on the training data
+                        (see important dates below). To ensure that the system results are comparable, we will
+                        provide the HOBBIT benchmarking platform for the generation of the final results to be
+                        included into the system publications. A specification of the hardware on which the
+                        benchmarks will be ran will be released in due course.</p>
+                    <p>This year, the challenge comprises the following tasks:</p>
+                    <ul>
+                        <li>Task 1: Focused Named Entity Identification and Linking</li>
+                        <li>Task 2: Broader Named Entity Identification and Linking</li>
+                        <li>Task 3: Focused Musical Named Entity Recognition and Linking</li>
+                        <li>Task 4: Knowledge Extraction</li>
+                    </ul>
+                    <p>————————————————————————————–</p>
+                </section>
+
+                <section>
+                    <h2>Important Dates</h2>
+                    <ul>
+                        <li>Paper submission deadline (5 pages document): March 10th, 2017, 23:59 Hawaii Time**</li>
+                        <li>Notification of acceptance: April 7th, 2017</li>
+                        <li>Camera ready papers (5 pages document): April 23rd, 2017</li>
+                        <li>Deadline for submission of system answers/instructions for evaluation: TBA</li>
+                        <li>Release of evaluation results: TBA</li>
+                        <li>Proclamation of winners: During ESWC 2017 closing ceremony</li>
+                    </ul>
+                    <p>**Eligible to submit papers are only authors participating in the challenge.</p>
+                </section>
+
+                <section>
+                    <h2>Organization</h2>
+                    <ul>
+                        <li>René Speck, University of Leipzig, Germany</li>
+                        <li>Michael Röder, University of Leipzig, Germany</li>
+                        <li>Ricardo Usbeck, University of Leipzig, Germany</li>
+                        <li>Axel-Cyrille Ngonga Ngomo, Institute for Applied Informatics, Germany</li>
+                        <li>Horacio Saggion, Universitat Pompeu Fabra, Spain</li>
+                        <li>Luis Espinosa-Anke, Universitat Pompeu Fabra, Spain</li>
+                        <li>Sergio Oramas, Universitat Pompeu Fabra, Spain</li>
+                    </ul>
+                    <p>For the complete list of organizers and program committee members,
+                        visit the challenge website.</p>
+                </section>
+
+                <section>
+                    <h2>Further Information and Contact</h2>
+                    <p>For detailed information, including datasets and submission guidelines,
+                        please visit the challenge website: <a href="https://project-hobbit.eu/challenges/oke2017-challenge-eswc-2017/">OKE2017 Challenge</a></p>
+                    <p>Contact Email: <a href="mailto:OKE-contact@googlegroups.com">OKE-contact@googlegroups.com</a></p>
+                </section>
+            </div>
+
+
+
+            <div class="post-header">
+   <h1 class="post-title-main">OKE 2017</h1>
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2024 HOBBIT Partners (maintained by InfAI). All rights reserved. <br />
+ Site last generated: Jul 4, 2024 <br />
+<p><img src="images/Hobbit_Logo_2015_rgb_cropped2.png" alt="HOBBIT logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+</html>

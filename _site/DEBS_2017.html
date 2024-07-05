@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" HOBBIT Documentation">
+<title>DEBS 2017 | GRAND CHALLENGE </title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="platform" href="http://0.0.0.0:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-tachometer fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> HOBBIT Documentation</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="https://github.com/hobbit-project/hobbit-project.github.io/issues">Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="OAEI 2023">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  
+      
+  
+  <a href="/index.html">Introduction</a>
+  
+  
+      
+  
+  <a href="/overview.html">Platform Overview</a>
+  
+  
+      
+  
+  
+  <li>
+      <a title="Tutorials" href="#">Tutorials</a>
+      <ul>
+          
+          
+          
+          <li><a title="Quick Guide" href="quick_guide.html">Quick Guide</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Deployment with Exoframe" href="exoframe.html">Deployment with Exoframe</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="master.project-hobbit.eu" href="master.html">master.project-hobbit.eu</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Benchmarking a System" href="benchmarking.html">Benchmarking a System</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Browsing Results" href="browsing_results.html">Browsing Results</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Taking Part in Challenge" href="challenge_participation.html">Taking Part in Challenge</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Organizing a Challenge" href="challenge_organization.html">Organizing a Challenge</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="How to Integrate a System" href="system_integration.html">How to Integrate a System</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="How to Integrate a Benchmark" href="benchmark_integration.html">How to Integrate a Benchmark</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using Java SDK to develop a Benchmark" href="java_sdk.html">Using Java SDK to develop a Benchmark</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Data License" href="data_license">Data License</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  <li>
+      <a title="Reference Manual" href="#">Reference Manual</a>
+      <ul>
+          
+          
+          
+          <li><a title="Workflow of an Experiment" href="experiment_workflow.html">Workflow of an Experiment</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Platform Deployment" href="#">Platform Deployment</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Requirements" href="requirements.html">Requirements</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="On a Single Machine" href="platform_deployment_single_machine.html">On a Single Machine</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="On a Cluster" href="platform_deployment_cluster.html">On a Cluster</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Troubleshooting" href="troubleshooting.html">Troubleshooting</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Optional platform features" href="optional_features.html">Optional platform features</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Env. Variables" href="parameters_env.html">Env. Variables</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Platform Config File" href="parameters_config.html">Platform Config File</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Volumes" href="parameters_volumes.html">Volumes</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="storage-init.sh" href="parameters_storage_init.html">storage-init.sh</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Frontend configuration" href="parameters_frontend.html">Frontend configuration</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="GPU configuration" href="gpu.html">GPU configuration</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Platform Components" href="#">Platform Components</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Platform Controller" href="platform_controller_component.html">Platform Controller</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Storage" href="storage_component.html">Storage</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Frontend" href="frontend_component.html">Frontend</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="User Management" href="user_management_component.html">User Management</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Repository" href="repository_component.html">Repository</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Analysis" href="analysis_component.html">Analysis</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Message Bus" href="message_bus_component.html">Message Bus</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Logging" href="logging_component.html">Logging</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Resource Monitoring" href="monitoring_component.html">Resource Monitoring</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Internal Challenge Workflow" href="internal_challenge_workflow.html">Internal Challenge Workflow</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Core Library" href="#">Core Library</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Java Components" href="java_components.html">Java Components</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Command Queue" href="command_queue.html">Command Queue</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Transferring Data" href="transferring_data.html">Transferring Data</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a title="General Platform API" href="platform_api.html">General Platform API</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Integrating a System" href="system_integration_api.html">Integrating a System</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Integrating a Benchmark" href="benchmark_integration_api.html">Integrating a Benchmark</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="FAQ" href="faq.html">FAQ</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  <li>
+      <a title="Challenges" href="#">Challenges</a>
+      <ul>
+          
+          
+          
+          <li><a title="Challenge Overview" href="challenge_overview.html">Challenge Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li class="active"><a title="OAEI 2023" href="OAEI_2023.html">OAEI 2023</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-content">
+                <h1>GRAND CHALLENGE – DEBS 2017</h1>
+
+                <h2>Call for Grand Challenge Solutions</h2>
+                <p>The 2017 ACM DEBS Grand Challenge is the seventh in a series of challenges which seek to provide a common ground and uniform evaluation criteria for a competition aimed at both research and industrial event-based systems. The goal of the 2017 DEBS Grand Challenge competition is to evaluate event-based systems for real-time analytics over high velocity and high volume data streams.</p>
+                <p>The focus of the 2017 Grand Challenge is on the analysis of the RDF streaming data generated by digital and analogue sensors embedded within manufacturing equipment. The goal of the 2017 Grand Challenge is to implement detection of anomalies in the behaviour of such manufacturing equipment.</p>
+                <p>This year’s Grand Challenge is co-organized by the HOBBIT project represented by AGT International. Both the data set and the automated evaluation platform are provided by the HOBBIT project. This will allow us to offer the possibility of running a distributed solution on multiple VMs.</p>
+                <p>Details about the data, queries for the Grand Challenge and the evaluation process are provided <a href="https://project-hobbit.eu/challenges/debs-grand-challenge/">here</a>.</p>
+
+                <h2>Prize</h2>
+                <p>Participants in the 2017 DEBS Grand Challenge will have the chance to win two prizes. The first prize is the “Grand Challenge Award” for the best performing, correct submission. The winner (or winning team) of the “Grand Challenge Award” will be additionally awarded with a monetary reward of $1000.</p>
+                <p>The second prize is the “Grand Challenge Audience Award” – it is determined based on the audience feedback provided after the presentation of the Grand Challenge solutions during the DEBS 2017 conference. The “Grand Challenge Audience Award”, as opposed to the overall “Grand Challenge Award”, does not entail any additional monetary reward as it is based purely on the audience perception of the presentation of a given solution.</p>
+
+                <h2>Q&A</h2>
+                <p>For additional questions please refer to the Grand Challenge mailing list: <a href="http://debs.org/listinfo/gc">http://debs.org/listinfo/gc</a> or send e-mail to: <a href="mailto:gc@debs.org">gc@debs.org</a>.</p>
+
+                <h2>Challenge Description (Tasks and Training Data)</h2>
+                <p>The 2017 DEBS Grand Challenge focuses on two scenarios that relate to the problem of automatic detection of anomalies for manufacturing equipment. The overall goal of both scenarios is to detect abnormal behaviour of a manufacturing machine based on the observation of the stream of measurements provided by such a machine. The data produced by each sensor is clustered and the state transitions between the observed clusters are modelled as a Markov chain. Based on this classification, anomalies are detected as sequences of transitions that happen with a probability lower than a given threshold.</p>
+                <p>The difference between the first and the second scenario is that in the first scenario the number of machines to observe is fixed, while in the second scenarios new machines dynamically join and leave the set of observable machines. We provide two sample input data sets under the following FTP address: <a href="ftp://hobbitdata.informatik.uni-leipzig.de/DEBS_GC/">ftp://hobbitdata.informatik.uni-leipzig.de/DEBS_GC/</a>. A description of the input and output data (together with their format) and the query that will evaluate the behavior of the machines under observation as well as the description of the parameters and the expected output format, can be found <a href="https://project-hobbit.eu/challenges/debs-grand-challenge/">here</a>.</p>
+                <p>DEBS parrot (Hello World) benchmark is ready. It sends certain amount of text messages and expects benchmarked system to send them back in the same order. We also provide an implementation of a system that can pass the benchmark. Source code, metadata, docker file can be found on GitHub: <a href="https://github.com/romromov/debs-parrotbenchmark-system">https://github.com/romromov/debs-parrotbenchmark-system</a>.</p>
+
+                <h2>Support</h2>
+                <p>The organisers of the challenge explicitly thank Weidmüller (<a href="http://www.weidmueller.de/">http://www.weidmueller.de/</a>) for the provisioning of the original data set that AGT International used to generate a realistic data set for the purpose of this challenge.</p>
+
+                <h2>Registration and Submission</h2>
+                <p>Submission and registration procedure is documented here: <a href="https://github.com/hobbit-project/platform/wiki">https://github.com/hobbit-project/platform/wiki</a></p>
+                <p>The evaluation platform can be reached under following address: <a href="http://master.project-hobbit.eu">http://master.project-hobbit.eu</a></p>
+
+                <h2>CALL FOR PAPERS</h2>
+                <hr>
+                <h3>GRAND CHALLENGE – DEBS 2017</h3>
+                <hr>
+                <p>June 19 – 23, Barcelona Spain</p>
+                <p>The 2017 ACM DEBS Grand Challenge (<a href="https://project-hobbit.eu/challenges/debs-grand-challenge/">https://project-hobbit.eu/challenges/debs-grand-challenge/</a>) is the seventh in a series of challenges which seek to provide a common ground and uniform evaluation criteria for a competition aimed at both research and industrial event-based systems. The focus of the DEBS 2017 Grand Challenge is on the analysis of RDF streaming data generated by digital and analogue sensors embedded within manufacturing equipment.</p>
+                <p>This year’s Grand Challenge is co-organized by the HOBBIT project represented by AGT International within the 11th ACM International Conference on Distributed and Event-Based Systems (DEBS 2017, <a href="http://www.debs2017.org/">http://www.debs2017.org/</a>). Both the data set and the automated evaluation platform are provided by the HOBBIT project.</p>
+
+                <hr>
+                <h3>Challenge Description</h3>
+                <hr>
+                <p>The 2017 DEBS Grand Challenge focuses on two scenarios that relate to the problem of automatic detection of anomalies for manufacturing equipment. The overall goal of both scenarios is to detect abnormal behavior of a manufacturing machine based on the observation of the stream of measurements provided by such a machine. Check more about our RDF steaming here <a href="https://docs.google.com/document/d/1O8TXLcqDHAPMmxZ8siYHLBVc6sfqslkVQKywNNILcy4/edit?usp=sharing">here</a>. The data produced by each sensor is clustered and the state transitions between the observed clusters are modeled as a Markov chain. Based on this classification, anomalies are detected as sequences of transitions that happen with a probability lower than a given threshold. The difference between the first and the second scenario is that in the first scenario the number of machines to observe is fixed, while in the second scenarios new machines dynamically join and leave the set of observable machines. Read more details <a href="https://project-hobbit.eu/challenges/debs-grand-challenge/">here</a>.</p>
+
+                <hr>
+                <h3>Prize</h3>
+                <hr>
+                <p>Participants in the 2017 DEBS Grand Challenge will have the chance to win two prizes. The first prize is the “Grand Challenge Award” for the best performing, correct submission. The second prize is the “Grand Challenge Audience Award” – it is determined based on the audience feedback provided after the presentation of the Grand Challenge solutions during the DEBS 2017 conference.</p>
+
+                <hr>
+                <h3>Registration and Submission</h3>
+                <hr>
+                <p>Submission and registration procedure is documented here: <a href="https://github.com/hobbit-project/platform/wiki">https://github.com/hobbit-project/platform/wiki</a></p>
+                <p>The evaluation platform can be reached under following address: <a href="http://master.project-hobbit.eu:8080">http://master.project-hobbit.eu:8080</a></p>
+
+                <hr>
+                <h3>Important Dates</h3>
+                <hr>
+                <ul>
+                    <li>April 7th, 2017: GC solutions due (submission system closes)</li>
+                    <li>April 29th, 2017: Paper submission due</li>
+                    <li>March 17th, 2017: Evaluation platform supports distributed performance tests</li>
+                    <li>March 3rd, 2017: Evaluation platform supports single node performance tests</li>
+                    <li>February 17th, 2017: Evaluation platform supports correctness tests</li>
+                    <li>December 17th, 2016: Evaluation platform online (team registration open)</li>
+                    <li>December 1st, 2016: Problem description (incl. sample data) online</li>
+                </ul>
+
+                <hr>
+                <h3>Organizers</h3>
+                <hr>
+                <ul>
+                    <li>Vincenzo Gulisano – Chalmers University of Technology</li>
+                    <li>Roman Katerinenko – AGT Group GmbH</li>
+                    <li>Zbigniew Jerzak – SAP SE</li>
+                    <li>Martin Strohbach – AGT Group GmbH</li>
+                    <li>Holger Ziekow – Hochschule Furtwangen</li>
+                </ul>
+
+                <h2>Proceedings</h2>
+                <p>DEBS 2017 Grand Challenge session proceedings are available <a href="https://project-hobbit.eu/challenges/debs-grand-challenge/">here</a>.</p>
+            </div>
+
+
+
+            <div class="post-header">
+   <h1 class="post-title-main">DEBS 2017</h1>
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2024 HOBBIT Partners (maintained by InfAI). All rights reserved. <br />
+ Site last generated: Jul 4, 2024 <br />
+<p><img src="images/Hobbit_Logo_2015_rgb_cropped2.png" alt="HOBBIT logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+</html>

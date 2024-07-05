@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" HOBBIT Documentation">
+<title>DEBS 2018 | GRAND CHALLENGE </title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="platform" href="http://0.0.0.0:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-tachometer fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> HOBBIT Documentation</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="https://github.com/hobbit-project/hobbit-project.github.io/issues">Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="OAEI 2023">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  
+      
+  
+  <a href="/index.html">Introduction</a>
+  
+  
+      
+  
+  <a href="/overview.html">Platform Overview</a>
+  
+  
+      
+  
+  
+  <li>
+      <a title="Tutorials" href="#">Tutorials</a>
+      <ul>
+          
+          
+          
+          <li><a title="Quick Guide" href="quick_guide.html">Quick Guide</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Deployment with Exoframe" href="exoframe.html">Deployment with Exoframe</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="master.project-hobbit.eu" href="master.html">master.project-hobbit.eu</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Benchmarking a System" href="benchmarking.html">Benchmarking a System</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Browsing Results" href="browsing_results.html">Browsing Results</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Taking Part in Challenge" href="challenge_participation.html">Taking Part in Challenge</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Organizing a Challenge" href="challenge_organization.html">Organizing a Challenge</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="How to Integrate a System" href="system_integration.html">How to Integrate a System</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="How to Integrate a Benchmark" href="benchmark_integration.html">How to Integrate a Benchmark</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Using Java SDK to develop a Benchmark" href="java_sdk.html">Using Java SDK to develop a Benchmark</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Data License" href="data_license">Data License</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  <li>
+      <a title="Reference Manual" href="#">Reference Manual</a>
+      <ul>
+          
+          
+          
+          <li><a title="Workflow of an Experiment" href="experiment_workflow.html">Workflow of an Experiment</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Platform Deployment" href="#">Platform Deployment</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Requirements" href="requirements.html">Requirements</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="On a Single Machine" href="platform_deployment_single_machine.html">On a Single Machine</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="On a Cluster" href="platform_deployment_cluster.html">On a Cluster</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Troubleshooting" href="troubleshooting.html">Troubleshooting</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Optional platform features" href="optional_features.html">Optional platform features</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Env. Variables" href="parameters_env.html">Env. Variables</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Platform Config File" href="parameters_config.html">Platform Config File</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Volumes" href="parameters_volumes.html">Volumes</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="storage-init.sh" href="parameters_storage_init.html">storage-init.sh</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Frontend configuration" href="parameters_frontend.html">Frontend configuration</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="GPU configuration" href="gpu.html">GPU configuration</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Platform Components" href="#">Platform Components</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Platform Controller" href="platform_controller_component.html">Platform Controller</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Storage" href="storage_component.html">Storage</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Frontend" href="frontend_component.html">Frontend</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="User Management" href="user_management_component.html">User Management</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Repository" href="repository_component.html">Repository</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Analysis" href="analysis_component.html">Analysis</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Message Bus" href="message_bus_component.html">Message Bus</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Logging" href="logging_component.html">Logging</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Resource Monitoring" href="monitoring_component.html">Resource Monitoring</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Internal Challenge Workflow" href="internal_challenge_workflow.html">Internal Challenge Workflow</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Core Library" href="#">Core Library</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Java Components" href="java_components.html">Java Components</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Command Queue" href="command_queue.html">Command Queue</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Transferring Data" href="transferring_data.html">Transferring Data</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a title="General Platform API" href="platform_api.html">General Platform API</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Integrating a System" href="system_integration_api.html">Integrating a System</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Integrating a Benchmark" href="benchmark_integration_api.html">Integrating a Benchmark</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="FAQ" href="faq.html">FAQ</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  
+  <li>
+      <a title="Challenges" href="#">Challenges</a>
+      <ul>
+          
+          
+          
+          <li><a title="Challenge Overview" href="challenge_overview.html">Challenge Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li class="active"><a title="OAEI 2023" href="OAEI_2023.html">OAEI 2023</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-content">
+
+
+
+
+
+
+
+
+                <h2 id="instance-matching-or-link-discovery">Instance Matching or Link Discovery</h2>
+                <p>
+                    <i>Join the 2018 DEBS Grand Challenge and use machine learning to make maritime transportation more reliable!
+                    Explore multiple gigabytes of real maritime spatio-temporal streaming data and compete with peers from academia and industry for the Grand Challenge prize of 1000 USD.
+                    </i>
+                    <br>
+                    The DEBS Grand Challenge is a series of competitions, that started in 2010, in which both academics and professionals compete with the goal of building faster and more accurate distributed and event based system.
+                    Every year, the DEBS Grand Challenge participants have a chance to explore a new data set and a new problem and can compare their results based on the common evaluation criteria.
+                </P>
+                <p>
+                    The 2018 DEBS Grand Challenge focuses on the application of machine learning to spatio-temporal streaming data.
+                    The goal of the challenge is to make the naval transportation industry more reliable by providing predictions for vessels’ destinations and arrival times.
+                    Predicting both correct destinations and arrival times of vessels are relevant problems, that once solved, will boost the efficiency of the overall supply chain management.
+                    The Grand Challenge data is provided by the MarineTraffic company and hosted by the Big Data Ocean (*) EU Horizon 2020 project.
+                    The evaluation platform is provided by the HOBBIT project (**) represented by AGT International (http://www.agtinternational.com/), an EU Horizon 2020 project.
+                </p>
+
+                <P>
+                    Details about the data, queries for the Grand Challenge and the evaluation process are provide here.
+                </p>
+                    <br>
+                <p>(*)  BigDataOcean project has received funding from the European Union’s H2020 research and innovation action program under grant agreement number #732310.</p>
+                <p>(**) HOBBIT project has received funding from the European Union’s H2020 research and innovation action program under grant agreement number #688227.</p>
+
+
+                <h2 id="tasks-and-training-data">Awards</h2>
+                <p>
+                    Participants of the challenge compete for two awards: (1) the performance award and (2) the audience award.
+                    The winner of the performance award will be determined through the automated evaluation of the HOBBIT platform, according to the evaluation criteria.
+                    These criteria factor in speed as well as accuracy of the solution. The winning team will receive 1000 USD as price money.
+                </p>
+                <p>
+                    The winner of the audience award will be determined amongst the finalists who present in the Grand Challenge session of the DEBS.
+                    In this session, the audience will be asked to vote for the solution with the most interesting concepts (highest number of votes wins).
+                    The intention is to award qualities of the solutions that are not tied to performance.
+                    Specifically, the audience will be encouraged to pay attention to the following aspects:
+                </p>
+                <p><ul>
+                        <li>Novelty/originality of the solution</li>
+                        <li>Quality of the solution architecture (e.g. flexibility, reusability, extensibility, generality, …)</li>
+                    </ul>
+                </p>
+
+                <p>
+                    There are two ways how teams can become finalists and get a presentation slot in the Grand Challenge session.
+                    <ol>
+                        <li>The two teams with the best performance (according to the HOBBIT platform) will be nominated. </li>
+                        <li>The Grand Challenge organizers will review the submitted papers for each solution and nominate additional teams with the most interesting concepts.</li>
+                    </ol>
+                    All submissions of sufficient quality that do not make it to the finals will get a chance to present theirs solution as a poster. (The sufficiency of the quality will be determined through the review of the papers).
+                </p>
+
+                <div class="section">
+                    <h2>Data Description</h2>
+                    <p>Static information: The queries require knowledge about the location of ports around the world. The locations are specified via bounding boxes that are defined through coordinates. You can find the complete list of ports <a href="#">here</a>.</p>
+                    <p>Data Stream: We provide a stream of comma-separated tuples that are ordered by time. A ship sends a tuple according to its behaviour based on the AIS specifications. The schema of the tuples is provided below:</p>
+                    <p><strong>Schema</strong> &lt;SHIP_ID, SPEED, LON, LAT, COURSE, HEADING, TIMESTAMP, Departure PORT_NAME, Reported_Draught&gt;</p>
+                    <ul>
+                        <li><strong>SHIP_ID</strong> is the anonymized id of the ship</li>
+                        <li><strong>SPEED</strong> is measured in knots (divide value by 10)</li>
+                        <li><strong>LON</strong> is the longitude of the current ship position</li>
+                        <li><strong>LAT</strong> is the latitude of the current ship position</li>
+                        <li><strong>COURSE</strong> is the direction in which ship moves (see: <a href="https://en.wikipedia.org/wiki/Course_(navigation)">Course (navigation)</a>)</li>
+                        <li><strong>HEADING</strong> (see: <a href="https://en.wikipedia.org/wiki/Course_(navigation)">Course (navigation)</a>)</li>
+                        <li><strong>TIMESTAMP</strong> is the time at which the message was sent (UTC)</li>
+                        <li><strong>Departure PORT_NAME</strong> is the name of the last port visited by the vessel</li>
+                        <li><strong>Reported_Draught</strong> of a ship’s hull is the vertical distance between the waterline and the bottom of the hull (keel) <a href="https://en.wikipedia.org/wiki/Draft_(hull)">Draft (hull)</a></li>
+                    </ul>
+                    <p>Two sample files are provided <a href="#">here</a> and <a href="#">here</a>.</p>
+                </div>
+
+                <div class="section">
+                    <h2>Query Description</h2>
+                    <h3>Query 1: Predicting destinations of ships</h3>
+                    <p>Predicting the correct destination of a vessel is a relevant problem for a wide range of stakeholders including port authorities, vessel operators and many more. The prediction problem is to generate a continuous stream of predictions for the destination port of any vessel given the following information: (1) name of the port of origin, (2) unique ID of the vessel, (3) position of the vessel, (4) time stamp, and (5) vessel’s draught. The above data is provided as a continuous stream of tuples and the goal of the system is to provide for every input tuple one output tuple containing the name of the destination port. A solution is considered correct at time stamp T if for a tuple with this timestamp as well as for all subsequent tuples the predicted destination port matches the actual destination port. The goal of any solution is not only to predict a correct destination port but also to predict it as soon as possible counting from the moment when a new port of origin appears for a given vessel.</p>
+                    <p>For the challenge, we will define a set of ports to consider. Each port will be specified by coordinates that define a bounding box around the port.</p>
+
+                    <h4>Evaluation for Query 1</h4>
+                    <p>The evaluation takes into account how early the correct predictions are made (Rank A1) and the total runtime of the system (Rank B1).</p>
+                    <ul>
+                        <li><strong>Rank A1</strong> ranks according to the prediction time (the average time span between a prediction and the arrival at the port). Only correct predictions are considered. The arrival at a port is defined by the first event that is reported from within the respective bounding box. More formally, Rank A1 = total_travel_time / earliest_travel_time_with_correct_prediction (Note, that earliest_travel_time_with_correct_prediction is defined by the point in time from which all subsequent predictions are correct).</li>
+                        <li>The overall ranking for query 1 (Rank Q1) is then computed as Rank Q1 = 0.75*Rank A1 + 0.25*Rank B1.</li>
+                        <li>At any point in time there is only one tuple per ship in the queue.</li>
+                    </ul>
+
+                    <h3>Query 2: Predicting arrival times of ships</h3>
+                    <p>There is a set of ports defined by respective bounding boxes of coordinates. Once a ship leaves a port (i.e. the respective bounding box), the task is to predict the arrival time at its destination port (i.e. when the next defined bounding boxes will be entered). Also for this query, after port departure and until arrival, the solution must emit one prediction per position update. The event includes the following information &lt;ship_id, arrival_time&gt;.</p>
+
+                    <h4>Evaluation for Query 2</h4>
+                    <p>The evaluation takes into account the accuracy of predictions (Rank A2) and the total runtime (Rank B2).</p>
+                    <ul>
+                        <li><strong>Rank A2</strong> ranks according to the prediction accuracy (i.e. mean average error of all predicted arrival times). Note, only correctly predicted target ports will be considered while Rank B2 ranks according to the total runtime.</li>
+                        <li>The overall ranking for query 2 (Rank Q2) is then computed as Rank Q2 = 0.75*Rank A2 + 0.25*Rank B2. The final ranking is given by the sum of ranks Rank Q1 and Rank Q2.</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Platform Overview</h2>
+                    <p>Submitted solutions will be benchmarked with the HOBBIT platform deployed online at <a href="http://master.project-hobbit.eu/">http://master.project-hobbit.eu/</a>. A detailed description of the platform is available <a href="#">here</a>.</p>
+                    <p>The evaluation cluster of the online platform has three working nodes allocated for solutions. Each node is 2×64 bit Intel Xeon E5-2630v3 (8-Cores, 2.4 GHz, Hyperthreading, 20MB Cache, each proc.), 256 GB RAM, 1Gb Ethernet.</p>
+                </div>
+
+                <div class="section">
+                    <h2>Hobbit How-To</h2>
+                    <p>In order to participate in the challenge participants need to:</p>
+                    <ul>
+                        <li>Develop a system adapter connecting their system to the HOBBIT platform</li>
+                        <li>Upload the system to the HOBBIT platform so that it can be benchmarked</li>
+                        <li>Register the system for the DEBS 2018 Grand Challenge for final evaluation</li>
+                    </ul>
+                    <p>Instructions for developing a HOBBIT system adapter are available at the <a href="#">HOBBIT Wiki</a>. A simple Hello World example for this challenge is available <a href="#">here</a>. The hobbit-java-sdk and published sources (to be updated) should help participants to debug and their system locally and to prepare a docker image for uploading into the online platform. Detailed information about the upload procedure is documented <a href="#">here</a>. After submitting your system to the HOBBIT platform, you can use the DEBS 2018 Benchmark (to be published) to test the correctness of your implementation.</p>
+                    <p>In order to register your system for the Challenge you have to use the “DEBS 2018 Grand Challenge” item under the “Challenges” tab in the platform GUI. The detailed description of the registration procedure is described <a href="#">here</a>. Participants need to register their systems for all tasks defined in DEBS 2018 Grand Challenge at the moment.</p>
+                </div>
+
+            </div>
+
+
+
+            <div class="post-header">
+   <h1 class="post-title-main">DEBS 2018</h1>
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2024 HOBBIT Partners (maintained by InfAI). All rights reserved. <br />
+ Site last generated: Jul 4, 2024 <br />
+<p><img src="images/Hobbit_Logo_2015_rgb_cropped2.png" alt="HOBBIT logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+</html>
