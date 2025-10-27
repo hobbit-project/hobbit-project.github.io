@@ -127,3 +127,9 @@ This example results in two system instances listed as systems for benchmarking 
 To ease the usage of parameters, the meta data of a system instance is given to its Docker container when it is started, i.e., the user does not have to define a single Docker image for every parameterization but can read the parameters from an environmental variable at runtime.
 
 **Note** that a single system.ttl file can contain multiple systems and system instances.
+
+## Integration with ENEXA
+
+Modules of the [ENEXA project](https://enexa.eu/) do not need any adaptation. The HOBBIT platform implements the [ENEXA service](https://enexa.eu/documentation/service_des.html) and, hence, supports the interactions that the ENEXA module may expect. 
+
+Most benchmark implementations won't be aware that they interact with an ENEXA module. Hence, we recommend to implement a light-weight system adapter that translates between requests of the benchmark and the ENEXA module. An example can be found [here](https://github.com/EnexaProject/tentris-odin-hobbit-benchmark) where the system adapter creates the evaluated ENEXA module using the typical ENEXA service methods and forwards requests and responses between the benchmark and the module.
